@@ -47,6 +47,16 @@
   "talks":
      [
       {
+        "title": "50inTech 2022",
+        "youtubeId": "VoPvX9K_Gok",
+        "date": "2022/07/06"
+      },
+      {
+        "title": "Sunny Tech Montpellier 2022",
+        "youtubeId": "l1zl0ift9q0",
+        "date": "2022/07/01"
+      },
+      {
         "title": "Ladies of Code Paris 2022",
         "youtubeId": "7ZLb6SQ9tTs",
         "date": "2022/03/08"
@@ -90,10 +100,10 @@
   "illustrations": {
     "albums": [
       { "name": "Technical conferences", "id": "72157713855312227" },
-      { "name": "Personal sketchnoting", "id": "72157711643998961" },
+      { "name": "Visual thinking", "id": "72157711643998961" },
       { "name": "Basque", "id": "72177720298004102" },
       { "name": "Test JS Summit", "id": "72157718113845317" },
-      { "name": "Inktober 2020", "id": "72157716697491682" }
+      { "name": "Inktober 2021", "id": "72157716697491682" }
     ]
   }
 }

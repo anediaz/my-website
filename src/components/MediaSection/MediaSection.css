@@ -29,6 +29,14 @@
   font-size: 1.1rem;;
 }
 
+.MediaSection .media-item:hover{
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.MediaSection .media-item:hover .media-info{
+  color: black;
+}
+
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
 

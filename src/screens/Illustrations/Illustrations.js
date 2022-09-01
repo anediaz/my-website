@@ -85,11 +85,6 @@ const Illustrations = () => {
     }
   };
 
-  const getClass = (id) => {
-    const active = illustrationsState.selectedAlbum === id ? 'active' : '';
-    return `albumName ${active}`;
-  };
-
   const currentPhotos = getCurrentPhotos(
     illustrationsState.loadedPhotos,
     illustrationsState.selectedAlbum,
@@ -103,18 +98,6 @@ const Illustrations = () => {
         onSelectItem={onSelectAlbum}
         activeItem={illustrationsState.selectedAlbum}
       />
-      <div className="albums">
-        {illustrations.albums.map(({ name, id }) => (
-          <div
-            className={getClass(id)}
-            key={id}
-            onClick={() => onSelectAlbum(id)}
-            role="presentation"
-          >
-            {name}
-          </div>
-        ))}
-      </div>
       <div className="container">
         <Gallery
           photos={currentPhotos || []}

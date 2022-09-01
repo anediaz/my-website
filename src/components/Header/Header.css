@@ -61,7 +61,7 @@
 .Header .infos .social .mail:hover a,
 .Header .infos .social .social-icons i:hover {
   cursor: pointer;
-  color: gray;
+  color: black;
 }
 
 .Header .infos .social .mail a,
