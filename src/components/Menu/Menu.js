@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
+import { Link } from 'react-router-dom';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Menu = ({
@@ -25,7 +26,7 @@ const Menu = ({
       tabIndex={0}
       onKeyDown={() => {}}
     >
-      <div>
+      <div className="text">
         {t(`menu.${item}`)}
       </div>
     </div>
@@ -39,6 +40,10 @@ const Menu = ({
         languageItems={languageItems}
       />
       {menuItems && buildMenu()}
+      <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>
+        <i className="fa fa-pen text">&nbsp;</i>
+        <i className="fa fa-eye text" />
+      </Link>
       {closable && (
       <button className="closeButton" type="button" onClick={selectItemHandler}>
         <i className="fa fa-hand-o-left" />

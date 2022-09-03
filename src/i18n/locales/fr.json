@@ -4,7 +4,7 @@
   "menu.works": "travaux",
   "menu.more": "plus",
   "menu.closable": "retour",
-
+  "menu.title.illustrations": "réalisations graphiques",
 
   "header.resumeTitle": "Téléchargez mon CV",
   "header.skill.developer": "Développeuse Web",
@@ -39,6 +39,7 @@
   "works.graphic.title":  "Dernier travail visuel",
   "works.graphic.content": "Récemment, j'ai eu le plaisir de travailler en tant que Facilitatrice Graphique pour Microsoft",
   "works.graphic.other": "Autres réalisations graphiques",
+
 
   "works.speaker.title": "Conférences",
   "works.speaker.content": "Conférences dans lasquelles j'ai participé en tant qu'oratrice",

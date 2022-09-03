@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.Menu .item {
+.Menu .item{
   line-height: 5rem;
   text-align: right;
   font-size: 2rem;
@@ -16,17 +16,34 @@
   margin: 0 4rem;
 }
 
-.Menu .item div{
+.Menu .item .text{
   text-decoration: none;
   color: rgb(204, 204, 204);
 }
 
-.Menu .item div:hover{
+.Menu .item.illustrations {
+  line-height: 7rem;
+}
+.Menu .item.illustrations i{
+  color: palevioletred;
+  opacity: .7;
+}
+
+.Menu .item.illustrations .text{
+  font-size: 1.5rem;
+}
+
+.Menu .item:hover .text{
   color: gray;
   cursor: pointer;
 }
 
-.Menu .item.active div{
+.Menu .item.illustrations:hover i{
+  color: palevioletred;
+  opacity: 1;
+}
+
+.Menu .item.active .text{
   color: #2a363b;
 }
 .Menu .LanguageSelector {
@@ -73,7 +90,6 @@
   background-color: inherit;
 }
 
-
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
   .Menu .LanguageSelector, .Menu .closeButton {
@@ -110,9 +126,25 @@
   .Menu .item {
     display: none;
   }
+
+  .Menu .item.illustrations{
+    display: flex;
+    margin: 0 3rem;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 0rem;
+  }
+
+  .Menu .item.illustrations .text{
+    opacity: 1;
+    font-size: 1.5rem;
+  }
 }
 /*iPadPro Vertical / iPad HorizontaL*/
 @media screen and (max-width: 1024px) {
+  .Menu .item.illustrations .text{
+    font-size: 1.5rem;
+  }
 }
 
 /*iPhoneX horizontal*/
@@ -134,6 +166,9 @@
   .Menu .closeButton i {
     margin-bottom: 5px;
   }
+  .Menu .item.illustrations .text{
+    font-size: 1rem;
+  }
 }
 
 /*iPad Vertical iPhone6/7/8 Horizontal*/
@@ -149,5 +184,13 @@
   .Menu .closeButton {
     font-size: 0.7rem;
     margin: 2rem auto;
+  }
+
+  .Menu .item.illustrations{
+    margin: 0;
+  }
+
+  .Menu .item.illustrations .text{
+    font-size: .8rem;
   }
 }
