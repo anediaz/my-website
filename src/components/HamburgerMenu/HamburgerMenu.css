@@ -131,6 +131,13 @@
   margin: 0.5rem 0rem 0 0.5rem;
 }
 
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  #menu li {
+    font-size: 1.7rem;
+  }
+}
+
 /*iPadPro Vertical / iPad HorizontaL*/
 @media screen and (max-width: 1024px) {
   .HamburgerMenu {

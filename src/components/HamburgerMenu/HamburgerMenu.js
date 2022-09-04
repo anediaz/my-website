@@ -30,7 +30,9 @@ const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }) => {
               tabIndex={0}
               onKeyDown={() => {}}
             >
-              <li>{name}</li>
+              <li>
+                {name}
+              </li>
             </div>
           ))}
         </ul>
