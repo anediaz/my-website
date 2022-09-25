@@ -16,7 +16,9 @@ const Graphic = ({ data, className, goToMicrosoft }) => {
         <div className="description">
           <div className="project">{t('works.graphic.title')}</div>
           <div className="infos">
-            <div>{t('works.graphic.content')}</div>
+            <div role="button" tabIndex="0" onKeyPress={() => {}} onClick={goToMicrosoft}>
+              {t('works.graphic.content')}
+            </div>
           </div>
         </div>
       </div>

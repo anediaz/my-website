@@ -18,6 +18,11 @@
   color: palevioletred;
 }
 
+.graphic .infos:hover{
+  cursor: pointer;
+  color: #2a363b;
+}
+
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
   .graphic .illustrations {
