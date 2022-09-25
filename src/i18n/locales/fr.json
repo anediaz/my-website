@@ -36,8 +36,10 @@
   "works.developer.info": "Site web photographique",
   "works.developer.role": "Role: Développement Web et design",
 
-  "works.graphic.title":  "Dernier travail visuel",
-  "works.graphic.content": "Travail de Facilitation Graphique pour Microsoft (lire l'article)",
+  "works.graphic.microsoft.title":  "Microsoft",
+  "works.graphic.microsoft.content": "Travail de Facilitation Graphique pour Microsoft (lire l'article)",
+  "works.graphic.paquier.title": "Dernier travail visuel",
+  "works.graphic.paquier.content": "Travail Graphique pour Paquier & Associés (lire l'article)",
   "works.graphic.other": "Autres réalisations graphiques",
 
 
@@ -68,7 +70,15 @@
   "microsoft.mediaIllustration": "La répresentation de chaque conférence technique",
   "microsoft.mediaIllustration.smartphone": "Mon sketchnote",
   "microsoft.mediaVideo": "Suivie de la vidéo de la conférence",
-  "microsoft.mediaVideo.smartphone": "Vidéo de la conférence"
+  "microsoft.mediaVideo.smartphone": "Vidéo de la conférence",
+
+  "paquier.title": "Travail graphique pour Paquier & Associés",
+  "paquier.description": "Réalisation de 7 illustrations des 7 valueurs d'entreprise de Paquier & Associés",
+  "paquier.highlightDescription": "7 illustrations",
+  "paquier.description2": "Travail qui a nécessité beaucoup de collaboration et communication avec les responsables du cabinet afin de répondre au mieux au besoin initial.",
+  "paquier.highlightDescription2": "collaboration et communication",
+  "paquier.whatIs": "Paquier & Associés, expert comptable et commissaire aux comptes à Bordeaux en Gironde.",
+  "paquier.mediaIllustration": "Les 7 valeurs d'entreprise de Paquier & Associés"
 
 
 }

@@ -10,7 +10,7 @@ const Web = ({ data, className }) => {
   return (
     <div className={`web ${className}`}>
       <div className="body">
-        <ImageWithLoader cls="clickableImage" alt={data.alt} url={data.url} image={image} loader={<LoaderInline height="50" width="50" />} />
+        <ImageWithLoader cls="clickableImage" alt={t('works.developer.title')} url={data.url} image={image} loader={<LoaderInline height="50" width="50" />} />
         <div className="description">
           <div className="project">{t('works.developer.title')}</div>
           <div className="infos">
@@ -26,7 +26,6 @@ const Web = ({ data, className }) => {
 Web.propTypes = {
   data: PropTypes.exact({
     url: PropTypes.string.isRequired,
-    alt: PropTypes.string,
   }),
   className: PropTypes.string,
 };

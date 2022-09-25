@@ -6,7 +6,7 @@ import {
   Menu, Header, Footer, LastNews,
 } from '../../components';
 import {
-  About, Skills, Works, More, Article, Microsoft,
+  About, Skills, Works, More, Article, Microsoft, Paquier,
 } from '../index';
 import {
   jsonData, constants,
@@ -16,6 +16,7 @@ import './Main.css';
 const PAGES = {
   article: Article,
   microsoft: Microsoft,
+  paquier: Paquier,
 };
 
 const { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } = constants;
@@ -121,7 +122,7 @@ const Main = ({ page, section }) => {
                   id="works"
                   onChangeVisibility={onChangeVisibility}
                   isVisible={visibleSection === 'works'}
-                  goToMicrosoft={() => goTo('?page=microsoft')}
+                  goToArticle={(pageName) => goTo(`?page=${pageName}`)}
                 />
                 <More
                   id="more"
