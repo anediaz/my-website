@@ -41,8 +41,7 @@ const Menu = ({
       />
       {menuItems && buildMenu()}
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>
-        <i className="fa fa-pen text">&nbsp;</i>
-        <i className="fa fa-eye text" />
+        {t('menu.portfolio')}
       </Link>
       {closable && (
       <button className="closeButton" type="button" onClick={selectItemHandler}>

@@ -22,15 +22,10 @@
 }
 
 .Menu .item.illustrations {
-  line-height: 7rem;
-}
-.Menu .item.illustrations i{
+  margin-top: 4rem;
+  font-size: 1.3rem;
+  text-decoration: none;
   color: palevioletred;
-  opacity: .4;
-}
-
-.Menu .item.illustrations .text{
-  font-size: 1.5rem;
 }
 
 .Menu .item:hover .text{
@@ -38,10 +33,6 @@
   cursor: pointer;
 }
 
-.Menu .item.illustrations:hover i{
-  color: palevioletred;
-  opacity: 1;
-}
 
 .Menu .item.active .text{
   color: #2a363b;
@@ -128,22 +119,15 @@
   }
 
   .Menu .item.illustrations{
-    display: flex;
-    margin: 0 3rem;
-    justify-content: center;
-    text-decoration: none;
-    line-height: 0rem;
-  }
-
-  .Menu .item.illustrations .text{
-    opacity: 1;
-    font-size: 1.5rem;
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
   }
 }
 /*iPadPro Vertical / iPad HorizontaL*/
 @media screen and (max-width: 1024px) {
-  .Menu .item.illustrations .text{
-    font-size: 1.5rem;
+  .Menu .item.illustrations{
+    display: none;
   }
 }
 
@@ -166,9 +150,7 @@
   .Menu .closeButton i {
     margin-bottom: 5px;
   }
-  .Menu .item.illustrations .text{
-    font-size: 1rem;
-  }
+
 }
 
 /*iPad Vertical iPhone6/7/8 Horizontal*/
@@ -184,13 +166,5 @@
   .Menu .closeButton {
     font-size: 0.7rem;
     margin: 2rem auto;
-  }
-
-  .Menu .item.illustrations{
-    margin: 0;
-  }
-
-  .Menu .item.illustrations .text{
-    font-size: .8rem;
   }
 }
