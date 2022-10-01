@@ -21,6 +21,7 @@
 
 .work .body .clickableImage:hover{
   cursor: pointer;
+  transform: scale(1.05);
 }
 .work .body .description {
   width: calc(50% - 6rem);
@@ -50,6 +51,11 @@
 .work .body .description .infos div::first-letter {
   opacity: 0.8;
   color: palevioletred;
+}
+
+.work .infos:hover{
+  cursor: pointer;
+  color: #2a363b;
 }
 
 /*MacBook 13"*/

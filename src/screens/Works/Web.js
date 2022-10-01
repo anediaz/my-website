@@ -13,9 +13,11 @@ const Web = ({ data, className }) => {
         <ImageWithLoader cls="clickableImage" alt={data.alt} url={data.url} image={image} loader={<LoaderInline height="50" width="50" />} />
         <div className="description">
           <div className="project">{t('works.developer.title')}</div>
-          <div className="infos">
-            <div>{t('works.developer.info')}</div>
-            <div>{t('works.developer.role')}</div>
+          <div role="button" tabIndex="0" onKeyPress={() => {}} onClick={() => window.open(data.url)}>
+            <div className="infos">
+              <div>{t('works.developer.info')}</div>
+              <div>{t('works.developer.role')}</div>
+            </div>
           </div>
         </div>
       </div>

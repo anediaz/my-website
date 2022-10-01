@@ -131,6 +131,10 @@
   margin: 0.5rem 0rem 0 0.5rem;
 }
 
+.HamburgerMenu.open .activeText {
+  display: none;
+}
+
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
   #menu li {

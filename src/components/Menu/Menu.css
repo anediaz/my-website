@@ -21,11 +21,20 @@
   color: rgb(204, 204, 204);
 }
 
+.Menu.closable .item.illustrations{
+  display: none;
+}
+
 .Menu .item.illustrations {
-  margin-top: 4rem;
+  margin: 4rem auto 2rem auto;
   font-size: 1.3rem;
   text-decoration: none;
   color: palevioletred;
+  display: block;
+}
+
+.Menu .item.illustrations:hover{
+  color: #c33564;
 }
 
 .Menu .item:hover .text{
@@ -62,9 +71,7 @@
   font-weight: 500;
   opacity: 0.5;
   overflow-wrap: break-word;
-  margin-bottom: 10rem;
-  margin-right: 4rem;
-  margin-left: 3rem;
+  margin: 0 auto 10rem auto;
   font-size: 1.5rem;
   text-align: right;
   padding: 0;
@@ -76,14 +83,14 @@
 
 .Menu .closeButton:hover {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   opacity: 1;
   background-color: inherit;
 }
 
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
-  .Menu .LanguageSelector, .Menu .closeButton {
+  .Menu .LanguageSelector {
     margin-right: 3rem;
     margin-bottom: 7rem;
   }
@@ -118,7 +125,7 @@
     display: none;
   }
 
-  .Menu .item.illustrations{
+  .Menu:not(.closable) .item.illustrations{
     display: block;
     margin-top: 2rem;
     font-size: 1.2rem;
@@ -126,9 +133,6 @@
 }
 /*iPadPro Vertical / iPad HorizontaL*/
 @media screen and (max-width: 1024px) {
-  .Menu .item.illustrations{
-    display: none;
-  }
 }
 
 /*iPhoneX horizontal*/
@@ -149,6 +153,9 @@
   }
   .Menu .closeButton i {
     margin-bottom: 5px;
+  }
+  .Menu:not(.closable) .item.illustrations{
+    display: none;
   }
 
 }

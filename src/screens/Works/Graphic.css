@@ -3,6 +3,10 @@
   margin-top: 1rem;
 }
 
+.graphic .clickableImage:hover{
+  cursor: pointer;
+}
+
 .graphic .illustrations .empty {
   width: 50%;
 }
@@ -16,11 +20,6 @@
 
 .graphic .illustrations i, .graphic .illustrations a:hover {
   color: palevioletred;
-}
-
-.graphic .infos:hover{
-  cursor: pointer;
-  color: #2a363b;
 }
 
 /*MacBook 13"*/

@@ -11,7 +11,7 @@ const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }) => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="HamburgerMenu">
+    <nav className={`HamburgerMenu ${menuOpen ? 'open' : ''}`}>
       {/* The <div> element has a child <button> element that allows keyboard interaction */}
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}

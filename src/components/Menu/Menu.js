@@ -33,7 +33,7 @@ const Menu = ({
   ));
 
   return (
-    <div className="Menu">
+    <div className={`Menu${closable ? ' closable' : ''}`}>
       <LanguageSelector
         language={language}
         handleLanguageClick={languageClickHandler}
