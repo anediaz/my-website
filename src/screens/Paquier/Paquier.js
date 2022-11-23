@@ -58,15 +58,7 @@ const Paquier = () => {
         title, tag, alt,
       }) => (
         <div className="MediaSectionItem media" key={title}>
-          <div className="text">
-            <span>{t('microsoft.mediaIllustration.smartphone')}</span>
-            <i className="fa fa-hand-o-down" aria-hidden="true" />
-          </div>
           {renderImg(tag, alt)}
-          <div className="text">
-            <span>{t('microsoft.mediaVideo.smartphone')}</span>
-            <i className="fa fa-hand-o-down" aria-hidden="true" />
-          </div>
         </div>
       ))}
     </div>
@@ -88,7 +80,7 @@ const Paquier = () => {
         </div>
         <div className="coverImage Section">
           {renderImg('cover', 'Paquier', 'cover-image')}
-          <a href="https://www.cabinet-paquier.fr/" target="_blank" rel="noreferrer" className="content msDevRoadShow">
+          <a href="https://www.cabinet-paquier.fr/" target="_blank" rel="noreferrer" className="content paquierinfo">
             {t('paquier.whatIs')}
           </a>
         </div>
@@ -98,7 +90,7 @@ const Paquier = () => {
   );
 
   return (
-    <div className="Microsoft">
+    <div className="Paquier">
       {isLoading ? <div className="fallback-style"><LoaderCircle /></div>
         : renderContent()}
 
