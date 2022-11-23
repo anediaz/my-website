@@ -37,8 +37,10 @@
     "works.developer.info": "Página web fotográfica",
     "works.developer.role": "Rol: Desarrollo web y diseño",
 
-    "works.graphic.title":  "Último trabajo visual",
-    "works.graphic.content": "Trabajo de Facilitadora Gráfica para Microsoft (leer artículo)",
+    "works.graphic.microsoft.title":  "Microsoft",
+    "works.graphic.microsoft.content": "Trabajo de Facilitadora Gráfica para Microsoft (leer artículo)",
+    "works.graphic.paquier.title":  "Último trabajo visual",
+    "works.graphic.paquier.content": "Trabajo Gráfico para Paquier & Associés (leer artículo)",
     "works.graphic.other": "Otras realizaciones gráficas",
 
     "works.speaker.title": "Conferencias",
@@ -68,5 +70,13 @@
     "microsoft.mediaIllustration": "Representación visual de cada conferencia técnica",
     "microsoft.mediaIllustration.smartphone": "Mi sketchnote",
     "microsoft.mediaVideo": "Seguida del vídeo original",
-    "microsoft.mediaVideo.smartphone": "Vídeo de la conferencia"
+    "microsoft.mediaVideo.smartphone": "Vídeo de la conferencia",
+
+    "paquier.title": "Trabajo gráfico para  Paquier & Associés",
+    "paquier.description": "Realización de 7 ilustraciones de los 7 valores de empresa de Paquier & Associés",
+    "paquier.highlightDescription": "7 ilustraciones",
+    "paquier.description2": "Trabajo que ha necesitado mucha colaboración y communicación con los responsables del cabinete para responder lo mejor posible a la demanda inicial.",
+    "paquier.highlightDescription2": "colaboración y communicación",
+    "paquier.whatIs": "Paquier & Associés, experto contable y auditor en Burdeos, Gironda.",
+    "paquier.mediaIllustration": "Los 7 valores de empresa de Paquier & Associés"
 }

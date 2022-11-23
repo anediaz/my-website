@@ -38,8 +38,10 @@
   "works.developer.info": "Argazki webgunea",
   "works.developer.role": "Rola: Web garapena eta diseinua",
 
-  "works.graphic.title":  "Azken lan bisuala",
-  "works.graphic.content": "Erraztaile Grafiko lana Microsoft-entzat (artikulua irakurri)",
+  "works.graphic.microsoft.title":  "Microsoft",
+  "works.graphic.microsoft.content": "Erraztaile Grafiko lana Microsoft-entzat (artikulua irakurri)",
+  "works.graphic.paquier.title":  "Azken lan bisuala",
+  "works.graphic.paquier.content": "A bisuala Paquier & Associés-entzat (artikulua irakurri)",
   "works.graphic.other": "Beste burutze grafikoak",
 
   "works.speaker.title": "Konferentziak",
@@ -69,7 +71,14 @@
   "microsoft.mediaIllustration": "Aurkezpen tekniko bakoitzaren adierazpen bisuala",
   "microsoft.mediaIllustration.smartphone": "Nire sketchnote-a",
   "microsoft.mediaVideo": "Aurkezpenaren bideoaz jarraitua",
-  "microsoft.mediaVideo.smartphone": "Aurkezpenaren bideoa"
+  "microsoft.mediaVideo.smartphone": "Aurkezpenaren bideoa",
 
+  "paquier.title": "Paquier & Associés-entzat lan grafikoa",
+  "paquier.description": "Paquier & Associés-entzat 7 marrazkiren burutzea, beren 7 enpresa balioena.",
+  "paquier.highlightDescription": "7 marrazki",
+  "paquier.description2": "Jatorrizko beharrari hoberen erantzuteko kabineteko arduradunekin elkarlan eta komunikazio asko behar izan duen lana.",
+  "paquier.highlightDescription2": "elkarlan eta komunikazio",
+  "paquier.whatIs": "Paquier & Associés, kontable aditua, kontu-hartzailea Bordelen, Girondan.",
+  "paquier.mediaIllustration": "Paquier & Associés-en 7 balioak"
 
 }

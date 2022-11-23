@@ -15,7 +15,7 @@ export const SIZES = {
 
 export const PHOTOSET_ID = '72157713844633802';
 export const MS_PHOTOSET_ID = '72157719163846608';
-
+export const PAQUIER_PHOTOSET_ID = '72177720302387065';
 export const ERROR_TYPES = {
   flickrLoading: 'Photo loading from Flickr',
 };

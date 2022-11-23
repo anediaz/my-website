@@ -12,18 +12,18 @@ import {
 } from '../../service';
 
 const Works = ({
-  id, onChangeVisibility = () => {}, isVisible, goToMicrosoft,
+  id, onChangeVisibility = () => {}, isVisible, goToArticle,
 }) => {
   const [t] = useTranslation();
 
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Works" isVisible={isVisible}>
       <Web className="work" key={1} data={jsonData.works.developer} />
-      <Graphic className="work" key={2} data={jsonData.works.graphic} goToMicrosoft={goToMicrosoft} />
+      <Graphic className="work" key={2} goToArticle={goToArticle} />
       <Conferences
         media={jsonData.talks}
         className="work"
-        key={3}
+        key={4}
       />
     </SectionWithSensor>
   );
@@ -33,7 +33,7 @@ Works.propTypes = {
   id: PropTypes.string,
   onChangeVisibility: PropTypes.func,
   isVisible: PropTypes.bool,
-  goToMicrosoft: PropTypes.func,
+  goToArticle: PropTypes.func,
 };
 
 export default Works;

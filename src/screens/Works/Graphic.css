@@ -1,6 +1,11 @@
+.graphic .articles {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .graphic .illustrations {
   display: flex;
-  margin-top: 1rem;
 }
 
 .graphic .clickableImage:hover{

@@ -37,8 +37,10 @@
     "works.developer.info": "A photography website",
     "works.developer.role": "Role: Web development and design",
 
-    "works.graphic.title":  "Latest visual work",
-    "works.graphic.content": "A Graphic Faciliation work for Microsoft (read the article)",
+    "works.graphic.microsoft.title":  "Microsoft",
+    "works.graphic.microsoft.content": "A Graphic Faciliation work for Microsoft (read the article)",
+    "works.graphic.paquier.title":  "Latest visual work",
+    "works.graphic.paquier.content": "A Graphic work for Paquier & Associés (read the article)",
     "works.graphic.other": "Other graphic realizations",
 
     "works.speaker.title": "Conferences",
@@ -68,7 +70,15 @@
     "microsoft.mediaIllustration": "A visual representation of each technical talk",
     "microsoft.mediaIllustration.smartphone": "My sketchnote",
     "microsoft.mediaVideo": "Followed by the conference's video",
-    "microsoft.mediaVideo.smartphone": "Conference's video"
+    "microsoft.mediaVideo.smartphone": "Conference's video",
+
+    "paquier.title": "Paquier & Associés",
+    "paquier.description": "Realization of 7 illustrations of the 7 company values of Paquier & Associés",
+    "paquier.highlightDescription": "7 illustrations",
+    "paquier.description2": "A work that has been made a lot of collaboration and communication with the responsibles of the accounting firm in order to respond the initial need.",
+    "paquier.highlightDescription2": "collaboration and communication",
+    "paquier.whatIs": "Chartered accountant and auditor in Bordeaux, Gironde.",
+    "paquier.mediaIllustration": "The 7 company values of Paquier & Associés"
 
 
 }
