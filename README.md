@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website : https://anediaz.github.io/my-website
+
+The source code is on this repository: https://github.com/anediaz/my-website
+
 
 ## Available Scripts
 
