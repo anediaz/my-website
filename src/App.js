@@ -7,6 +7,7 @@ import { LoaderCircle } from './components';
 import './App.css';
 
 const Illustrations = lazy(() => import('./screens/Illustrations/Illustrations'));
+const Animations = lazy(() => import('./screens/Animations/Animations'));
 const Main = lazy(() => import('./screens/Main/Main'));
 
 const useQuery = () => new URLSearchParams(useLocation().search);
@@ -23,6 +24,7 @@ const QueryScreen = () => {
     <Switch>
       <Route key="root" path="/" exact render={() => <Main page={query.get('page')} section={query.get('section')} />} />
       <Route key="illustrations" path="/illustrations" exact render={() => <Illustrations />} />
+      <Route key="animations" path="/animations" exact render={() => <Animations />} />
       <Route key="root-locale" path="/:locale/" exact render={() => <Main page={query.get('page')} section={query.get('section')} />} />
     </Switch>
   );

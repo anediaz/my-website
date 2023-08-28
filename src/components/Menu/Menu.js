@@ -43,6 +43,9 @@ const Menu = ({
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>
         {t('menu.portfolio')}
       </Link>
+      <Link to="/animations" target="_blank" className="item animations" title={t('menu.title.animations')}>
+        {t('menu.animations')}
+      </Link>
       {closable && (
       <button className="closeButton" type="button" onClick={selectItemHandler}>
         <i className="fa fa-hand-o-left" />
