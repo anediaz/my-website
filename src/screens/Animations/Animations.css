@@ -1,0 +1,35 @@
+body {
+  background-color: #09101b;
+}
+
+.Animations {
+  height: 100%;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 5rem;
+}
+
+.Animations .title {
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 13rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+/* smartphone en portrait */
+@media screen and (max-width: 479px) {
+  .Animations .title {
+    height: 3rem;
+    width: 85%;
+  }
+
+}
+
+/* smartphone in landscape, tablet in portrait and small tablet in landscape */
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  .Animations .title {
+    height: 4.5rem;
+    width: 90%;
+  }
+}
