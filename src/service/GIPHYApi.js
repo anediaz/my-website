@@ -7,11 +7,9 @@ const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${se
 const getAnimations = async () => {
   const response = await fetch(searchUrl);
   return response && response.ok
-    ? (await response.json()).data.map((a) => a.images.original.url)
-    : { Error: 'Error while fetching user\'s photosets' };
+    ? (await response.json()).data
+    : { Error: 'Error while fetching user\'s giphy' };
 };
-
-// (await response.json()).photosets.photoset.map((p) => p.id)
 
 const GIPHYApi = {
   getAnimations,

@@ -17,6 +17,15 @@ body {
   margin: 2rem auto;
 }
 
+.Animations .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Animations .container div {
+  outline: none;
+}
+
 /* smartphone en portrait */
 @media screen and (max-width: 479px) {
   .Animations .title {

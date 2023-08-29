@@ -1,5 +1,17 @@
 import React from 'react';
 
+const transformGiphyResult = (result) => result.map(({ images, id }) => {
+  const { original } = images;
+  const serialized = {
+    src: original.url,
+    width: Math.floor(original.width),
+    height: Math.floor(original.width),
+    bigSrc: original.url,
+    id,
+  };
+  return serialized;
+});
+
 /* eslint-disable no-param-reassign */
 const transformResult = (result, def, big) => result.map((r) => ({
   src: r[`url${def}`],
@@ -29,4 +41,6 @@ const formatContent = (content, highlight, cls) => {
   ));
 };
 
-export { transformResult, sufflePhotos, formatContent };
+export {
+  transformResult, transformGiphyResult, sufflePhotos, formatContent,
+};

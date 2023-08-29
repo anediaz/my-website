@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { Gallery } from 'react-ikusi';
 import './Animations.css';
 import GIPHYApi from '../../service/GIPHYApi';
+import { transformGiphyResult } from '../../service/utils';
+import { animationsConfigurations } from '../../service/constants';
 
 const Animations = () => {
   const [animations, setAnimations] = useState([]);
-  const renderImg = (url) => {
-    const img = <img src={url} alt="gif" style={{ height: '400px', width: '400px' }} />;
-    return img;
-  };
 
   useEffect(() => {
     const loadAnimations = async () => {
       const fetchGifs = await GIPHYApi.getAnimations();
-      setAnimations(fetchGifs);
+      const transformed = transformGiphyResult(fetchGifs);
+      setAnimations(transformed);
     };
     loadAnimations();
   }, []);
@@ -20,7 +20,12 @@ const Animations = () => {
   return (
     <div className="Animations">
       <div className="title" />
-      {animations.map(renderImg)}
+      <div className="container">
+        <Gallery
+          photos={animations || []}
+          configurations={animationsConfigurations}
+        />
+      </div>
     </div>
   );
 };
