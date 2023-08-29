@@ -7,6 +7,7 @@ import { animationsConfigurations } from '../../service/constants';
 
 const Animations = () => {
   const [animations, setAnimations] = useState([]);
+  const [stickers, setStickers] = useState([]);
 
   useEffect(() => {
     const loadAnimations = async () => {
@@ -14,19 +15,32 @@ const Animations = () => {
       const transformed = transformGiphyResult(fetchGifs);
       setAnimations(transformed);
     };
+    const loadStickers = async () => {
+      const fetchStickers = await GIPHYApi.getStickers();
+      const transformed = transformGiphyResult(fetchStickers);
+      setStickers(transformed);
+    };
     loadAnimations();
+    loadStickers();
   }, []);
 
   return (
     <div className="Animations">
       <div className="title" />
       <div className="container">
+        <div>Stickers</div>
+        <Gallery
+          photos={stickers || []}
+          configurations={animationsConfigurations}
+        />
+        <div>Animations</div>
         <Gallery
           photos={animations || []}
           configurations={animationsConfigurations}
         />
       </div>
     </div>
+
   );
 };
 
