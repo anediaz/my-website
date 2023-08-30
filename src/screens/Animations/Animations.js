@@ -1,29 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Gallery } from 'react-ikusi';
 import './Animations.css';
-import GIPHYApi from '../../service/GIPHYApi';
-import { transformGiphyResult } from '../../service/utils';
+import { useAnimations } from '../../hooks/useAnimations.tsx';
+
 import { animationsConfigurations } from '../../service/constants';
 
 const Animations = () => {
-  const [animations, setAnimations] = useState([]);
-  const [stickers, setStickers] = useState([]);
-
-  useEffect(() => {
-    const loadAnimations = async () => {
-      const fetchGifs = await GIPHYApi.getAnimations();
-      const transformed = transformGiphyResult(fetchGifs);
-      setAnimations(transformed);
-    };
-    const loadStickers = async () => {
-      const fetchStickers = await GIPHYApi.getStickers();
-      const transformed = transformGiphyResult(fetchStickers);
-      setStickers(transformed);
-    };
-    loadAnimations();
-    loadStickers();
-  }, []);
-
+  const { gifs, stickers } = useAnimations();
   return (
     <div className="Animations">
       <div className="title" />
@@ -44,7 +27,7 @@ const Animations = () => {
             Gifs
           </div>
           <Gallery
-            photos={animations || []}
+            photos={gifs || []}
             configurations={animationsConfigurations}
           />
         </div>
