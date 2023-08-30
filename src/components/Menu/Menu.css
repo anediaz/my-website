@@ -21,7 +21,8 @@
   color: rgb(204, 204, 204);
 }
 
-.Menu.closable .item.illustrations{
+.Menu.closable .item.illustrations,
+.Menu.closable .item.animations {
   display: none;
 }
 
@@ -125,7 +126,7 @@
     display: none;
   }
 
-  .Menu:not(.closable) .item.illustrations{
+  .Menu:not(.closable) .item.illustrations .Menu:not(.closable) .item.animations{
     display: block;
     margin-top: 2rem;
     font-size: 1.2rem;
@@ -154,7 +155,11 @@
   .Menu .closeButton i {
     margin-bottom: 5px;
   }
-  .Menu:not(.closable) .item.illustrations{
+  .Menu:not(.closable) .item.illustrations {
+    display: none;
+  }
+
+  .Menu:not(.closable) .item.animations {
     display: none;
   }
 
