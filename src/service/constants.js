@@ -34,8 +34,8 @@ export const illustrationsConfigurations = [
 
 export const animationsConfigurations = [
   { maxWidth: 340, cols: 4, margin: 2 },
-  { maxWidth: 1024, cols: 8, margin: 4 },
-  { minWidth: 1025, cols: 8, margin: 4 },
+  { maxWidth: 1024, cols: 6, margin: 8 },
+  { minWidth: 1025, cols: 6, margin: 8 },
 ];
 
 export const LANGUAGES = {

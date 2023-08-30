@@ -28,16 +28,26 @@ const Animations = () => {
     <div className="Animations">
       <div className="title" />
       <div className="container">
-        <div>Stickers</div>
-        <Gallery
-          photos={stickers || []}
-          configurations={animationsConfigurations}
-        />
-        <div>Animations</div>
-        <Gallery
-          photos={animations || []}
-          configurations={animationsConfigurations}
-        />
+        <div className="stickers">
+          <div className="subtitle">
+            <i className="fa fa-angle-double-right symbol" aria-hidden="true" />
+            Stickers
+          </div>
+          <Gallery
+            photos={stickers || []}
+            configurations={animationsConfigurations}
+          />
+        </div>
+        <div className="gifs">
+          <div className="subtitle">
+            <i className="fa fa-angle-double-right symbol" aria-hidden="true" />
+            Gifs
+          </div>
+          <Gallery
+            photos={animations || []}
+            configurations={animationsConfigurations}
+          />
+        </div>
       </div>
     </div>
 

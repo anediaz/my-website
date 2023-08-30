@@ -8,6 +8,7 @@ import {
 } from '../../service';
 import ImageWithLoader from '../ImageWithLoader/ImageWithLoader';
 import LoaderInline from '../Loader/LoaderInline';
+import { ReactComponent as GiphyLogo } from './giphy.svg';
 
 const Header = ({
   id, language,
@@ -37,6 +38,9 @@ const Header = ({
           </i>
           <div className="social-icons">
             {socialContent}
+            <a href="https://giphy.com/ane_naiz" title="GIPHY">
+              <GiphyLogo style={{ width: '100px', fill: 'red' }} />
+            </a>
             <a href={header.url[language]}>
               <i className="fa fa-file-text-o" title={t('header.resumeTitle') || null} />
             </a>

@@ -20,10 +20,27 @@ body {
 .Animations .container {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 .Animations .container div {
   outline: none;
+}
+
+.Animations .container .subtitle {
+  padding: 12px;
+  font-size: 2rem;
+}
+.Animations .container .symbol {
+  color: tomato;
+  margin-right: 10px;
+}
+
+
+.Animations .container .stickers img{
+  background-color: #323d4c;
 }
 
 /* smartphone en portrait */
