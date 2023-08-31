@@ -10,6 +10,7 @@ body {
 }
 
 .Animations .title {
+  background-image: url("./title-white.svg");
   background-repeat: no-repeat;
   background-position: center top;
   height: 13rem;
