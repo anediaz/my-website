@@ -21,19 +21,59 @@ body {
 .Animations .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.Animations .container .media {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 8rem;
 }
 
 .Animations .container div {
   outline: none;
 }
 
-.Animations .container .subtitle {
+.Animations .container .description {
   padding: 12px;
+  margin: 0 0 2rem 0;
+  font-size: 1.4rem;
+  display: flex;
+  gap: 15px;
+  justify-content:flex-end;
+}
+
+.Animations .container .description div {
+  position: relative;
+  width: fit-content;
+  z-index: 100;
+  opacity: 1;
+}
+
+.Animations .container .description div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 125%;
+  background-color: rgba(128, 128, 128, .3);
+  transform: skew(-20deg) translateX(2%);
+  z-index: -1;
+}
+
+.Animations .container .description a {
+  margin-left: 5px;
+  color: tomato;
+  text-decoration: none;
+}
+
+.Animations .container .subtitle{
+  padding: .8rem;
   font-size: 2rem;
 }
+
+
+
 .Animations .container .symbol {
   color: tomato;
   margin-right: 10px;
@@ -50,7 +90,17 @@ body {
     height: 3rem;
     width: 85%;
   }
-
+  .Animations .container .description {
+    font-size: 1rem;
+    margin: 0 0 .8rem 0;
+  }
+  .Animations .container .subtitle{
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+  .Animations .container .media {
+    gap: 3rem;
+  }
 }
 
 /* smartphone in landscape, tablet in portrait and small tablet in landscape */
