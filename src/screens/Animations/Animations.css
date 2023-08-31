@@ -40,7 +40,7 @@ body {
 }
 
 
-.Animations .container .stickers img{
+.Animations .container .stickers img:not([alt~="lightbox"]){
   background-color: #323d4c;
 }
 
