@@ -40,7 +40,7 @@ const GraphicWorks = ({ className, goToArticle }) => {
     <div className={`graphic ${className}`}>
 
       <div className="articles">
-        {works.map(({ name, image }) => (<Graphic goToArticle={goToArticle} work={name} image={image} translate={t} />))}
+        {works.map(({ name, image }) => (<Graphic goToArticle={goToArticle} work={name} image={image} translate={t} key={name} />))}
       </div>
       <div className="illustrations">
         <Link to="/illustrations" target="_blank">

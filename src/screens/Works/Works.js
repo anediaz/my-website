@@ -18,7 +18,7 @@ const Works = ({
 
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Works" isVisible={isVisible}>
-      <Web className="work" key={1} data={jsonData.works.developer} />
+      <Web className="work" key={1} data={{ url: jsonData.works.developer.url }} />
       <Graphic className="work" key={2} goToArticle={goToArticle} />
       <Conferences
         media={jsonData.talks}
