@@ -31,6 +31,7 @@
     "social": [
       {"id": "linkedin", "url": "https://www.linkedin.com/in/ane-diaz-de-tuesta-37785252", "className": "fa-linkedin"},
       {"id": "twitter", "url": "https://twitter.com/ane_naiz", "className": "fa-twitter"},
+      {"id": "giphy", "url": "https://giphy.com/ane_naiz", "className": "giphyLogo", "isSvg":true},
       {"id": "github", "url": "https://github.com/anediaz", "className": "fa-github"},
       {"id": "npm", "url": "https://www.npmjs.com/~anediaz", "className": "fab fa-npm"}
     ]

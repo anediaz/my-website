@@ -94,6 +94,11 @@
   display: flex;
 }
 
+.Header .infos .social .giphyLogo:hover {
+  opacity: 1;
+}
+
+
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
   .Header {

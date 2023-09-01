@@ -16,15 +16,18 @@ const Header = ({
   const [t] = useTranslation();
   const { header, skills } = jsonData;
   const getSocial = () => {
-    const socialContent = header.social.map(({ id: socialId, url, className }) => (
+    const socialContent = header.social.map(({
+      id: socialId, url, className, isSvg,
+    }) => (
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
         key={t(`header.social.${socialId}`)}
         title={t(`header.social.${socialId}`) || null}
+        className={isSvg ? className : undefined}
       >
-        <i className={`fa ${className}`} />
+        {isSvg ? <GiphyLogo /> : <i className={`fa ${className}`} />}
       </a>
     ));
 
@@ -38,9 +41,6 @@ const Header = ({
           </i>
           <div className="social-icons">
             {socialContent}
-            <a href="https://giphy.com/ane_naiz" title="GIPHY" className="giphyLogo">
-              <GiphyLogo />
-            </a>
             <a href={header.url[language]}>
               <i className="fa fa-file-text-o" title={t('header.resumeTitle') || null} />
             </a>

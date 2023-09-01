@@ -14,7 +14,7 @@ const Animations = () => {
         <div className="description">
           <div />
           <div>
-            Find me on GIPHY
+            On GIPHY →
             <a href="https://giphy.com/ane_naiz" target="_blank" rel="noreferrer">@ane_naiz</a>
           </div>
         </div>
