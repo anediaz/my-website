@@ -38,8 +38,8 @@ const Header = ({
           </i>
           <div className="social-icons">
             {socialContent}
-            <a href="https://giphy.com/ane_naiz" title="GIPHY">
-              <GiphyLogo style={{ width: '100px', fill: 'red' }} />
+            <a href="https://giphy.com/ane_naiz" title="GIPHY" className="giphyLogo">
+              <GiphyLogo />
             </a>
             <a href={header.url[language]}>
               <i className="fa fa-file-text-o" title={t('header.resumeTitle') || null} />

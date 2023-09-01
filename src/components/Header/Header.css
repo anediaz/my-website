@@ -74,6 +74,7 @@
 .Header .infos .social .social-icons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .Header .infos .pic {
@@ -85,6 +86,12 @@
   width: 100%;
   height: auto;
   border-radius: 12.5rem;
+}
+
+.Header .infos .social .giphyLogo {
+  width: 1.1rem;
+  opacity: .5;
+  display: flex;
 }
 
 /*MacBook 13"*/
@@ -104,6 +111,10 @@
   .Header .infos .pic {
     width: 20rem;
     height: 20rem;
+  }
+
+  .Header .infos .social .giphyLogo {
+    width: 1.1rem;
   }
 
   .Header .infos .pic img {
@@ -262,6 +273,10 @@
   .Header .infos .social {
     font-size: 0.8rem;
     margin-top: 2.5rem;
+  }
+
+  .Header .infos .social .giphyLogo {
+    width: 0.7rem;
   }
 
   .Header .infos .social .social-icons {
