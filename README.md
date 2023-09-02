@@ -1,4 +1,4 @@
-Website : https://anediaz.github.io/my-website
+Website : https://anediaz.com
 
 The source code is on this repository: https://github.com/anediaz/my-website
 
