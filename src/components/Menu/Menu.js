@@ -41,10 +41,12 @@ const Menu = ({
       />
       {menuItems && buildMenu()}
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>
-        {t('menu.portfolio')}
+        <span>{t('menu.portfolio')}</span>
+        <i className="fa fa-image" />
       </Link>
       <Link to="/animations" target="_blank" className="item animations" title={t('menu.title.animations')}>
-        {t('menu.animations')}
+        <span>{t('menu.animations')}</span>
+        <i className="fa fa fa-file-video-o" />
       </Link>
       {closable && (
       <button className="closeButton" type="button" onClick={selectItemHandler}>

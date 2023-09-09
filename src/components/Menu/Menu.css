@@ -38,6 +38,10 @@
   color: #c33564;
 }
 
+.Menu .item.illustrations i, .Menu .item.animations i{
+  display: none;
+}
+
 .Menu .item:hover .text{
   color: gray;
   cursor: pointer;
@@ -141,7 +145,7 @@
   .Menu .LanguageSelector {
     font-size: 0.9rem;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .Menu .closeButton {
     font-size: 0.9rem;
@@ -155,12 +159,22 @@
   .Menu .closeButton i {
     margin-bottom: 5px;
   }
-  .Menu:not(.closable) .item.illustrations {
+
+  .Menu .item.illustrations, .Menu .item.animations {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  .Menu:not(.closable) .item.illustrations span{
     display: none;
   }
 
-  .Menu:not(.closable) .item.animations {
+  .Menu:not(.closable) .item.animations span {
     display: none;
+  }
+
+  .Menu .item.illustrations i,
+  .Menu .item.animations i {
+    display: inline;
   }
 
 }
