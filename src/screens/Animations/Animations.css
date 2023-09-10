@@ -38,18 +38,20 @@ body {
   margin: 0 0 2rem 0;
   font-size: 1.4rem;
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
   justify-content:flex-end;
 }
 
-.Animations .container .description div {
+.Animations .container .description .onGiphy {
   position: relative;
   width: fit-content;
   z-index: 100;
   opacity: 1;
 }
 
-.Animations .container .description div::before {
+.Animations .container .description .onGiphy::before {
   content: "";
   position: absolute;
   left: 0;
@@ -72,13 +74,15 @@ body {
   font-size: 2rem;
 }
 
-
-
 .Animations .container .symbol {
   color: tomato;
   margin-right: 10px;
 }
 
+.Animations .poweredByGiphy img {
+  width: 10rem;
+  height: auto;
+}
 
 .Animations .container .stickers img:not([alt~="lightbox"]){
   background-color: #323d4c;
@@ -108,5 +112,15 @@ body {
   .Animations .title {
     height: 4.5rem;
     width: 90%;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 480px) {
+  .Animations .container .description {
+    gap: 1rem;
+  }
+  .Animations .poweredByGiphy img {
+    width: 7rem;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Gallery } from 'react-ikusi';
 import './Animations.css';
 import { useAnimations } from '../../hooks/useAnimations.tsx';
+import poweredBy from './poweredby_large.png';
 
 import { animationsConfigurations } from '../../service/constants';
 
@@ -12,10 +13,12 @@ const Animations = () => {
       <div className="title" />
       <div className="container">
         <div className="description">
-          <div />
-          <div>
+          <div className="onGiphy">
             On GIPHY →
             <a href="https://giphy.com/ane_naiz" target="_blank" rel="noreferrer">@ane_naiz</a>
+          </div>
+          <div className="poweredByGiphy">
+            <img src={poweredBy} alt="Powered by GIPHY" />
           </div>
         </div>
         <div className="media">
