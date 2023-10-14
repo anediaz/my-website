@@ -48,6 +48,11 @@
   "talks":
      [
       {
+        "title": "Goolge WDA 2023",
+        "youtubeId": "O4ch095al50",
+        "date": "2023/09/14"
+      },
+      {
         "title": "BDX/IO 2022 Keynote",
         "youtubeId": "ifXy9jRLWl8",
         "date": "2022/07/06"
