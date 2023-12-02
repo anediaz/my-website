@@ -41,7 +41,7 @@ const Header = ({
           </i>
           <div className="social-icons">
             {socialContent}
-            <a href={header.url[language]}>
+            <a href={header.url[language]} aria-label="resume">
               <i className="fa fa-file-text-o" title={t('header.resumeTitle') || null} />
             </a>
           </div>
