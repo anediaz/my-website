@@ -1,5 +1,5 @@
-export { default as Footer } from './Footer/Footer';
-export { default as HamburgerMenu } from './HamburgerMenu/HamburgerMenu';
+export * from './Footer/Footer.tsx';
+export * from './HamburgerMenu/HamburgerMenu.tsx';
 export { default as Header } from './Header/Header';
 export { default as ImageSection } from './ImageSection';
 export { default as LanguageSelector } from './LanguageSelector/LanguageSelector';

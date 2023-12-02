@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import * as PropTypes from 'prop-types';
 import './HamburgerMenu.css';
 
-const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }) => {
+interface MenuItemsProps {
+  id: string,
+  name: string
+}
+
+interface HamburgerMenuProps {
+  menuItems: MenuItemsProps[],
+  activeItem: string,
+  onSelectItem?: (v:string) => void,
+}
+
+export const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }: HamburgerMenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const getClassName = (id) => `menuItem ${id === activeItem ? 'active' : ''}`;
-  const findActive = () => menuItems.find(({ id }) => id === activeItem) || {};
-  const handleSelectItem = (id) => {
+  const getClassName = (id:string) => `menuItem ${id === activeItem ? 'active' : ''}`;
+  const findActive = ():MenuItemsProps|undefined => menuItems.find(({ id }) => id === activeItem);
+  const handleSelectItem = (id:string) => {
     onSelectItem(id);
     setMenuOpen(!menuOpen);
   };
@@ -15,7 +25,7 @@ const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }) => {
       {/* The <div> element has a child <button> element that allows keyboard interaction */}
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-      <div id="menuToggle" onClick={() => setMenuOpen(!menuOpen)} alt="toggleMenu" role="button" tabIndex={0}>
+      <div id="menuToggle" onClick={() => setMenuOpen(!menuOpen)} role="button" tabIndex={0}>
         <input type="checkbox" checked={menuOpen} readOnly />
         <span />
         <span />
@@ -37,19 +47,7 @@ const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }) => {
           ))}
         </ul>
       </div>
-      <div className="activeText">{findActive().name}</div>
+      <div className="activeText">{findActive()?.name}</div>
     </nav>
   );
 };
-HamburgerMenu.propTypes = {
-  menuItems: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  ),
-  activeItem: PropTypes.string,
-  onSelectItem: PropTypes.func,
-
-};
-export default HamburgerMenu;

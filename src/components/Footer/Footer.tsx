@@ -5,7 +5,7 @@ import {
 } from '../../service';
 import './Footer.css';
 
-const Footer = () => {
+export const Footer = () => {
   const [t] = useTranslation();
   const { webSiteInfo } = jsonData;
 
@@ -23,5 +23,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;
