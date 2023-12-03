@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
-import * as PropTypes from 'prop-types';
-import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader.tsx';
-import LoaderInline from '../Loader/LoaderInline';
+import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
+import LoaderInline from '../Loader/LoaderInline.js';
 import './Lightbox.css';
 
-const Lightbox = ({ src, onClick = () => {} }) => {
+interface LightboxProps {
+  src: string;
+  onClick?: () => void;
+}
+
+export const Lightbox = ({ src, onClick = () => {} }:LightboxProps) => {
   useEffect(() => {
-    const handleEsc = (event) => {
+    const handleEsc = (event: KeyboardEvent) => {
       if (event.keyCode === 27) {
         onClick();
       }
@@ -26,10 +30,3 @@ const Lightbox = ({ src, onClick = () => {} }) => {
     </div>
   );
 };
-
-Lightbox.propTypes = {
-  src: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
-
-export default Lightbox;
