@@ -1,6 +1,6 @@
 import React from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import Section from './Section';
+import { Section } from './Section';
 
 interface SectionWithSensorProps {
   id: string;

@@ -4,7 +4,7 @@ export { default as Header } from './Header/Header';
 export { default as ImageSection } from './ImageSection';
 export { default as LastNews } from './LastNews/LastNews';
 export { default as Menu } from './Menu/Menu';
-export { default as Section } from './Section/Section';
+export * from './Section/Section';
 export * from './Section/SectionWithSensor.tsx';
 export * from './Lightbox/Lightbox.tsx';
 export * from './Loader/LoaderCircle.tsx';
