@@ -9,8 +9,10 @@ import {
   About, Skills, Works, More, Article, Microsoft, Paquier,
 } from '../index';
 import {
-  jsonData, constants,
+  jsonData,
 } from '../../service';
+
+import { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } from '../../service/constants.ts';
 import './Main.css';
 
 const PAGES = {
@@ -18,8 +20,6 @@ const PAGES = {
   microsoft: Microsoft,
   paquier: Paquier,
 };
-
-const { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } = constants;
 
 const Main = ({ page, section }) => {
   const { i18n } = useTranslation();

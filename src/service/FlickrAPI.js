@@ -1,4 +1,4 @@
-import { FLICKR } from './constants';
+import { FLICKR } from './constants.ts';
 
 const getUrl = (photoSetId, sizes) => `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR.api_key}&photoset_id=${photoSetId}&extras=${sizes}&format=json&nojsoncallback=true`;
 

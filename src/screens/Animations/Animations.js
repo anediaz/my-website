@@ -4,7 +4,7 @@ import './Animations.css';
 import { useAnimations } from '../../hooks/useAnimations.tsx';
 import poweredBy from './poweredby_large.png';
 
-import { animationsConfigurations } from '../../service/constants';
+import { animationsConfigurations } from '../../service/constants.ts';
 
 const Animations = () => {
   const { gifs, stickers } = useAnimations();

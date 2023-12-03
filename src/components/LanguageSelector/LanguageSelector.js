@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import './LanguageSelector.css';
-import { LANGUAGES } from '../../service/constants';
+import { LANGUAGES } from '../../service/constants.ts';
 
 const LanguageSelector = ({ language, languageItems, handleLanguageClick }) => {
   const isActive = (lang) => `language ${LANGUAGES[lang]} ${lang === language ? 'active' : ''}`;

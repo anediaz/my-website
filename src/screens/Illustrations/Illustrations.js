@@ -3,7 +3,7 @@ import { Gallery } from 'react-ikusi';
 import { illustrations } from '../../service/data.json';
 import FlickrAPI from '../../service/FlickrAPI';
 import { transformResult } from '../../service/utils';
-import { SIZES, illustrationsConfigurations } from '../../service/constants';
+import { SIZES, illustrationsConfigurations } from '../../service/constants.ts';
 import './Illustrations.css';
 
 import { HamburgerMenu } from '../../components';
