@@ -11,4 +11,4 @@ export * from './Loader/LoaderCircle.tsx';
 export * from './Loader/LoaderInline.tsx';
 export * from './ImageWithLoader/ImageWithLoader.tsx';
 export * from './MediaSection/MediaSection.tsx';
-export { default as MediaItem } from './MediaItem/MediaItem';
+export * from './MediaItem/MediaItem.tsx';

@@ -1,15 +1,20 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
-import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader.tsx';
+import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
 import youtubeIcon from './youtube.png';
 import './MediaItem.css';
 
-const buildVideoUrl = (youtubeId) => `https://www.youtube.com/watch?v=${youtubeId}`;
+const buildVideoUrl = (youtubeId:string) => `https://www.youtube.com/watch?v=${youtubeId}`;
 
-const buildVideoThumbnail = (youtubeId) => `http://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+const buildVideoThumbnail = (youtubeId:string) => `http://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
 
-const MediaItem = ({ title, youtubeId, withLogo }) => (
+interface MediaItemProps {
+  title: string;
+  youtubeId: string;
+  withLogo?: boolean;
+}
+
+export const MediaItem = ({ title, youtubeId, withLogo }:MediaItemProps) => (
   <a
     className="media-item"
     key={title}
@@ -25,10 +30,3 @@ const MediaItem = ({ title, youtubeId, withLogo }) => (
     </div>
   </a>
 );
-
-MediaItem.propTypes = {
-  title: PropTypes.string,
-  youtubeId: PropTypes.string,
-  withLogo: PropTypes.bool,
-};
-export default MediaItem;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './MediaSection.css';
-import MediaItem from '../MediaItem/MediaItem';
+import { MediaItem } from '../MediaItem/MediaItem';
 
 interface MediaProps {
   title: string;
