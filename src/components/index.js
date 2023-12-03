@@ -7,7 +7,7 @@ export { default as Menu } from './Menu/Menu';
 export { default as Section } from './Section/Section';
 export { default as SectionWithSensor } from './Section/SectionWithSensor';
 export * from './Lightbox/Lightbox.tsx';
-export { default as LoaderCircle } from './Loader/LoaderCircle';
+export * from './Loader/LoaderCircle.tsx';
 export { default as LoaderInline } from './Loader/LoaderInline';
 export * from './ImageWithLoader/ImageWithLoader.tsx';
 export { default as MediaSection } from './MediaSection/MediaSection';
