@@ -15,7 +15,7 @@ const ImageComponent = ({ src, alt }) => {
       {isOpen && <Lightbox onClick={() => handleClick(false)} src={src} />}
       {
       isNodejs(alt) ? <img alt={alt} src={src} className="nodejs" />
-        : <ImageWithLoader alt={alt} image={src} onClick={() => handleClick(true)} loader={<LoaderInline height="50" width="50" />} />
+        : <ImageWithLoader alt={alt} src={src} onClick={() => handleClick(true)} loader={<LoaderInline height="50" width="50" />} />
     }
     </>
   );

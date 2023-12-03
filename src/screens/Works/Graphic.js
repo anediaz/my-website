@@ -12,7 +12,7 @@ const Graphic = ({
   goToArticle, work, translate, image,
 }) => (
   <div className="body">
-    <ImageWithLoader cls="clickableImage" image={image} alt={translate(`works.graphic.${work}.title`)} loader={<LoaderInline height="50" width="50" />} onClick={() => goToArticle(work)} />
+    <ImageWithLoader className="clickableImage" src={image} alt={translate(`works.graphic.${work}.title`)} loader={<LoaderInline height="50" width="50" />} onClick={() => goToArticle(work)} />
     <div className="description">
       <div className="project">{translate(`works.graphic.${work}.title`)}</div>
       <div className="infos">

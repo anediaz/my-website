@@ -44,7 +44,7 @@ const Paquier = () => {
 
   const renderImg = (findingTag, alt, cls) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
-    return imgObject ? <ImageWithLoader image={imgObject.src} alt={alt} cls={cls} onClick={() => setLightboxImg(imgObject.bigSrc)} loader={<LoaderInline />} /> : null;
+    return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject.bigSrc)} loader={<LoaderInline />} /> : null;
   };
 
   const renderMediaSection = () => (photos.length ? (

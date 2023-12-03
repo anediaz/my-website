@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import ImageWithLoader from '../ImageWithLoader/ImageWithLoader';
+import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader.tsx';
 import LoaderInline from '../Loader/LoaderInline';
 import youtubeIcon from './youtube.png';
 import './MediaItem.css';
@@ -18,7 +18,7 @@ const MediaItem = ({ title, youtubeId, withLogo }) => (
     rel="noopener noreferrer"
     title={title}
   >
-    <ImageWithLoader alt={title} image={buildVideoThumbnail(youtubeId)} loader={<LoaderInline height="50" width="50" />} />
+    <ImageWithLoader alt={title} src={buildVideoThumbnail(youtubeId)} loader={<LoaderInline height="50" width="50" />} />
     {withLogo && <img className="youtubeLogo" src={youtubeIcon} alt="See on youtube" />}
     <div className="media-info">
       <div>{title}</div>
