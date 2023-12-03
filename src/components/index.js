@@ -2,7 +2,6 @@ export * from './Footer/Footer.tsx';
 export * from './HamburgerMenu/HamburgerMenu.tsx';
 export { default as Header } from './Header/Header';
 export { default as ImageSection } from './ImageSection';
-export { default as LanguageSelector } from './LanguageSelector/LanguageSelector';
 export { default as LastNews } from './LastNews/LastNews';
 export { default as Menu } from './Menu/Menu';
 export { default as Section } from './Section/Section';

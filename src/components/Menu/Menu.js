@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import { LanguageSelector } from '../LanguageSelector/LanguageSelector.tsx';
 
 const Menu = ({
   selectedItem,
@@ -37,7 +37,7 @@ const Menu = ({
       <LanguageSelector
         language={language}
         handleLanguageClick={languageClickHandler}
-        languageItems={languageItems}
+        items={languageItems}
       />
       {menuItems && buildMenu()}
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>

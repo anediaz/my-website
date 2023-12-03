@@ -46,5 +46,6 @@ export const LANGUAGES = {
 };
 
 export const LOCALES = ['en', 'fr', 'es', 'eu'];
+export type LocaleType = 'en'|'fr'|'es'|'eu';
 export const DEFAULT_LOCALE = 'en';
 export const DEFAULT_SECTION = 'about';
