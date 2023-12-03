@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import { LanguageSelector } from '../LanguageSelector/LanguageSelector.tsx';
+import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
 
 const Menu = ({
   selectedItem,

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const transformGiphyResult = (result) => result.map(({ images, id }) => {
   const { original } = images;

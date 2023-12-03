@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import './LoaderInline.css';

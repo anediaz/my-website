@@ -8,7 +8,7 @@ import {
 import FlickrAPI from '../../service/FlickrAPI';
 import {
   SIZES, PAQUIER_PHOTOSET_ID,
-} from '../../service/constants.ts';
+} from '../../service/constants';
 import { paquierMedia } from '../../service';
 import { formatContent } from '../../service/utils';
 

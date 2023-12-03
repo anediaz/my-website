@@ -12,7 +12,7 @@ import {
   jsonData,
 } from '../../service';
 
-import { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } from '../../service/constants.ts';
+import { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } from '../../service/constants';
 import './Main.css';
 
 const PAGES = {

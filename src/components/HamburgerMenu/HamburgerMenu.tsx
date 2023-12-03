@@ -23,7 +23,6 @@ export const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }
   return (
     <nav className={`HamburgerMenu ${menuOpen ? 'open' : ''}`}>
       {/* The <div> element has a child <button> element that allows keyboard interaction */}
-      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div id="menuToggle" onClick={() => setMenuOpen(!menuOpen)} role="button" tabIndex={0}>
         <input type="checkbox" checked={menuOpen} readOnly />

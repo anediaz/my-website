@@ -6,7 +6,7 @@ import profileImage from './profile.jpg';
 import {
   jsonData,
 } from '../../service';
-import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader.tsx';
+import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
 import { ReactComponent as GiphyLogo } from './giphy.svg';
 

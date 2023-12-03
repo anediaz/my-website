@@ -6,7 +6,7 @@ import {
   SIZES,
   PHOTOSET_ID,
   imageSectionConfigurations,
-} from '../service/constants.ts';
+} from '../service/constants';
 
 const { original: def, large1024: big } = SIZES;
 

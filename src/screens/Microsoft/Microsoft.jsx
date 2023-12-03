@@ -8,7 +8,7 @@ import {
 import FlickrAPI from '../../service/FlickrAPI';
 import {
   SIZES, MS_PHOTOSET_ID,
-} from '../../service/constants.ts';
+} from '../../service/constants';
 import { microsoftMedia } from '../../service';
 import { formatContent } from '../../service/utils';
 

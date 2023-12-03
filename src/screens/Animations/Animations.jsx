@@ -1,10 +1,10 @@
 import React from 'react';
 import { Gallery } from 'react-ikusi';
 import './Animations.css';
-import { useAnimations } from '../../hooks/useAnimations.tsx';
+import { useAnimations } from '../../hooks/useAnimations';
 import poweredBy from './poweredby_large.png';
 
-import { animationsConfigurations } from '../../service/constants.ts';
+import { animationsConfigurations } from '../../service/constants';
 
 const Animations = () => {
   const { gifs, stickers } = useAnimations();
