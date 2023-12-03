@@ -10,7 +10,7 @@ const Web = ({ data, className }) => {
   return (
     <div className={`web ${className}`}>
       <div className="body">
-        <ImageWithLoader className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline height="50" width="50" />} />
+        <ImageWithLoader className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline height={50} />} />
         <div className="description">
           <div className="project">{t('works.developer.title')}</div>
           <div role="button" tabIndex="0" onKeyPress={() => {}} onClick={() => window.open(data.url)}>

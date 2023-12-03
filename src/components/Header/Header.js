@@ -7,7 +7,7 @@ import {
   jsonData,
 } from '../../service';
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader.tsx';
-import LoaderInline from '../Loader/LoaderInline';
+import { LoaderInline } from '../Loader/LoaderInline';
 import { ReactComponent as GiphyLogo } from './giphy.svg';
 
 const Header = ({
@@ -50,7 +50,7 @@ const Header = ({
     );
   };
 
-  const getImage = () => (<ImageWithLoader className="pic" src={profileImage} alt="profile" loader={<LoaderInline height="50" width="50" />} />);
+  const getImage = () => (<ImageWithLoader className="pic" src={profileImage} alt="profile" loader={<LoaderInline size={50} />} />);
 
   return (
     <div className="Header" id={id}>

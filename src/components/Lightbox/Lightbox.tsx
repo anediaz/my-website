@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
-import LoaderInline from '../Loader/LoaderInline.js';
+import { LoaderInline } from '../Loader/LoaderInline';
 import './Lightbox.css';
 
 interface LightboxProps {
@@ -26,7 +26,7 @@ export const Lightbox = ({ src, onClick = () => {} }:LightboxProps) => {
     <div className="lightbox">
       <div className="lightbox-layer" />
       <div className="close"><i className="fa fa-times-circle" aria-hidden="true" onClick={onClick} title="close" /></div>
-      <ImageWithLoader alt="lightbox" src={src} loader={<LoaderInline height="80" width="80" />} />
+      <ImageWithLoader alt="lightbox" src={src} loader={<LoaderInline />} />
     </div>
   );
 };

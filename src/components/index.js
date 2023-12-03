@@ -8,7 +8,7 @@ export { default as Section } from './Section/Section';
 export { default as SectionWithSensor } from './Section/SectionWithSensor';
 export * from './Lightbox/Lightbox.tsx';
 export * from './Loader/LoaderCircle.tsx';
-export { default as LoaderInline } from './Loader/LoaderInline';
+export * from './Loader/LoaderInline.tsx';
 export * from './ImageWithLoader/ImageWithLoader.tsx';
 export { default as MediaSection } from './MediaSection/MediaSection';
 export { default as MediaItem } from './MediaItem/MediaItem';
