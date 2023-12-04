@@ -1,4 +1,4 @@
-const article = `# Publicación en euskera de la guía *Buenas Prácticas de Node.js*
+export const articleEs = `# Publicación en euskera de la guía *Buenas Prácticas de Node.js*
 
 El 21 de Marzo de este año 2021, se publicó la versión en euskera de la guía *Buenas Prácticas Node.js*, gracias a la traducción realizada por la desarrolladora web Ane Diaz de Tuesta y Jose Felix Diaz de Tuesta, tarea que les ha costado aproximadamente un año llevar a cabo.
 
@@ -41,5 +41,3 @@ El fin de esta guía es dar a conocer y compartir conocimientos, y, en nuestra o
 [Aquí](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.basque.md) tienes la versión en euskera de la Guía *Buenas Prácticas de Node.js*.
 
 ¡Utilízala y disfruta!“`;
-
-export default article;

@@ -1,4 +1,4 @@
-const article = `# *Node.jsren Praktika Onak* gida euskaraz
+export const articleEu = `# *Node.jsren Praktika Onak* gida euskaraz
 
 Aurtengo martxoaren 21ean,  *Node.jsren Praktika Onak* gida argitaratu zen euskaraz, Ane Diaz de Tuesta web programatzaileak eta haren aita Joxe Felix Diaz de Tuesta euskaltzaleak itzulita. Urtebeteko lana izan da gida.
 
@@ -48,5 +48,3 @@ Gida honen helburua da informazioa ezagutaraztea eta partekatzea. Gure ustez, ku
 [Hementxe](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.basque.md) duzue *Node.jsren Praktika Onak* gida euskaraz.
 
 Erabili eta gozatu!“`;
-
-export default article;

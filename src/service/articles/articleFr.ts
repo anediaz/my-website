@@ -1,4 +1,4 @@
-const article = `# Le guide des *Bonnes Pratiques de Node.js*, en basque
+export const articleFr = `# Le guide des *Bonnes Pratiques de Node.js*, en basque
 
 Le 21 mars dernier, le guide des *Bonnes Pratiques de Node.js*, a été publié en basque. Sa traduction a été réalisée par la web développeuse Ane Diaz de Tuesta et son père, le bascophile Jose Felix Diaz de Tuesta. Elle représente une année de travail.
 
@@ -41,5 +41,3 @@ Le but de ce guide est de diffuser et partager la connaissance. Nous aspirons à
 [Voici](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.basque.md)  le guide des *Bonnes Pratiques de Node.js* en basque.
 
 Utilisez et profitez-le!”`;
-
-export default article;

@@ -1,4 +1,4 @@
-const article = `# The guide *Node.js Best Practices*, in Basque
+export const articleEn = `# The guide *Node.js Best Practices*, in Basque
 
 The 21st March of the present year, the guide *Node.js Best Practices* has been published in Basque. The translation has been carried out by the web developer Ane Diaz de Tuesta and her father, a Basque language loyalist, Joxe Felix Diaz de Tuesta. It took them a year.
 
@@ -42,5 +42,3 @@ The aim of this guide is to spread and share knowledge. We aspire to do the same
 [Here](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.basque.md) is the *Node.js Best Practices* Basque guide.
 
 Use it and enjoy yourself!”`;
-
-export default article;
