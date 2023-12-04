@@ -2,7 +2,7 @@ export * from './Footer/Footer.tsx';
 export * from './HamburgerMenu/HamburgerMenu.tsx';
 export { default as Header } from './Header/Header';
 export { default as ImageSection } from './ImageSection';
-export { default as LastNews } from './LastNews/LastNews';
+export * from './LastNews/LastNews';
 export * from './Menu/Menu';
 export * from './Section/Section';
 export * from './Section/SectionWithSensor.tsx';

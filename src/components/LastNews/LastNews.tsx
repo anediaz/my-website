@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './LastNews.css';
 
 const GUIDE_URL = 'https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md';
 
-const transformLink = (text, index) => {
+const transformLink = (text:string, index:string) => {
   const wordToFind = 'Node.js';
   const [phrase1, phrase2] = text.split(wordToFind);
   return [phrase1, wordToFind, phrase2].map((t) => (t === wordToFind
@@ -22,10 +21,14 @@ const transformLink = (text, index) => {
     )));
 };
 
-const LastNews = ({ goToArticle = () => {} }) => {
+interface LastNewsProps {
+  goToArticle?: () => void;
+}
+
+export const LastNews = ({ goToArticle = () => {} }: LastNewsProps) => {
   const [t] = useTranslation();
 
-  const transformItem = (text, key) => (text === '$toAddLink' ? (
+  const transformItem = (text:string, key:string) => (text === '$toAddLink' ? (
     <div key={key}>
       <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer">
         {transformLink(t('lastNews.link'), key)}
@@ -52,8 +55,3 @@ const LastNews = ({ goToArticle = () => {} }) => {
     </div>
   );
 };
-
-LastNews.propTypes = {
-  goToArticle: PropTypes.func,
-};
-export default LastNews;
