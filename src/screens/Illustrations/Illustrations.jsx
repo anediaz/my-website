@@ -2,14 +2,14 @@ import React, { useReducer, useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
 import { illustrations } from '../../service/data.json';
 import { getPhotos } from '../../service/FlickrAPI';
-import { transformResult } from '../../service/utils';
+import { transformFlickrResult } from '../../helpers';
 import { SIZES, illustrationsConfigurations } from '../../service/constants';
 import './Illustrations.css';
 
 import { HamburgerMenu } from '../../components';
 
 const { original: def, large1024: big } = SIZES;
-const sizes = [`url${def}`, `url${big}`];
+const sizes = [def.url, big.url];
 
 const ACTION_TYPES = {
   ADD_NEW_PHOTOS: 'ADD_NEW_PHOTOS',
@@ -53,7 +53,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: ACTION_TYPES.ADD_NEW_PHOTOS,
-        newPhotos: transformResult(photos, def, big),
+        newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
         selectedAlbum,
       });
     };
@@ -79,7 +79,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: ACTION_TYPES.ADD_NEW_PHOTOS,
-        newPhotos: transformResult(photos, def, big),
+        newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
         selectedAlbum,
       });
     }

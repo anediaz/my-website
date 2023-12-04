@@ -3,7 +3,7 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { SectionWithSensor } from '../../components';
-import { formatContent } from '../../service/utils';
+import { formatContent } from '../../helpers';
 import {
   jsonData,
 } from '../../service';

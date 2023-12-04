@@ -7,16 +7,16 @@ import {
 } from '../../components';
 import { getPhotos } from '../../service/FlickrAPI';
 import {
-  SIZES, PAQUIER_PHOTOSET_ID,
+  PAQUIER_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
 import { paquierMedia } from '../../service';
-import { formatContent } from '../../service/utils';
+import { formatContent } from '../../helpers';
 
-const { original: def, large1024: big } = SIZES;
+const { original: def, large1024: big } = SIZES_URLS;
 
 const transformResult = (r) => ({
-  src: r[`url${def}`],
-  bigSrc: r[`url${big}`],
+  src: r[def],
+  bigSrc: r[big],
   tag: r.tags,
   id: r.id,
 });
@@ -31,8 +31,8 @@ const Paquier = () => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
       const result = await getPhotos(PAQUIER_PHOTOSET_ID, [
-        `url${def}`,
-        `url${big}`,
+        def,
+        big,
         'tags',
       ]);
       setPhotos(result.map(transformResult));

@@ -1,4 +1,4 @@
-import { FLICKR, FlickrSizeType } from './constants';
+import { FLICKR } from './constants';
 
 interface photosetProps {
   id: string;
@@ -11,7 +11,7 @@ export const getPhotosets = async () => {
     : { Error: 'Error while fetching user\'s photosets' };
 };
 
-export const getPhotos = async (photoSetId:string, sizes:FlickrSizeType[]) => {
+export const getPhotos = async (photoSetId:string, sizes:string[]) => {
   const sizesParam = sizes.join(',');
   const getPhotosUrl = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR.api_key}&photoset_id=${photoSetId}&extras=${sizesParam}&format=json&nojsoncallback=true`;
   const response = await fetch(getPhotosUrl);

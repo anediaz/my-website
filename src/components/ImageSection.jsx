@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
-import { transformResult, sufflePhotos } from '../service/utils';
+import { sufflePhotos, transformFlickrResult } from '../helpers';
 import { getPhotos } from '../service/FlickrAPI';
 import {
   SIZES,
@@ -17,10 +17,10 @@ const ImageSection = () => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
       const result = await getPhotos(PHOTOSET_ID, [
-        `url${def}`,
-        `url${big}`,
+        def.url,
+        big.url,
       ]);
-      setPhotos(transformResult(result, def, big));
+      setPhotos(transformFlickrResult(result, 'original', 'large1024'));
     }
     // Execute the created function directly
     loadPhotos();

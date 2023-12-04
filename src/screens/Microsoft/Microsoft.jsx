@@ -7,16 +7,16 @@ import {
 } from '../../components';
 import { getPhotos } from '../../service/FlickrAPI';
 import {
-  SIZES, MS_PHOTOSET_ID,
+  MS_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
 import { microsoftMedia } from '../../service';
-import { formatContent } from '../../service/utils';
+import { formatContent } from '../../helpers';
 
-const { original: def, large1024: big } = SIZES;
+const { original: def, large1024: big } = SIZES_URLS;
 
 const transformResult = (r) => ({
-  src: r[`url${def}`],
-  bigSrc: r[`url${big}`],
+  src: r[def],
+  bigSrc: r[big],
   tag: r.tags,
   id: r.id,
 });
@@ -32,7 +32,7 @@ const Microsoft = () => {
     async function loadPhotos() {
       const result = await getPhotos(MS_PHOTOSET_ID, [
         `url${def}`,
-        `url${big}`,
+        big,
         'tags',
       ]);
       setPhotos(result.map(transformResult));
