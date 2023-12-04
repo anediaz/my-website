@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
 import { illustrations } from '../../service/data.json';
-import FlickrAPI from '../../service/FlickrAPI';
+import { getPhotos } from '../../service/FlickrAPI';
 import { transformResult } from '../../service/utils';
 import { SIZES, illustrationsConfigurations } from '../../service/constants';
 import './Illustrations.css';
@@ -50,7 +50,7 @@ const Illustrations = () => {
 
   useEffect(() => {
     const loadPhotos = async (selectedAlbum) => {
-      const photos = await FlickrAPI.getPhotos(selectedAlbum, sizes);
+      const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: ACTION_TYPES.ADD_NEW_PHOTOS,
         newPhotos: transformResult(photos, def, big),
@@ -76,7 +76,7 @@ const Illustrations = () => {
         selectedAlbum,
       });
     } else {
-      const photos = await FlickrAPI.getPhotos(selectedAlbum, sizes);
+      const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: ACTION_TYPES.ADD_NEW_PHOTOS,
         newPhotos: transformResult(photos, def, big),

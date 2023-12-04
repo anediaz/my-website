@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { transformGiphyResult } from '../service/utils';
-import { GIPHYApi } from '../service/GIPHYApi';
+import { getStickers, getAnimations } from '../service/GIPHYApi';
 
 export const useAnimations = () => {
   const [gifs, setGifs] = useState();
   const [stickers, setStickers] = useState();
   useEffect(() => {
     const loadAnimations = async () => {
-      const fetchGifs = await GIPHYApi.getAnimations();
+      const fetchGifs = await getAnimations();
       const transformed = transformGiphyResult(fetchGifs);
       setGifs(transformed);
     };
     const loadStickers = async () => {
-      const fetchStickers = await GIPHYApi.getStickers();
+      const fetchStickers = await getStickers();
       const transformed = transformGiphyResult(fetchStickers);
       setStickers(transformed);
     };

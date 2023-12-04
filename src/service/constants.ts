@@ -13,6 +13,8 @@ export const SIZES = {
   large1024: '_l',
 };
 
+export type FlickrSizeType = '_n' |'_o' | '_m' | '_c' | '_l';
+
 export const PHOTOSET_ID = '72157713844633802';
 export const MS_PHOTOSET_ID = '72157719163846608';
 export const PAQUIER_PHOTOSET_ID = '72177720302387065';

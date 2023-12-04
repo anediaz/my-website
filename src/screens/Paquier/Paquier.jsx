@@ -5,7 +5,7 @@ import paquierLogo from './logo-paquier.png';
 import {
   Lightbox, ImageWithLoader, LoaderInline, LoaderCircle,
 } from '../../components';
-import FlickrAPI from '../../service/FlickrAPI';
+import { getPhotos } from '../../service/FlickrAPI';
 import {
   SIZES, PAQUIER_PHOTOSET_ID,
 } from '../../service/constants';
@@ -30,7 +30,7 @@ const Paquier = () => {
   useEffect(() => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
-      const result = await FlickrAPI.getPhotos(PAQUIER_PHOTOSET_ID, [
+      const result = await getPhotos(PAQUIER_PHOTOSET_ID, [
         `url${def}`,
         `url${big}`,
         'tags',

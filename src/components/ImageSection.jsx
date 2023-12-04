@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
 import { transformResult, sufflePhotos } from '../service/utils';
-import FlickrAPI from '../service/FlickrAPI';
+import { getPhotos } from '../service/FlickrAPI';
 import {
   SIZES,
   PHOTOSET_ID,
@@ -16,7 +16,7 @@ const ImageSection = () => {
   useEffect(() => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
-      const result = await FlickrAPI.getPhotos(PHOTOSET_ID, [
+      const result = await getPhotos(PHOTOSET_ID, [
         `url${def}`,
         `url${big}`,
       ]);

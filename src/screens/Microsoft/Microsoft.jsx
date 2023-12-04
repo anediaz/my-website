@@ -5,7 +5,7 @@ import msLogo from './logo-ms.png';
 import {
   Lightbox, MediaItem, ImageWithLoader, LoaderInline, LoaderCircle,
 } from '../../components';
-import FlickrAPI from '../../service/FlickrAPI';
+import { getPhotos } from '../../service/FlickrAPI';
 import {
   SIZES, MS_PHOTOSET_ID,
 } from '../../service/constants';
@@ -30,7 +30,7 @@ const Microsoft = () => {
   useEffect(() => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
-      const result = await FlickrAPI.getPhotos(MS_PHOTOSET_ID, [
+      const result = await getPhotos(MS_PHOTOSET_ID, [
         `url${def}`,
         `url${big}`,
         'tags',
