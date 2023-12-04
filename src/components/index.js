@@ -1,6 +1,6 @@
 export * from './Footer/Footer.tsx';
 export * from './HamburgerMenu/HamburgerMenu.tsx';
-export { default as Header } from './Header/Header';
+export * from './Header/Header';
 export { default as ImageSection } from './ImageSection';
 export * from './LastNews/LastNews';
 export * from './Menu/Menu';

@@ -1,5 +1,4 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 import profileImage from './profile.jpg';
@@ -9,10 +8,16 @@ import {
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
 import { ReactComponent as GiphyLogo } from './giphy.svg';
+import { LocaleType } from '../../service/constants';
 
-const Header = ({
+interface HeaderProps {
+  id: string;
+  language: LocaleType;
+}
+
+export const Header = ({
   id, language,
-}) => {
+}: HeaderProps) => {
   const [t] = useTranslation();
   const { header, skills } = jsonData;
   const getSocial = () => {
@@ -23,8 +28,8 @@ const Header = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        key={t(`header.social.${socialId}`)}
-        title={t(`header.social.${socialId}`) || null}
+        key={`${t(`header.social.${socialId}`)}`}
+        title={`${t(`header.social.${socialId}`)}`}
         className={isSvg ? className : undefined}
       >
         {isSvg ? <GiphyLogo /> : <i className={`fa ${className}`} />}
@@ -42,15 +47,13 @@ const Header = ({
           <div className="social-icons">
             {socialContent}
             <a href={header.url[language]} aria-label="resume">
-              <i className="fa fa-file-text-o" title={t('header.resumeTitle') || null} />
+              <i className="fa fa-file-text-o" title={`${t('header.resumeTitle')}`} />
             </a>
           </div>
         </div>
       </>
     );
   };
-
-  const getImage = () => (<ImageWithLoader className="pic" src={profileImage} alt="profile" loader={<LoaderInline size={50} />} />);
 
   return (
     <div className="Header" id={id}>
@@ -63,16 +66,9 @@ const Header = ({
         </div>
       </div>
       <div className="infos">
-        {getImage()}
+        <ImageWithLoader className="pic" src={profileImage} alt="profile" loader={<LoaderInline size={50} />} />
         {getSocial()}
       </div>
     </div>
   );
 };
-
-Header.propTypes = {
-  id: PropTypes.string,
-  language: PropTypes.string.isRequired,
-};
-
-export default Header;

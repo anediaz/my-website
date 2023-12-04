@@ -18,8 +18,6 @@ const getStickers = async () => {
     : { Error: 'Error while fetching user\'s giphy' };
 };
 
-const GIPHYApi = {
+export const GIPHYApi = {
   getAnimations, getStickers,
 };
-
-export default GIPHYApi;

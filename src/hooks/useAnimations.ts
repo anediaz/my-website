@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { transformGiphyResult } from '../service/utils';
-import GIPHYApi from '../service/GIPHYApi';
+import { GIPHYApi } from '../service/GIPHYApi';
 
 export const useAnimations = () => {
   const [gifs, setGifs] = useState();
