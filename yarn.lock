@@ -11465,7 +11465,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-ga: "npm:^3.1.2"
     react-i18next: "npm:^11.8.15"
-    react-ikusi: "npm:^2.3.0"
+    react-ikusi: "npm:^3.1.2"
     react-markdown: "npm:^5.0.3"
     react-router-dom: "npm:^5.2.0"
     react-scripts: "npm:^4.0.0"
@@ -13742,16 +13742,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ikusi@npm:^2.3.0":
-  version: 2.4.0
-  resolution: "react-ikusi@npm:2.4.0"
-  dependencies:
-    prop-types: "npm:^15.7.2"
-    underscore: "npm:^1.12.0"
+"react-ikusi@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "react-ikusi@npm:3.1.2"
   peerDependencies:
-    react: ^17.0.1
-    styled-components: ^5.x
-  checksum: 91b2e4439bd7f03dc3883ab1fb2cbb87a7ee389713e35add39d47153fa109b2526aa4e8c3c47bc67d6fa96135e88686809d55b8857e08c7499f6da23c87932cc
+    react: ^18.2.0
+  checksum: b5fa932a9bb5e9165605c95dbe7078ebcc4a16a698b4d75edbc21f44b75510148c4456e3ff01f0ef19068da921e99d62bce364ebebba4208109b2eb98007ab1d
   languageName: node
   linkType: hard
 
@@ -16315,13 +16311,6 @@ __metadata:
   version: 1.12.1
   resolution: "underscore@npm:1.12.1"
   checksum: 45e77d566d19fcacbbd9e3d73b7f3e22370ecd41d37ef36e7a94cd5b3ae4f4609850935e42bbce5e998d31f788d4a31c4b15c81b7cc1af2096eab9d97cb9e574
-  languageName: node
-  linkType: hard
-
-"underscore@npm:^1.12.0":
-  version: 1.13.6
-  resolution: "underscore@npm:1.13.6"
-  checksum: c97263094d771a862beb174d174d3c783f5fdb4734de323ba5e43e5f926b387eda901d816cc8eface402fb223ff4acdd469f4f1a294b17725b09db5d083c7a65
   languageName: node
   linkType: hard
 

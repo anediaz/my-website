@@ -6,13 +6,12 @@ interface SectionWithSensorProps {
   id: string;
   children: React.ReactNode;
   onChangeVisibility?: (visible:boolean, id:string) => void;
-  title: string,
+  title?: string,
   className: string;
-  isVisible: boolean;
 }
 
 export const SectionWithSensor = ({
-  children, onChangeVisibility = () => {}, id, title, className, isVisible,
+  children, onChangeVisibility = () => {}, id, title, className,
 }:SectionWithSensorProps) => (
   <VisibilitySensor
     scrollCheck
