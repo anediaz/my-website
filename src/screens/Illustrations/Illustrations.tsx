@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
-import { Gallery } from 'react-ikusi';
+import { Gallery, PhotoProps } from 'react-ikusi';
 import { illustrations } from '../../service/data.json';
 import { getPhotos } from '../../service/FlickrAPI';
 import { transformFlickrResult } from '../../helpers';
@@ -11,28 +11,41 @@ import { HamburgerMenu } from '../../components';
 const { original: def, large1024: big } = SIZES;
 const sizes = [def.url, big.url];
 
-const ACTION_TYPES = {
-  ADD_NEW_PHOTOS: 'ADD_NEW_PHOTOS',
-  SET_ALBUM: 'SET_ALBUM',
-};
+type ActionType = 'ADD_NEW_PHOTOS'|'SET_ALBUM';
 
 const initialIllustrations = {
   selectedAlbum: '',
   loadedPhotos: [],
 };
 
-const illustrationsReducer = (state, action) => {
-  const { selectedAlbum, newPhotos } = action;
-  switch (action.type) {
-    case ACTION_TYPES.ADD_NEW_PHOTOS:
+interface ActionProps {
+  type: ActionType;
+  selectedAlbum: string;
+  newPhotos?: PhotoProps[] | [];
+}
+
+interface LoadedPhotosProps {
+  albumId: string;
+  photos: PhotoProps[];
+}
+
+interface StateProps {
+  selectedAlbum:string;
+  loadedPhotos: LoadedPhotosProps[] | [];
+}
+
+const illustrationsReducer = (state: StateProps, action: ActionProps): StateProps => {
+  const { selectedAlbum, newPhotos, type } = action;
+  switch (type) {
+    case 'ADD_NEW_PHOTOS':
       return {
         selectedAlbum,
         loadedPhotos: [
           ...state.loadedPhotos,
-          { albumId: selectedAlbum, photos: newPhotos },
+          { albumId: selectedAlbum, photos: newPhotos || [] },
         ],
       };
-    case ACTION_TYPES.SET_ALBUM:
+    case 'SET_ALBUM':
       return {
         ...state,
         selectedAlbum,
@@ -49,36 +62,36 @@ const Illustrations = () => {
   );
 
   useEffect(() => {
-    const loadPhotos = async (selectedAlbum) => {
+    const loadPhotos = async (selectedAlbum:string) => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
-        type: ACTION_TYPES.ADD_NEW_PHOTOS,
+        type: 'ADD_NEW_PHOTOS',
         newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
         selectedAlbum,
       });
     };
-    loadPhotos(illustrations.albums[0].id, sizes);
+    loadPhotos(illustrations.albums[0].id);
   }, []);
 
-  const getCurrentPhotos = (photos, albumId) => {
+  const getCurrentPhotos = (photos: LoadedPhotosProps[], albumId: string) => {
     const photosObject = photos.find((p) => p.albumId === albumId);
     return photosObject ? photosObject.photos : null;
   };
 
-  const onSelectAlbum = async (selectedAlbum) => {
+  const onSelectAlbum = async (selectedAlbum:string) => {
     const photosExist = getCurrentPhotos(
       illustrationsState.loadedPhotos,
       selectedAlbum,
     );
     if (photosExist) {
       dispatch({
-        type: ACTION_TYPES.SET_ALBUM,
+        type: 'SET_ALBUM',
         selectedAlbum,
       });
     } else {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
-        type: ACTION_TYPES.ADD_NEW_PHOTOS,
+        type: 'ADD_NEW_PHOTOS',
         newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
         selectedAlbum,
       });

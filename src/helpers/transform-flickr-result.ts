@@ -1,3 +1,4 @@
+import { PhotoProps } from 'react-ikusi';
 import { FlicrSizeType, SIZES } from '../service/constants';
 
 interface FlickrResult {
@@ -6,20 +7,20 @@ interface FlickrResult {
   'url_m': string;
   'url_c': string;
   'url_l': string;
-  'width_n': string;
-  'width_o': string;
-  'width_m': string;
-  'width_c': string;
-  'width_l': string;
-  'height_n': string;
-  'height_o': string;
-  'height_m': string;
-  'height_c': string;
-  'height_l': string;
+  'width_n': number;
+  'width_o': number;
+  'width_m': number;
+  'width_c': number;
+  'width_l': number;
+  'height_n': number;
+  'height_o': number;
+  'height_m': number;
+  'height_c': number;
+  'height_l': number;
   id: string
 }
 
-export const transformFlickrResult = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType) => result.map((r) => ({
+export const transformFlickrResult = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):PhotoProps[] => result.map((r) => ({
   src: r[SIZES[def].url],
   width: r[SIZES[def].width],
   height: r[SIZES[def].height],
