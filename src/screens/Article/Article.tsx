@@ -29,7 +29,7 @@ interface ArticleProps {
   language: 'en' | 'es' | 'fr' | 'eu';
 }
 
-const Article = ({ language }: ArticleProps) => {
+export const Article = ({ language }: ArticleProps) => {
   const renderers = {
     link: (props:propsInterface) => <a href={props.href} target="_blank" rel="noopener noreferrer">{props.children}</a>,
     image: ImageComponent,
@@ -46,5 +46,3 @@ const Article = ({ language }: ArticleProps) => {
     </div>
   );
 };
-
-export default Article;

@@ -90,4 +90,7 @@ export const LANGUAGES = {
 export const LOCALES = ['en', 'fr', 'es', 'eu'];
 export type LocaleType = 'en'|'fr'|'es'|'eu';
 export const DEFAULT_LOCALE = 'en';
+export type SectionType = 'about' | 'skills' | 'works' | 'more';
+export const menuItems:SectionType[] = ['about', 'skills', 'works', 'more'];
+
 export const DEFAULT_SECTION = 'about';

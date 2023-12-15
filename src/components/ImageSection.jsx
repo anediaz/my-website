@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
-import { sufflePhotos, transformFlickrResult } from '../helpers';
+import { sufflePhotos, transformToGalleryPhoto } from '../helpers';
 import { getPhotos } from '../service/FlickrAPI';
 import {
   SIZES,
@@ -20,7 +20,7 @@ const ImageSection = () => {
         def.url,
         big.url,
       ]);
-      setPhotos(transformFlickrResult(result, 'original', 'large1024'));
+      setPhotos(transformToGalleryPhoto(result, 'original', 'large1024'));
     }
     // Execute the created function directly
     loadPhotos();

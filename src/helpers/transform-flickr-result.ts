@@ -17,13 +17,23 @@ interface FlickrResult {
   'height_m': number;
   'height_c': number;
   'height_l': number;
-  id: string
+  id: string;
+  tags?: string;
 }
 
-export const transformFlickrResult = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):PhotoProps[] => result.map((r) => ({
+export const transformToGalleryPhoto = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):PhotoProps[] => result.map((r) => ({
   src: r[SIZES[def].url],
   width: r[SIZES[def].width],
   height: r[SIZES[def].height],
   bigSrc: r[SIZES[big].url],
   id: r.id,
+}));
+
+export type ImageProps = Pick<PhotoProps, 'src' | 'bigSrc'|'id'> & {tag?:string};
+
+export const transformToPhoto = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):ImageProps[] => result.map((r) => ({
+  src: r[SIZES[def].url],
+  bigSrc: r[SIZES[big].url],
+  id: r.id,
+  tag: r.tags,
 }));

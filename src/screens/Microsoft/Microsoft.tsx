@@ -10,21 +10,14 @@ import {
   MS_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
 import { microsoftMedia } from '../../service';
-import { formatContent } from '../../helpers';
+import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
 
-const transformResult = (r) => ({
-  src: r[def],
-  bigSrc: r[big],
-  tag: r.tags,
-  id: r.id,
-});
-
 const Microsoft = () => {
   const [t] = useTranslation();
-  const [photos, setPhotos] = useState([]);
-  const [lightboxImg, setLightboxImg] = useState(null);
+  const [photos, setPhotos] = useState<ImageProps[]>([]);
+  const [lightboxImg, setLightboxImg] = useState<string|undefined>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -35,14 +28,14 @@ const Microsoft = () => {
         big,
         'tags',
       ]);
-      setPhotos(result.map(transformResult));
+      setPhotos(result.map(transformToPhoto));
       setIsLoading(false);
     }
     // Execute the created function directly
     loadPhotos();
   }, []);
 
-  const renderImg = (findingTag, alt, cls) => {
+  const renderImg = (findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
     return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject.bigSrc)} loader={<LoaderInline />} /> : null;
   };
@@ -72,7 +65,7 @@ const Microsoft = () => {
             <span>{t('microsoft.mediaVideo.smartphone')}</span>
             <i className="fa fa-hand-o-down" aria-hidden="true" />
           </div>
-          <MediaItem title={title} youtubeId={youtubeId} />
+          { youtubeId ? <MediaItem title={title} youtubeId={youtubeId} /> : null }
         </div>
       ))}
     </div>
@@ -80,7 +73,7 @@ const Microsoft = () => {
 
   const renderContent = () => (
     <>
-      {lightboxImg && <Lightbox onClick={() => setLightboxImg(null)} src={lightboxImg} />}
+      {lightboxImg && <Lightbox onClick={() => setLightboxImg(undefined)} src={lightboxImg} />}
       <div className="Header">
         <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">
           <img src={msLogo} alt="Microsoft logo" className="msLogo" />

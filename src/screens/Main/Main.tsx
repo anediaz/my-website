@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import * as PropTypes from 'prop-types';
 import {
   Menu, Header, Footer, LastNews,
 } from '../../components';
 import {
   About, Skills, Works, More, Article, Microsoft, Paquier,
 } from '../index';
-import {
-  jsonData,
-} from '../../service';
 
-import { LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION } from '../../service/constants';
+import { jsonData as newData } from '../../service/data';
+
+import {
+  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, menuItems,
+} from '../../service/constants';
 import './Main.css';
 
 const PAGES = {
@@ -21,20 +21,43 @@ const PAGES = {
   paquier: Paquier,
 };
 
-const Main = ({ page, section }) => {
+interface MainProps {
+  page?: PageType;
+  section: SectionType;
+}
+
+export type PageType = 'article'|'microsoft'|'paquier';
+
+const Main = ({ page, section }: MainProps) => {
   const { i18n } = useTranslation();
+  const [language, setLanguage] = useState<LocaleType>('en');
+  const updateLanguage = (l:string) => {
+    switch (l) {
+      case 'fr':
+        setLanguage('fr');
+        break;
+      case 'es':
+        setLanguage('es');
+        break;
+      case 'eu':
+        setLanguage('eu');
+        break;
+      default:
+        setLanguage('en');
+    }
+  };
   const [visibleSection, setVisibleSection] = useState(DEFAULT_SECTION);
-  const { locale } = useParams();
+  const { locale } = useParams<{locale:LocaleType}>();
   const history = useHistory();
 
-  const scrollToSection = (sectionToGo) => {
+  const scrollToSection = (sectionToGo: SectionType) => {
     const selectedSection = document.getElementById(sectionToGo);
     if (selectedSection) {
       selectedSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const selectSectionHandler = (sectionToSelect) => {
+  const selectSectionHandler = (sectionToSelect: SectionType) => {
     if (sectionToSelect !== visibleSection) {
       setVisibleSection(sectionToSelect);
       scrollToSection(sectionToSelect);
@@ -44,42 +67,47 @@ const Main = ({ page, section }) => {
   useEffect(() => {
     i18n.changeLanguage(locale && LOCALES.includes(locale) ? locale : DEFAULT_LOCALE);
     selectSectionHandler(section || DEFAULT_SECTION);
+    updateLanguage(i18n.language);
   }, [locale]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const getPath = (language, search) => {
-    const pathname = language === DEFAULT_LOCALE ? '/' : language;
+  const getPath = (l:LocaleType, search:string):{pathname:string; search:string} => {
+    const pathname = l === DEFAULT_LOCALE ? '/' : l;
     return { pathname, search };
   };
 
-  const languageClickHandler = (language) => {
-    if (LOCALES.includes(language)) {
-      history.push(getPath(language, page ? `?page=${page}` : ''));
+  const languageClickHandler = (l:LocaleType) => {
+    if (LOCALES.includes(l)) {
+      history.push(getPath(l, page ? `?page=${page}` : ''));
     }
     scrollToTop();
   };
 
-  const menuItemClickHandler = (item) => {
+  const menuItemClickHandler = (item: SectionType|undefined) => {
+    if (item === undefined) {
+      goTo('');
+      return;
+    }
     selectSectionHandler(item);
-    history.push(getPath(i18n.language, item === DEFAULT_SECTION ? '' : `?section=${item}`));
+    history.push(getPath(language, item === DEFAULT_SECTION ? '' : `?section=${item}`));
   };
 
-  const onChangeVisibility = (isVisible, id) => {
+  const onChangeVisibility = (isVisible:boolean, id:SectionType) => {
     if (isVisible) {
       setVisibleSection(id);
     }
   };
 
-  const goTo = (queryValue) => {
+  const goTo = (queryValue?:string) => {
     scrollToTop();
-    history.push(getPath(i18n.language, queryValue));
+    history.push(getPath(language, queryValue || ''));
   };
 
-  const renderPage = (pageName) => {
-    const PageComponent = PAGES[pageName];
+  const renderPage = (pageType:PageType) => {
+    const PageComponent = PAGES[pageType];
     if (PageComponent) {
-      return <PageComponent language={i18n.language} />;
+      return <PageComponent language={i18n.language as LocaleType} />;
     }
     return <></>;
   };
@@ -88,12 +116,12 @@ const Main = ({ page, section }) => {
     <div className="Main">
       <>
         <Menu
-          menuItems={page ? [] : jsonData.menuItems}
-          language={i18n.language}
+          menuItems={page ? [] : menuItems}
+          language={language}
           languageClickHandler={languageClickHandler}
-          languageItems={jsonData.languages}
+          languageItems={newData.languages}
           selectedItem={page ? '' : visibleSection}
-          selectItemHandler={page ? () => goTo() : menuItemClickHandler}
+          selectItemHandler={menuItemClickHandler}
           closable={Boolean(page)}
         />
         <div className="page">
@@ -102,32 +130,27 @@ const Main = ({ page, section }) => {
               <div className="resume">
                 <Header
                   id={DEFAULT_SECTION}
-                  language={i18n.language}
+                  language={language}
                 />
                 <LastNews
-                  id={DEFAULT_SECTION}
                   goToArticle={() => goTo('?page=article')}
                 />
                 <About
                   id="about"
                   onChangeVisibility={onChangeVisibility}
-                  isVisible={visibleSection === 'about'}
                 />
                 <Skills
                   id="skills"
                   onChangeVisibility={onChangeVisibility}
-                  isVisible={visibleSection === 'skills'}
                 />
                 <Works
                   id="works"
                   onChangeVisibility={onChangeVisibility}
-                  isVisible={visibleSection === 'works'}
-                  goToArticle={(pageName) => goTo(`?page=${pageName}`)}
+                  goToArticle={(pageName:string) => goTo(`?page=${pageName}`)}
                 />
                 <More
                   id="more"
                   onChangeVisibility={onChangeVisibility}
-                  isVisible={visibleSection === 'more'}
                 />
               </div>
             )}
@@ -136,11 +159,6 @@ const Main = ({ page, section }) => {
       </>
     </div>
   );
-};
-
-Main.propTypes = {
-  page: PropTypes.string,
-  section: PropTypes.string,
 };
 
 export default Main;

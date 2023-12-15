@@ -10,21 +10,14 @@ import {
   PAQUIER_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
 import { paquierMedia } from '../../service';
-import { formatContent } from '../../helpers';
+import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
 
-const transformResult = (r) => ({
-  src: r[def],
-  bigSrc: r[big],
-  tag: r.tags,
-  id: r.id,
-});
-
 const Paquier = () => {
   const [t] = useTranslation();
-  const [photos, setPhotos] = useState([]);
-  const [lightboxImg, setLightboxImg] = useState(null);
+  const [photos, setPhotos] = useState<ImageProps[]>([]);
+  const [lightboxImg, setLightboxImg] = useState<string|undefined>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -35,14 +28,14 @@ const Paquier = () => {
         big,
         'tags',
       ]);
-      setPhotos(result.map(transformResult));
+      setPhotos(result.map(transformToPhoto));
       setIsLoading(false);
     }
     // Execute the created function directly
     loadPhotos();
   }, []);
 
-  const renderImg = (findingTag, alt, cls) => {
+  const renderImg = (findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
     return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject.bigSrc)} loader={<LoaderInline />} /> : null;
   };
@@ -66,7 +59,7 @@ const Paquier = () => {
 
   const renderContent = () => (
     <>
-      {lightboxImg && <Lightbox onClick={() => setLightboxImg(null)} src={lightboxImg} />}
+      {lightboxImg && <Lightbox onClick={() => setLightboxImg(undefined)} src={lightboxImg} />}
       <div className="Header">
         <a href="https://www.cabinet-paquier.fr/" target="_blank" rel="noreferrer">
           <img src={paquierLogo} alt="Paquier & Associés logo" className="msLogo" />

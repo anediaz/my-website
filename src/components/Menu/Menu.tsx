@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
 import { LanguageItem, LanguageSelector } from '../LanguageSelector/LanguageSelector';
-import { LocaleType } from '../../service/constants';
+import { LocaleType, SectionType } from '../../service/constants';
 
 interface MenuProps {
-  menuItems: string[];
+  menuItems: SectionType[];
   language: LocaleType;
-  languageClickHandler: (l:string) => void;
+  languageClickHandler: (l:LocaleType) => void;
   languageItems: LanguageItem[];
   selectedItem: string;
-  selectItemHandler: (v?:string) => void;
+  selectItemHandler: (v:SectionType|undefined) =>void
   closable?:boolean;
 }
 
@@ -27,7 +27,7 @@ export const Menu = ({
   const [t] = useTranslation();
   const getClass = (id:string) => `item ${selectedItem === id ? 'active' : ''}`;
 
-  const buildMenu = () => menuItems.map((item:string) => (
+  const buildMenu = () => menuItems.map((item:SectionType) => (
     <div
       className={getClass(item)}
       onClick={() => selectItemHandler(item)}
@@ -59,7 +59,7 @@ export const Menu = ({
         <i className="fa fa fa-file-video-o" />
       </Link>
       {closable && (
-      <button className="closeButton" type="button" onClick={() => selectItemHandler()}>
+      <button className="closeButton" type="button" onClick={() => selectItemHandler(undefined)}>
         <i className="fa fa-hand-o-left" />
         {t('menu.closable')}
       </button>

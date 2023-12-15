@@ -10,14 +10,21 @@ import Conferences from './Conferences';
 import {
   jsonData,
 } from '../../service';
+import { SectionType } from '../../service/constants';
 
-const Works = ({
-  id, onChangeVisibility = () => {}, isVisible, goToArticle,
-}) => {
+interface WorksProps {
+  id: SectionType;
+  onChangeVisibility: (visible: boolean, id:SectionType) => void;
+  goToArticle: (pageName:string) => void;
+}
+
+export const Works = ({
+  id, onChangeVisibility = () => {}, goToArticle,
+}: WorksProps) => {
   const [t] = useTranslation();
 
   return (
-    <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Works" isVisible={isVisible}>
+    <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Works">
       <Web className="work" key={1} data={{ url: jsonData.works.developer.url }} />
       <Graphic className="work" key={2} goToArticle={goToArticle} />
       <Conferences
@@ -28,12 +35,3 @@ const Works = ({
     </SectionWithSensor>
   );
 };
-
-Works.propTypes = {
-  id: PropTypes.string,
-  onChangeVisibility: PropTypes.func,
-  isVisible: PropTypes.bool,
-  goToArticle: PropTypes.func,
-};
-
-export default Works;

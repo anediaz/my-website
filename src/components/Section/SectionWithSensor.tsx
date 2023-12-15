@@ -1,11 +1,12 @@
 import React from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Section } from './Section';
+import { SectionType } from '../../service/constants';
 
 interface SectionWithSensorProps {
-  id: string;
+  id: SectionType;
   children: React.ReactNode;
-  onChangeVisibility?: (visible:boolean, id:string) => void;
+  onChangeVisibility?: (visible:boolean, id:SectionType) => void;
   title?: string,
   className: string;
 }

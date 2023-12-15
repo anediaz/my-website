@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { SectionWithSensor } from '../../components';
 
 import './About.css';
+import { SectionType } from '../../service/constants';
 
 interface AboutProps {
-  id: string,
-  onChangeVisibility?: (visible: boolean, id:string) => void,
+  id: SectionType,
+  onChangeVisibility?: (visible: boolean, id:SectionType) => void,
 }
 
-export const About = ({ id, onChangeVisibility = () => {} }: AboutProps) => {
+export const About = ({ id, onChangeVisibility }: AboutProps) => {
   const [t] = useTranslation();
 
   return (

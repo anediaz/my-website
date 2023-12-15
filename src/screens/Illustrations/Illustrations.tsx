@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import { Gallery, PhotoProps } from 'react-ikusi';
 import { illustrations } from '../../service/data.json';
 import { getPhotos } from '../../service/FlickrAPI';
-import { transformFlickrResult } from '../../helpers';
+import { transformToGalleryPhoto } from '../../helpers';
 import { SIZES, illustrationsConfigurations } from '../../service/constants';
 import './Illustrations.css';
 
@@ -66,7 +66,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: 'ADD_NEW_PHOTOS',
-        newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
+        newPhotos: transformToGalleryPhoto(photos, 'original', 'large1024'),
         selectedAlbum,
       });
     };
@@ -92,7 +92,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: 'ADD_NEW_PHOTOS',
-        newPhotos: transformFlickrResult(photos, 'original', 'large1024'),
+        newPhotos: transformToGalleryPhoto(photos, 'original', 'large1024'),
         selectedAlbum,
       });
     }

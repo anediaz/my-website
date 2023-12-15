@@ -1,8 +1,8 @@
 interface MediaProps {
-  title: String;
-  alt: String;
-  tag: String;
-  youtubeId?: String;
+  title: string;
+  alt: string;
+  tag: string;
+  youtubeId?: string;
 }
 
 export const microsoftMedia:MediaProps[] = [
