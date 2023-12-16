@@ -5,7 +5,7 @@ export const FLICKR = {
 
 export const googleTrackId = 'UA-56075584-1';
 
-export type FlicrSizeType = 'small320' | 'original' | 'medium500' | 'medium800' | 'large1024';
+export type FlickrSizeType = 'small320' | 'original' | 'medium500' | 'medium800' | 'large1024';
 export type FlickrSizeUrlType = 'url_n' | 'url_o' | 'url_m' | 'url_c' | 'url_l';
 export type FlickrSizeWidthUrlType = 'width_n' | 'width_o' | 'width_m' | 'width_c' | 'width_l';
 export type FlickrSizeHeightUrlType = 'height_n' | 'height_o' | 'height_m' | 'height_c' | 'height_l';
@@ -16,7 +16,7 @@ interface FlickrSizeProps {
   width: FlickrSizeWidthUrlType;
   height: FlickrSizeHeightUrlType
 }
-export const SIZES:Record<FlicrSizeType, FlickrSizeProps> = {
+export const SIZES:Record<FlickrSizeType, FlickrSizeProps> = {
   small320: {
     key: '_n',
     url: 'url_n',

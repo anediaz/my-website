@@ -24,11 +24,11 @@ const Microsoft = () => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
       const result = await getPhotos(MS_PHOTOSET_ID, [
-        `url${def}`,
+        def,
         big,
         'tags',
       ]);
-      setPhotos(result.map(transformToPhoto));
+      setPhotos(transformToPhoto(result, 'original', 'large1024'));
       setIsLoading(false);
     }
     // Execute the created function directly

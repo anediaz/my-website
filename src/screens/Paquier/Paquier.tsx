@@ -28,7 +28,7 @@ const Paquier = () => {
         big,
         'tags',
       ]);
-      setPhotos(result.map(transformToPhoto));
+      setPhotos(transformToPhoto(result, 'original', 'large1024'));
       setIsLoading(false);
     }
     // Execute the created function directly

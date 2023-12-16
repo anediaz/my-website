@@ -1,5 +1,5 @@
 import { PhotoProps } from 'react-ikusi';
-import { FlicrSizeType, SIZES } from '../service/constants';
+import { FlickrSizeType, SIZES } from '../service/constants';
 
 interface FlickrResult {
   'url_n': string;
@@ -21,7 +21,7 @@ interface FlickrResult {
   tags?: string;
 }
 
-export const transformToGalleryPhoto = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):PhotoProps[] => result.map((r) => ({
+export const transformToGalleryPhoto = (result: FlickrResult[], def: FlickrSizeType, big:FlickrSizeType):PhotoProps[] => result.map((r) => ({
   src: r[SIZES[def].url],
   width: r[SIZES[def].width],
   height: r[SIZES[def].height],
@@ -31,9 +31,12 @@ export const transformToGalleryPhoto = (result: FlickrResult[], def: FlicrSizeTy
 
 export type ImageProps = Pick<PhotoProps, 'src' | 'bigSrc'|'id'> & {tag?:string};
 
-export const transformToPhoto = (result: FlickrResult[], def: FlicrSizeType, big:FlicrSizeType):ImageProps[] => result.map((r) => ({
-  src: r[SIZES[def].url],
-  bigSrc: r[SIZES[big].url],
-  id: r.id,
-  tag: r.tags,
-}));
+export const transformToPhoto = (result: FlickrResult[], def: FlickrSizeType, big:FlickrSizeType):ImageProps[] => {
+  const transformed = result.map((r) => ({
+    src: r[SIZES[def].url],
+    bigSrc: r[SIZES[big].url],
+    id: r.id,
+    tag: r.tags,
+  }));
+  return transformed;
+};
