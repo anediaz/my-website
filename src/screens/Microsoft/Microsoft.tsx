@@ -14,7 +14,7 @@ import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
 
-const Microsoft = () => {
+export const Microsoft = () => {
   const [t] = useTranslation();
   const [photos, setPhotos] = useState<ImageProps[]>([]);
   const [lightboxImg, setLightboxImg] = useState<string|undefined>();
@@ -104,5 +104,3 @@ const Microsoft = () => {
     </div>
   );
 };
-
-export default Microsoft;

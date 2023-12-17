@@ -6,7 +6,7 @@ import './Works.css';
 
 import Web from './Web';
 import Graphic from './Graphic';
-import Conferences from './Conferences';
+import { Conferences } from './Conferences';
 import {
   jsonData,
 } from '../../service';

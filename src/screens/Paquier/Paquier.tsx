@@ -14,7 +14,7 @@ import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
 
-const Paquier = () => {
+export const Paquier = () => {
   const [t] = useTranslation();
   const [photos, setPhotos] = useState<ImageProps[]>([]);
   const [lightboxImg, setLightboxImg] = useState<string|undefined>();
@@ -90,5 +90,3 @@ const Paquier = () => {
     </div>
   );
 };
-
-export default Paquier;

@@ -1,12 +1,16 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { MediaSection } from '../../components';
+import { MediaSection, MediaProps } from '../../components';
 import './Conferences.css';
 
-const Conferences = ({
+interface ConferencesProps {
+  media: MediaProps[];
+  className?: string;
+}
+
+export const Conferences = ({
   media, className,
-}) => {
+}:ConferencesProps) => {
   const [t] = useTranslation();
 
   return (
@@ -23,15 +27,3 @@ const Conferences = ({
     </div>
   );
 };
-
-Conferences.propTypes = {
-  media: PropTypes.arrayOf(
-    PropTypes.exact({
-      title: PropTypes.string.isRequired,
-      youtubeId: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-    }),
-  ),
-  className: PropTypes.string,
-};
-export default Conferences;
