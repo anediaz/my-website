@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Gallery } from 'react-ikusi';
+import { Gallery, PhotoProps } from 'react-ikusi';
 import { sufflePhotos, transformToGalleryPhoto } from '../helpers';
 import { getPhotos } from '../service/FlickrAPI';
 import {
-  SIZES,
+  SIZES_URLS,
   PHOTOSET_ID,
   imageSectionConfigurations,
 } from '../service/constants';
 
-const { original: def, large1024: big } = SIZES;
+const { original: def, large1024: big } = SIZES_URLS;
 
-const ImageSection = () => {
-  const [photos, setPhotos] = useState([]);
+export const ImageSection = () => {
+  const [photos, setPhotos] = useState<PhotoProps[]>([]);
 
   useEffect(() => {
     // Create an scoped async function in the hook
     async function loadPhotos() {
       const result = await getPhotos(PHOTOSET_ID, [
-        def.url,
-        big.url,
+        def,
+        big,
       ]);
       setPhotos(transformToGalleryPhoto(result, 'original', 'large1024'));
     }
@@ -37,5 +37,3 @@ const ImageSection = () => {
     </div>
   );
 };
-
-export default ImageSection;
