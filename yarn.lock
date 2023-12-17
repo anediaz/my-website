@@ -11464,7 +11464,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-ga: "npm:^3.1.2"
     react-i18next: "npm:^11.8.15"
-    react-ikusi: "npm:^3.1.2"
+    react-ikusi: "npm:^3.1.3"
     react-markdown: "npm:^5.0.3"
     react-router-dom: "npm:^5.2.0"
     react-scripts: "npm:^4.0.0"
@@ -13741,12 +13741,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ikusi@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "react-ikusi@npm:3.1.2"
+"react-ikusi@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "react-ikusi@npm:3.1.3"
   peerDependencies:
     react: ^18.2.0
-  checksum: b5fa932a9bb5e9165605c95dbe7078ebcc4a16a698b4d75edbc21f44b75510148c4456e3ff01f0ef19068da921e99d62bce364ebebba4208109b2eb98007ab1d
+  checksum: 263eb1c4154a19520ebb754b06ee9ced2eb4974efb26fb83a10e49c4589a3c5fb8ebe2a0a0dc774307a8de7aa46654a707003aa29063f470fb333d8be695975a
   languageName: node
   linkType: hard
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Ligthbox } from 'react-ikusi';
 import './Microsoft.css';
 import msLogo from './logo-ms.png';
 import {
-  Lightbox, MediaItem, ImageWithLoader, LoaderInline, LoaderCircle,
+  MediaItem, ImageWithLoader, LoaderInline, ContainerWithCloseKeyInteraction,
 } from '../../components';
 import { getPhotos } from '../../service/FlickrAPI';
 import {
@@ -17,7 +18,7 @@ const { original: def, large1024: big } = SIZES_URLS;
 export const Microsoft = () => {
   const [t] = useTranslation();
   const [photos, setPhotos] = useState<ImageProps[]>([]);
-  const [lightboxImg, setLightboxImg] = useState<string|undefined>();
+  const [lightboxImg, setLightboxImg] = useState<ImageProps|undefined>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -35,9 +36,11 @@ export const Microsoft = () => {
     loadPhotos();
   }, []);
 
+  const onCloseLightbox = () => setLightboxImg(undefined);
+
   const renderImg = (findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
-    return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject.bigSrc)} loader={<LoaderInline />} /> : null;
+    return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject)} loader={<LoaderInline />} /> : null;
   };
 
   const renderMediaSection = () => (photos.length ? (
@@ -71,9 +74,9 @@ export const Microsoft = () => {
     </div>
   ) : <></>);
 
-  const renderContent = () => (
-    <>
-      {lightboxImg && <Lightbox onClick={() => setLightboxImg(undefined)} src={lightboxImg} />}
+  return (
+    <ContainerWithCloseKeyInteraction className="Microsoft" onClose={onCloseLightbox} isLoading={isLoading}>
+      {lightboxImg && <Ligthbox onClose={onCloseLightbox} img={lightboxImg.bigSrc || lightboxImg.src} id={lightboxImg.id} />}
       <div className="Header">
         <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">
           <img src={msLogo} alt="Microsoft logo" className="msLogo" />
@@ -93,14 +96,6 @@ export const Microsoft = () => {
         </div>
         {renderMediaSection()}
       </div>
-    </>
-  );
-
-  return (
-    <div className="Microsoft">
-      {isLoading ? <div className="fallback-style"><LoaderCircle /></div>
-        : renderContent()}
-
-    </div>
+    </ContainerWithCloseKeyInteraction>
   );
 };
