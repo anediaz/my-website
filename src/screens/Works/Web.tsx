@@ -1,19 +1,25 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { ImageWithLoader, LoaderInline } from '../../components';
 import image from './latestProject.png';
 
-const Web = ({ data, className }) => {
+interface WebProps {
+  data: {
+    url: string;
+  };
+  className?: string;
+}
+
+export const Web = ({ data, className }: WebProps) => {
   const [t] = useTranslation();
 
   return (
     <div className={`web ${className}`}>
       <div className="body">
-        <ImageWithLoader className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline height={50} />} />
+        <ImageWithLoader className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline size={50} />} />
         <div className="description">
           <div className="project">{t('works.developer.title')}</div>
-          <div role="button" tabIndex="0" onKeyPress={() => {}} onClick={() => window.open(data.url)}>
+          <div role="button" tabIndex={0} onKeyPress={() => {}} onClick={() => window.open(data.url)}>
             <div className="infos">
               <div>{t('works.developer.info')}</div>
               <div>{t('works.developer.role')}</div>
@@ -24,11 +30,3 @@ const Web = ({ data, className }) => {
     </div>
   );
 };
-
-Web.propTypes = {
-  data: PropTypes.exact({
-    url: PropTypes.string.isRequired,
-  }),
-  className: PropTypes.string,
-};
-export default Web;

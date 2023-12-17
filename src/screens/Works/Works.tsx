@@ -1,10 +1,9 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { SectionWithSensor } from '../../components';
 import './Works.css';
 
-import Web from './Web';
+import { Web } from './Web';
 import { GraphicWorks } from './Graphic';
 import { Conferences } from './Conferences';
 import {

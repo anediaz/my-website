@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { ImageWithLoader, LoaderInline } from '../../components';
 import ms from './ms.png';

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import * as PropTypes from 'prop-types';
 import { articleData } from '../../service';
 import { Lightbox, ImageWithLoader, LoaderInline } from '../../components';
 import './Article.css';
