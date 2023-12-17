@@ -1,11 +1,6 @@
 import React from 'react';
 import './LanguageSelector.css';
-import { LANGUAGES, LocaleType } from '../../service/constants';
-
-export interface LanguageItem {
-  id: LocaleType;
-  title: string;
-}
+import { LANGUAGES, LocaleType, LanguageItem } from '../../service/constants';
 
 interface LanguageSelectorProps {
   items: LanguageItem[];

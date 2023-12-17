@@ -1,17 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  jsonData,
-} from '../../service';
+import { FooterData } from '../../service/data';
+
 import './Footer.css';
 
 export const Footer = () => {
   const [t] = useTranslation();
-  const { webSiteInfo } = jsonData;
 
   const clickableText = (
-    <a href={webSiteInfo.url} target="_blank" rel="noopener noreferrer" key={2}>
-      {webSiteInfo.author}
+    <a href={FooterData.url} target="_blank" rel="noopener noreferrer" key={2}>
+      {FooterData.author}
     </a>
   );
   const footerText = t('webSiteInfo').split('$author');

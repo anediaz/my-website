@@ -3,11 +3,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SectionWithSensor } from '../../components';
 import { formatContent } from '../../helpers';
-import {
-  jsonData,
-} from '../../service';
 import './Skills.css';
-import { SectionType } from '../../service/constants';
+import { SectionType, SkillsTypes } from '../../service/constants';
 
 interface SkillsProps {
   id: SectionType,
@@ -18,7 +15,7 @@ export const Skills = ({ id, onChangeVisibility = () => {} }: SkillsProps) => {
   const [t] = useTranslation();
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Skills">
-      {jsonData.skills.map((skill, index) => (
+      {SkillsTypes.map((skill, index) => (
         <div className="skill" key={index}>
           {formatContent(t(`skills.content.${skill}`), t(`skills.content.${skill}.highlight`), 'highlight-marker')}
         </div>

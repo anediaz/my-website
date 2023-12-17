@@ -8,7 +8,7 @@ import {
   About, Skills, Works, More, Article, Microsoft, Paquier,
 } from '../index';
 
-import { jsonData as newData } from '../../service/data';
+import { LanguagesData } from '../../service/data';
 
 import {
   LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, menuItems,
@@ -119,7 +119,7 @@ const Main = ({ page, section }: MainProps) => {
           menuItems={page ? [] : menuItems}
           language={language}
           languageClickHandler={languageClickHandler}
-          languageItems={newData.languages}
+          languageItems={LanguagesData}
           selectedItem={page ? '' : visibleSection}
           selectItemHandler={menuItemClickHandler}
           closable={Boolean(page)}

@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-import { LanguageItem, LanguageSelector } from '../LanguageSelector/LanguageSelector';
-import { LocaleType, SectionType } from '../../service/constants';
+import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
+import { LocaleType, SectionType, LanguageItem } from '../../service/constants';
 
 interface MenuProps {
   menuItems: SectionType[];

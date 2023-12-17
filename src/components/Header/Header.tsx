@@ -2,13 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 import profileImage from './profile.jpg';
-import {
-  jsonData,
-} from '../../service';
+import { HeaderData } from '../../service/data';
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
 import { ReactComponent as GiphyLogo } from './giphy.svg';
-import { LocaleType } from '../../service/constants';
+import { LocaleType, SkillsTypes } from '../../service/constants';
 
 interface HeaderProps {
   id: string;
@@ -19,9 +17,8 @@ export const Header = ({
   id, language,
 }: HeaderProps) => {
   const [t] = useTranslation();
-  const { header, skills } = jsonData;
   const getSocial = () => {
-    const socialContent = header.social.map(({
+    const socialContent = HeaderData.social.map(({
       id: socialId, url, className, isSvg,
     }) => (
       <a
@@ -40,13 +37,13 @@ export const Header = ({
       <>
         <div className="social">
           <i className="fa fa-envelope mail">
-            <a href={`mailto:${header.mail}?`} target="_top">
-              {` ${header.mail}`}
+            <a href={`mailto:${HeaderData.mail}?`} target="_top">
+              {` ${HeaderData.mail}`}
             </a>
           </i>
           <div className="social-icons">
             {socialContent}
-            <a href={header.url[language]} aria-label="resume">
+            <a href={HeaderData.url[language]} aria-label="resume">
               <i className="fa fa-file-text-o" title={`${t('header.resumeTitle')}`} />
             </a>
           </div>
@@ -58,9 +55,9 @@ export const Header = ({
   return (
     <div className="Header" id={id}>
       <div className="name">
-        <h2>{header.name}</h2>
+        <h2>{HeaderData.name}</h2>
         <div className="presentation">
-          {skills.map((skill) => (
+          {SkillsTypes.map((skill:string) => (
             <div key={skill}>{t(`header.skill.${skill}`)}</div>
           ))}
         </div>

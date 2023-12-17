@@ -1,9 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SectionWithSensor, ImageSection } from '../../components';
-import {
-  jsonData,
-} from '../../service';
+import { MoreData } from '../../service/data';
 import './More.css';
 import { SectionType } from '../../service/constants';
 
@@ -17,7 +15,7 @@ export const More = ({ id, onChangeVisibility = () => {} }:MoreProps) => {
 
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} className="More" title={t(`${id}.title`)}>
-      {jsonData.more.map(
+      {MoreData.map(
         ({ item, content, contentItems }) => (
           <div className="more" key={item}>
             <div className="more-title">{t(`more.${item}`)}</div>
