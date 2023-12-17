@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import { Gallery, PhotoProps } from 'react-ikusi';
-import { illustrations } from '../../service/data.json';
+import { IllustrationsAlbums } from '../../service/data';
 import { getPhotos } from '../../service/FlickrAPI';
 import { transformToGalleryPhoto } from '../../helpers';
 import { SIZES, illustrationsConfigurations } from '../../service/constants';
@@ -70,7 +70,7 @@ const Illustrations = () => {
         selectedAlbum,
       });
     };
-    loadPhotos(illustrations.albums[0].id);
+    loadPhotos(IllustrationsAlbums[0].id);
   }, []);
 
   const getCurrentPhotos = (photos: LoadedPhotosProps[], albumId: string) => {
@@ -107,7 +107,7 @@ const Illustrations = () => {
     <div className="Illustrations">
       <div className="title" />
       <HamburgerMenu
-        menuItems={illustrations.albums}
+        menuItems={IllustrationsAlbums}
         onSelectItem={onSelectAlbum}
         activeItem={illustrationsState.selectedAlbum}
       />

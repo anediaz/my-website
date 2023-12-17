@@ -168,7 +168,7 @@ export const jsonData:jsonDataProps = {
   },
 };
 
-export const IllustrationsData:Album[] = [
+export const IllustrationsAlbums:Album[] = [
   { name: 'Technical conferences', id: '72157713855312227' },
   { name: 'Visual thinking', id: '72157711643998961' },
   { name: 'Visual communication', id: '72177720301819686' },

@@ -10,7 +10,7 @@ interface ImageComponentProps {
   src: string;
   alt?: string
 }
-const ImageComponent = ({ src, alt = ' ' }: ImageComponentProps) => {
+const ImageComponent = ({ src, alt = '' }: ImageComponentProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = (val:boolean) => setIsOpen(val);
   return (

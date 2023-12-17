@@ -107,16 +107,5 @@
   "webSiteInfo": {
     "author": "Ane Diaz de Tuesta",
     "url": "http://www.anediaz.com"
-  },
-  "illustrations": {
-    "albums": [
-      { "name": "Technical conferences", "id": "72157713855312227" },
-      { "name": "Visual thinking", "id": "72157711643998961" },
-      { "name": "Visual communication", "id": "72177720301819686" },
-      { "name": "Basque", "id": "72177720298004102" },
-      { "name": "Test JS Summit 2021", "id": "72157718113845317" },
-      { "name": "Inktober 2021", "id": "72157716697491682" },
-      { "name": "Microsoft", "id": "72157719163846608" }
-    ]
   }
 }
