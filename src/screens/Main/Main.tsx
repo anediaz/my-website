@@ -11,7 +11,7 @@ import {
 import { LanguagesData } from '../../service/data';
 
 import {
-  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, SECTIONS,
+  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, SECTIONS, PageType,
 } from '../../service/constants';
 import './Main.css';
 
@@ -25,8 +25,6 @@ interface MainProps {
   page?: PageType;
   section: SectionType;
 }
-
-export type PageType = 'article'|'microsoft'|'paquier';
 
 const Main = ({ page, section }: MainProps) => {
   const { i18n } = useTranslation();

@@ -108,8 +108,7 @@ export const SECTIONS = [
   'works',
   'more',
 ] as const;
-// export type SectionType = ValueOf<typeof SECTIONS>;
-export type SectionType = typeof SECTIONS[number];
+export type SectionType = ValueOf<typeof SECTIONS>;
 
 export type LanguageItem = {
   id: LocaleType;
@@ -122,3 +121,10 @@ export const SKILLS = [
   'graphic' as const,
   'speaker' as const,
 ] as const;
+
+export const PAGES = [
+  'article',
+  'microsoft',
+  'paquier',
+] as const;
+export type PageType = ValueOf<typeof PAGES>;
