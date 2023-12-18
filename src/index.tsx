@@ -7,12 +7,12 @@ import './index.css';
 
 const initializeReactGA = () => {
   ReactGA.initialize(googleTrackId);
-  ReactGA.pageview('/', 'myResume-tracker', 'my resume');
+  ReactGA.pageview('/', ['myResume-tracker'], 'my resume');
 };
 
 initializeReactGA();
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render(
   <React.StrictMode>
     <App />
