@@ -11,7 +11,7 @@ import {
 import { LanguagesData } from '../../service/data';
 
 import {
-  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, menuItems,
+  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, SECTIONS,
 } from '../../service/constants';
 import './Main.css';
 
@@ -116,7 +116,6 @@ const Main = ({ page, section }: MainProps) => {
     <div className="Main">
       <>
         <Menu
-          menuItems={page ? [] : menuItems}
           language={language}
           languageClickHandler={languageClickHandler}
           languageItems={LanguagesData}

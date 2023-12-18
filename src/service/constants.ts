@@ -1,3 +1,4 @@
+/** FLICKR */
 export const FLICKR = {
   api_key: '1674efb9c58cad9ba9309a06519c8021',
   user_id: '185143642@N07',
@@ -80,22 +81,44 @@ export const animationsConfigurations = [
   { minWidth: 1025, cols: 6, margin: 8 },
 ];
 
-export const LANGUAGES = {
+/**
+ * returns the union of the types of each value inside
+ * an object type.
+ * Similar to the `keyof` keyword but extracts the values.
+ */
+export type ValueOf<T> = T extends readonly unknown[] ? T[number] : T[keyof T];
+
+export const LOCALES = [
+  'es',
+  'fr',
+  'en',
+  'eu',
+] as const;
+export type LocaleType = ValueOf<typeof LOCALES>;
+export const LANGUAGES:Record<LocaleType, string> = {
   eu: 'basque',
   es: 'spanish',
   en: 'english',
   fr: 'french',
 };
 
-export type LocaleType = 'en'|'fr'|'es'|'eu';
-export const LOCALES = ['en', 'fr', 'es', 'eu'];
+export const SECTIONS = [
+  'about',
+  'skills',
+  'works',
+  'more',
+] as const;
+// export type SectionType = ValueOf<typeof SECTIONS>;
+export type SectionType = typeof SECTIONS[number];
 
 export type LanguageItem = {
   id: LocaleType;
   title: string;
 };
 export const DEFAULT_LOCALE = 'en';
-export type SectionType = 'about' | 'skills' | 'works' | 'more';
-export const menuItems:SectionType[] = ['about', 'skills', 'works', 'more'];
 export const DEFAULT_SECTION = 'about';
-export const SkillsTypes = ['developer', 'graphic', 'speaker'];
+export const SKILLS = [
+  'developer' as const,
+  'graphic' as const,
+  'speaker' as const,
+] as const;

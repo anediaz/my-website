@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
 import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
-import { LocaleType, SectionType, LanguageItem } from '../../service/constants';
+import {
+  LocaleType, SectionType, LanguageItem, SECTIONS,
+} from '../../service/constants';
 
 interface MenuProps {
-  menuItems: SectionType[];
   language: LocaleType;
   languageClickHandler: (l:LocaleType) => void;
   languageItems: LanguageItem[];
@@ -20,14 +21,13 @@ export const Menu = ({
   language,
   languageItems,
   languageClickHandler = () => {},
-  menuItems,
   selectItemHandler,
   closable,
 }: MenuProps) => {
   const [t] = useTranslation();
   const getClass = (id:string) => `item ${selectedItem === id ? 'active' : ''}`;
 
-  const buildMenu = () => menuItems.map((item:SectionType) => (
+  const buildMenu = () => SECTIONS.map((item:SectionType) => (
     <div
       className={getClass(item)}
       onClick={() => selectItemHandler(item)}
@@ -49,7 +49,7 @@ export const Menu = ({
         handleLanguageClick={languageClickHandler}
         items={languageItems}
       />
-      {menuItems && buildMenu()}
+      {buildMenu()}
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')}>
         <span>{t('menu.portfolio')}</span>
         <i className="fa fa-image" />

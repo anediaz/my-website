@@ -6,7 +6,7 @@ import { HeaderData } from '../../service/data';
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
 import { ReactComponent as GiphyLogo } from './giphy.svg';
-import { LocaleType, SkillsTypes } from '../../service/constants';
+import { LocaleType, SKILLS } from '../../service/constants';
 
 interface HeaderProps {
   id: string;
@@ -57,7 +57,7 @@ export const Header = ({
       <div className="name">
         <h2>{HeaderData.name}</h2>
         <div className="presentation">
-          {SkillsTypes.map((skill:string) => (
+          {SKILLS.map((skill:string) => (
             <div key={skill}>{t(`header.skill.${skill}`)}</div>
           ))}
         </div>
