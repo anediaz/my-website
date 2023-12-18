@@ -29,21 +29,6 @@ interface MainProps {
 const Main = ({ page, section }: MainProps) => {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState<LocaleType>('en');
-  const updateLanguage = (l:string) => {
-    switch (l) {
-      case 'fr':
-        setLanguage('fr');
-        break;
-      case 'es':
-        setLanguage('es');
-        break;
-      case 'eu':
-        setLanguage('eu');
-        break;
-      default:
-        setLanguage('en');
-    }
-  };
   const [visibleSection, setVisibleSection] = useState(DEFAULT_SECTION);
   const { locale } = useParams<{locale:LocaleType}>();
   const history = useHistory();
@@ -65,7 +50,7 @@ const Main = ({ page, section }: MainProps) => {
   useEffect(() => {
     i18n.changeLanguage(locale && LOCALES.includes(locale) ? locale : DEFAULT_LOCALE);
     selectSectionHandler(section || DEFAULT_SECTION);
-    updateLanguage(i18n.language);
+    setLanguage(i18n.language as LocaleType);
   }, [locale]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
