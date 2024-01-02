@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+.Main {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  width: 100%;
+  background-color: #fcfcfc;
+}
+
+.Main .Menu {
+  width: 20%;
+}
+.Main .page {
+  z-index: 8;
+  width: 80%;
+  min-height: calc(100vh - 3rem);
+  float: right;
+}
+
+.Main .page .resume {
+  padding-bottom: 7rem;
+}
+
+/* MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .Main .page {
+    width: 85%;
+  }
+  .Main .Menu {
+    width: 15%;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .Main .page {
+    width: 84%;
+  }
+  .Main .page .resume {
+    padding-bottom: 4rem;
+  }
+  .Main .Menu {
+    width: 16%;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .Main .page {
+    width: 79%;
+  }
+  .Main .page .resume {
+    padding-bottom: 2rem;
+  }
+  .Main .Menu {
+    width: 21%;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .Main {
+    height: 100%;
+  }
+  .Main .page {
+    width: 85%;
+  }
+  .Main .page .resume {
+    padding-bottom: 1.5rem;
+  }
+  .Main .Menu {
+    width: 15%;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+}

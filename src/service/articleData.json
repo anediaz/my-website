@@ -1,0 +1,24 @@
+{
+  "eu": [
+    [
+      {"type": "title", "text": "Node.js programazio ingurunearen praktika onen gida euskaraz"},
+      {"type": "paragraph", "text": "Aurtengo martxoaren 21ean, Node.js programazio ingurunearen Praktika Onen Gida argitaratu zen euskaraz, Ane Diaz de Tuesta web programatzaileak eta haren aita Joxe Felix Diaz de Tuesta euskaltzaleak itzulita. Urtebeteko lana izan da Praktika Onen Gida euskaratzea, proiektua 2020ko martxoaren 10ean hasi baitzen, SARS-CoV-2 birusak eragindako pandemiaren lehen konfinamenduarekin batera."},
+      {"type": "paragraph", "text": "Web garatzaile askok estimu handitan dute Node.jsren Praktika Onen Gida, gai horren inguruan gidarik garrantzitsuenetako bat delako. Bertsio originala ingelesez argitaratu zen, baina laster itzuli zen beste bost hizkuntzatara. Seigarren itzulpena, hain zuzen, euskarazko hau izan da, Diaz de Tuesta aita-alabak egindakoa."}
+    ],
+    [
+      {"type": "title", "text": "Hitz batzuk Node.jsren gainean"},
+      {"type": "paragraph", "text": "Node.js programazio ingurune bat da, kode irekikoa, diseinatu zena Interneteko aplikazio eskalagarriak sortzeko, zerbitzariak batez ere. Bertako programak JavaScript-ez idatzita daude."},
+      {"type": "paragraph", "text": "Hona hemen Node.js erabiltzen duten zenbait enpresa ezagun:"},
+      {"type": "image", "src": "", "alt": "Enpresa ezagunen zerrenda"},
+      {"type": "paragraph", "text": "(Linkedin, Netflix, Uber, Trello, PayPal, Nasa, Ebay, Medium, Groupon, Walmart, Mozilla, GoDaddy, Yandex, Citybank, Yahoo)."},
+      {"type": "paragraph", "text": "Webgune ofiziala : https://nodejs.org/", "links": [{"text": "Webgune ofiziala : https://nodejs.org/", "url": "Webgune ofiziala : https://nodejs.org/"}]},
+      {"type": "paragraph", "text": "Github orrialdea: https://github.com/nodejs", "links": [{"text": "https://github.com/nodejs", "link": "https://github.com/nodejs"}]}
+    ],
+    [
+      {"type": "title", "text": "Node.jsren Praktika Onen Gida"},
+      {"type": "paragraph", "text": "Dagoeneko eskuragarri dago [Interneten](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md) “Node.jsren Praktika Onak” izeneko agiria. Eremu horretan dagoen praktika onen bildumarik handiena da, eta handitzen ari da astetik astera. Une honetan 80tik gora praktika, estilo eskuliburu eta arkitektura aholku biltzen ditu. Praktika bakoitza kode adibideek, blogetako aipu hautatuek eta informazio osagarriek osatzen dute.", "links": [{"text": "interneten", "link": "https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md"}]},
+      {"type": "paragraph", "text": "Kolaboratzaile ugariren parte hartzeari esker sortu zen Praktika Onen Gida, batez ere sortzaileei esker: [Yoni Goldberg](https://github.com/goldbergyoni), [Bruno Scheufler](https://github.com/BrunoScheufler), [Kyle Martin](https://github.com/js-kyle) eta [Kevyn Bruyere](https://github.com/kevynb).", "links": [{"text": "Yoni Goldberg", "link": "https://github.com/goldbergyoni"}, {"text": "Bruno Scheufler", "link": "https://github.com/BrunoScheufler"}, {"text": "Kyle Martin", "link": "https://github.com/js-kyle"}, {"text": "Kevyn Bruyere", "link": "https://github.com/kevynb"}]},
+      {"type": "paragraph", "text": "Hasieran ingelesez argitaratu zen, baina gaur egun beste sei hizkuntzatan dago irakurgai: Brasilgo portugesa, txinera, errusiera, poloniera, japoniera eta EUSKARA! Beste hizkuntza batzuetara ere itzultzen hasita daude: frantsesa, hebreera, koreera, gaztelania eta turkiera."}
+    ]
+  ]
+}

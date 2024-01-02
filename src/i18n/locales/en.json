@@ -1,0 +1,88 @@
+{
+    "menu.about": "about",
+    "menu.skills": "skills",
+    "menu.works": "works",
+    "menu.more": "more",
+    "menu.closable": "return",
+    "menu.portfolio": "portfolio",
+    "menu.animations": "animations",
+
+    "menu.title.illustrations": "graphic realizations",
+    "menu.title.animations": "gifs and others",
+
+    "header.resumeTitle": "Download my Resume",
+    "header.skill.developer": "Web Developer",
+    "header.skill.graphic":"Visual Facilitator",
+    "header.skill.speaker":"Speaker",
+    "header.social.linkedin": "Linkedin",
+    "header.social.twitter": "Follow me on Twitter",
+    "header.social.giphy": "My GIPHY",
+    "header.social.github": "My GitHub",
+    "header.social.npm": "My npm",
+    "lastNews.text1": "Realization of Basque translation of",
+    "lastNews.text2": "$toAddLink",
+    "lastNews.last": "Read the post",
+    "lastNews.link": "Node.js Best Practices",
+
+    "about.content": "I am a dynamic, curious and sociable person. I work as a developer since 2012. I am passionated by my work, which makes me happy.",
+
+    "skills.title": "Skills",
+    "skills.content.developer": "With more than 10 years of professional experience in Web Development. My aim is to create qualitative and intuitif applications which respond to users' needs by using the most recent technologies.",
+    "skills.content.developer.highlight": "Web Development",
+
+    "skills.content.graphic": "I'm convinced of Graphic Facilitation's benefits. Since I discovered it some years ago,  I keep learning and improving it. I use it in my personal and professional life each time I have the opportunity to.",
+    "skills.content.graphic.highlight": "Graphic Facilitation",
+
+    "skills.content.speaker": "I'm a conference enthusiast, especially conferences related to computing and development. I find the interactions, the knowledge transmission, the atmosphere... absolutely fabulous. This is why I participate as a Speaker when I have the possibility.",    
+    "skills.content.speaker.highlight": "Speaker",
+
+    "works.title": "Works",
+    "works.developer.title": "Latest web project",
+    "works.developer.info": "A photography website",
+    "works.developer.role": "Role: Web development and design",
+
+    "works.graphic.microsoft.title":  "Microsoft",
+    "works.graphic.microsoft.content": "A Graphic Faciliation work for Microsoft (read the article)",
+    "works.graphic.paquier.title":  "Latest visual work",
+    "works.graphic.paquier.content": "A Graphic work for Paquier & Associés (read the article)",
+    "works.graphic.other": "Other graphic realizations",
+
+    "works.speaker.title": "Conferences",
+    "works.speaker.content": "The conferences where I've participated as Speaker",
+
+    "more.title": "More",
+    "more.languages": "Languages",
+    "more.languages.eu": "Basque",
+    "more.languages.fr": "French",
+    "more.languages.en": "English",
+    "more.languages.es": "Spanish",
+
+    "more.sports": "Sports practice",
+    "more.sports.content": "Mainly running, cycling and hiking",
+
+    "more.draw": "Drawing",
+    "more.draw.content": "Drawing with pencils, pens, oil painting and sketchnoting",
+
+    "webSiteInfo": "Web site developed by $author",
+
+    "microsoft.title": "Graphic work for Microsoft",
+    "microsoft.description": "Realization of 14 sketchnotes of MS Dev RoadShow conferences.",
+    "microsoft.highlightDescription": "14 sketchnotes",
+    "microsoft.description2": "Also the cover illustration of the book, to which these sketchnotes will belong.",
+    "microsoft.highlightDescription2": "cover illustration",
+    "microsoft.whatIs": "What is MS Dev Road Show?",
+    "microsoft.mediaIllustration": "A visual representation of each technical talk",
+    "microsoft.mediaIllustration.smartphone": "My sketchnote",
+    "microsoft.mediaVideo": "Followed by the conference's video",
+    "microsoft.mediaVideo.smartphone": "Conference's video",
+
+    "paquier.title": "Paquier & Associés",
+    "paquier.description": "Realization of 7 illustrations of the 7 company values of Paquier & Associés.",
+    "paquier.highlightDescription": "7 illustrations",
+    "paquier.description2": "A work that required a lot of collaboration and communication with the responsibles of the accounting firm in order to respond the initial need.",
+    "paquier.highlightDescription2": "collaboration and communication",
+    "paquier.whatIs": "Chartered accountant and auditor in Bordeaux, Gironde.",
+    "paquier.mediaIllustration": "The 7 company values of Paquier & Associés"
+
+
+}

@@ -1,0 +1,295 @@
+.Header {
+  color: #2a363b;
+  display: flex;
+  font-size: 3rem;
+  margin: 15rem 9rem 0 9rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Header .name {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Header .name h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.Header .name .presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7em;
+  margin-block-start: 4em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.Header .name .presentation div {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.Header .name .presentation div::first-letter {
+  opacity: 0.6;
+}
+
+.Header .infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header .infos .social {
+  font-family: "Raleway", sans-serif;
+  color: rgb(153, 153, 153);
+  font-size: 1.7rem;
+  margin-top: 0.5rem;
+}
+
+.Header .infos .social .mail {
+  line-height: 3rem;
+}
+
+.Header .infos .social .mail:hover,
+.Header .infos .social .mail:hover a,
+.Header .infos .social .social-icons i:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.Header .infos .social .mail a,
+.Header .infos .social-icons a {
+  text-decoration: none;
+  color: rgb(153, 153, 153);
+  font-family: "Raleway", sans-serif;
+}
+
+.Header .infos .social .social-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header .infos .pic {
+  width: 25rem;
+  height: 25rem;
+}
+
+.Header .infos .pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 12.5rem;
+}
+
+.Header .infos .social .giphyLogo {
+  width: 1.1rem;
+  opacity: .5;
+  display: flex;
+}
+
+.Header .infos .social .giphyLogo:hover {
+  opacity: 1;
+}
+
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .Header {
+    margin: 15rem 7rem 0 7rem;
+    justify-content: space-between;
+  }
+  .Header .name h2 {
+    font-size: 2em;
+  }
+
+  .Header .name .presentation {
+    font-size: 0.6em;
+  }
+
+  .Header .infos .pic {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .Header .infos .social .giphyLogo {
+    width: 1.1rem;
+  }
+
+  .Header .infos .pic img {
+    border-radius: 10rem;
+  }
+
+  .Header .infos .social {
+    font-size: 1.4rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .Header {
+    margin: 7rem 7rem 0 9rem;
+  }
+  .Header .name {
+    width: 50%;
+  }
+
+  .Header .infos .pic {
+    width: 15rem;
+    height: 15rem;
+  }
+  .Header .infos .pic img {
+    border-radius: 7.5rem;
+  }
+
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .Header {
+    margin: 9rem 3rem 1.5rem 3rem;
+    align-items: center;
+    font-size: 3rem;
+  }
+
+  .Header .name h2 {
+    text-align: left;
+  }
+
+  .Header .name .presentation {
+    align-items: flex-start;
+  }
+
+  .Header .infos .social {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Header .infos .pic {
+    width: 15rem;
+    height: 15rem;
+  }
+  .Header .infos .pic img {
+    border-radius: 7.5rem;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .Header {
+    margin: 7rem 2.5rem 1.5rem 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+  .Header .name {
+    width: 100%;
+  }
+
+  .Header .name h2 {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+
+  .Header .name .presentation {
+    align-items: center;
+    font-size: 0.8em;
+  }
+
+  .Header .infos {
+    width: 100%;
+  }
+
+  .Header .infos .pic, .Header .infos .pic img{
+    display: none;
+  }
+
+  .Header .infos .social {
+    margin-top: 6rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Header .infos .social .mail {
+    margin: 2rem 0 1.8rem 0;
+    font-size: 1.2rem;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Header .infos .social .social-icons {
+    width: 41%;
+  }
+
+  .Header .infos .social .mail a {
+    margin-left: 0.1rem;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+  .Header {
+    margin: 7rem 4rem 1.5rem 4rem;
+    font-size: 2rem;
+  }
+
+  .Header .name h2 {
+    font-size: 4.5rem;
+  }
+
+  .Header .infos .social {
+    margin-top: 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .Header .infos .social .mail {
+    margin: 2rem 0 1.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .Header .infos .social .social-icons {
+    width: 43%;
+  }
+
+  .Header .infos .social .mail a {
+    margin-left: 0.1rem;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .Header {
+    font-size: 1.2rem;
+    margin: 5rem 2rem 1.5rem 2rem;
+  }
+
+  .Header .name h2 {
+    font-size: 2.6rem;
+  }
+
+  .Header .infos .social {
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
+  }
+
+  .Header .infos .social .giphyLogo {
+    width: 0.7rem;
+  }
+
+  .Header .infos .social .social-icons {
+    width: 51%;
+  }
+
+  .Header .infos .social .mail {
+     margin: 1.5rem 0 1.2rem 0;
+    font-size: 1rem;
+  }
+}

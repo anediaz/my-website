@@ -1,0 +1,10 @@
+.conferences.work .body .description {
+  width: fit-content;
+}
+.conferences.work .body .description .project {
+  padding-bottom: 1rem;
+}
+
+.conferences.work .body .description .project::after {
+  display: none;
+}

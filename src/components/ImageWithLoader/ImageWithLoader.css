@@ -1,0 +1,13 @@
+.ImageWithLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImageWithLoader img{
+  display: none;
+}
+
+.ImageWithLoader img.loaded {
+  display: flex;
+}

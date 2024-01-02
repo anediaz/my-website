@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { lazy, Suspense } from 'react';
+import {
+  HashRouter, Route, Switch, useLocation,
+} from 'react-router-dom';
+import './i18n/i18n';
+import { LoaderCircle } from './components';
 import './App.css';
 
-function App() {
+const Illustrations = lazy(() => import('./screens/Illustrations/Illustrations'));
+const Animations = lazy(() => import('./screens/Animations/Animations'));
+const Main = lazy(() => import('./screens/Main/Main'));
+
+const useQuery = () => new URLSearchParams(useLocation().search);
+
+const FallBack = () => (
+  <div className="fallback-style">
+    <LoaderCircle />
+  </div>
+);
+
+const QueryScreen = () => {
+  const query = useQuery();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route key="root" path="/" exact render={() => <Main page={query.get('page')} section={query.get('section')} />} />
+      <Route key="illustrations" path="/illustrations" exact render={() => <Illustrations />} />
+      <Route key="animations" path="/animations" exact render={() => <Animations />} />
+      <Route key="root-locale" path="/:locale/" exact render={() => <Main page={query.get('page')} section={query.get('section')} />} />
+    </Switch>
   );
-}
+};
+
+const App = () => (
+  <Suspense fallback={<FallBack />}>
+    <HashRouter>
+      <QueryScreen />
+    </HashRouter>
+  </Suspense>
+);
 
 export default App;

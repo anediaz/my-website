@@ -1,0 +1,84 @@
+{
+    "menu.about": "sobre mí",
+    "menu.skills": "competencias",
+    "menu.works": "trabajos",
+    "menu.more": "más",
+    "menu.closable": "volver",
+    "menu.portfolio": "portfolio",
+    "menu.animations": "animaciones",
+    "menu.title.illustrations": "realizaciones gráficas",
+    "menu.title.animations": "gifs and otros",
+
+    "header.resumeTitle": "Descargar mi currículo",
+    "header.skill.developer": "Desarrolladora Web",
+    "header.skill.graphic":"Facilitadora Gráfica",
+    "header.skill.speaker":"Oradora",
+    "header.social.linkedin": "Linkedin",
+    "header.social.twitter": "Sígueme en Twitter",
+    "header.social.giphy": "Mi GIPHY",
+    "header.social.github": "Mi GitHub",
+    "header.social.npm": "Mi npm",
+    "lastNews.text1": "Realización de la traducción vasca de",
+    "lastNews.text2": "$toAddLink",
+    "lastNews.last": "Leer el artículo",
+    "lastNews.link": "Node.js Best Practices",
+    "about.content": "Soy una persona dinámica, curiosa y sociable. Trabajo como programadora desde 2012. Mi trabajo mi pasiona y me hace feliz.",
+
+    "skills.title": "Competencias",
+    "skills.content.developer": "Con más de 10 años de esperiencia en el Desarrollo Web. Doy importancia a crear aplicaciones cualitativas e intuitivas que respondan a las necesidades de los usuarios, con las tecnologías más recientes",
+    "skills.content.developer.highlight": "Desarrollo Web",
+
+    "skills.content.graphic": "Estoy convencida de los beneficios de la Facilitación Gráfica. Desde que la descubrí hace algunos años, no dejo de aprender y de mejorar. Lo utilizo en mi vida personal y profesional siempre que tengo la oportunidad.",
+    "skills.content.graphic.highlight": "Facilitación Gráfica",
+
+    "skills.content.speaker": "Soy adepta a las conferencias, sobre todo las que tratan sobre informática y el desarrollo. Las interacciones, la transmisión de conocimientos, el ambiente... me parecen fabulosos. Es por todo esto que, cuando tengo la posibilidad, participo como Oradora.",
+    "skills.content.speaker.highlight": "Oradora",
+
+    "works.title": "Trabajos",
+    "works.developer.title": "Último proyecto web",
+    "works.developer.info": "Página web fotográfica",
+    "works.developer.role": "Rol: Desarrollo web y diseño",
+
+    "works.graphic.microsoft.title":  "Microsoft",
+    "works.graphic.microsoft.content": "Trabajo de Facilitadora Gráfica para Microsoft (leer artículo)",
+    "works.graphic.paquier.title":  "Último trabajo visual",
+    "works.graphic.paquier.content": "Trabajo Gráfico para Paquier & Associés (leer artículo)",
+    "works.graphic.other": "Otras realizaciones gráficas",
+
+    "works.speaker.title": "Conferencias",
+    "works.speaker.content": "Conferencias en las que he participado como Oradora",
+
+    "more.title": "Más",
+    "more.languages": "Idiomas",
+    "more.languages.eu": "Vasco",
+    "more.languages.fr": "Francés",
+    "more.languages.en": "Inglés",
+    "more.languages.es": "Español",
+
+    "more.sports": "Deportes",
+    "more.sports.content": "Principalmente correr, ciclismo y senderismo",
+
+    "more.draw": "Dibujar",
+    "more.draw.content": "Dibujos con lápices, rotuladores, pintura al óleo y sketchnoting",
+
+    "webSiteInfo": "Página web desarrollada por $author",
+
+    "microsoft.title": "Trabajo gráfico para Microsoft",
+    "microsoft.description": "Realización de 14 sketchnotes de las diferentes conferencias de MS Dev RoadShow.",
+    "microsoft.highlightDescription": "14 sketchnotes",
+    "microsoft.description2": "Además, la ilustración de la portada del libro que reunirá estos sketchnotes.",
+    "microsoft.highlightDescription2": "ilustración de la portada",
+    "microsoft.whatIs": "¿Qué es MS Dev Road Show?",
+    "microsoft.mediaIllustration": "Representación visual de cada conferencia técnica",
+    "microsoft.mediaIllustration.smartphone": "Mi sketchnote",
+    "microsoft.mediaVideo": "Seguida del vídeo original",
+    "microsoft.mediaVideo.smartphone": "Vídeo de la conferencia",
+
+    "paquier.title": "Trabajo gráfico para  Paquier & Associés",
+    "paquier.description": "Realización de 7 ilustraciones de los 7 valores de empresa de Paquier & Associés.",
+    "paquier.highlightDescription": "7 ilustraciones",
+    "paquier.description2": "Trabajo que ha necesitado mucha colaboración y communicación con los responsables del cabinete para responder lo mejor posible a la demanda inicial.",
+    "paquier.highlightDescription2": "colaboración y communicación",
+    "paquier.whatIs": "Experto contable y auditor en Burdeos, Gironda.",
+    "paquier.mediaIllustration": "Los 7 valores de empresa de Paquier & Associés"
+}

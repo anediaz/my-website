@@ -1,0 +1,117 @@
+.Section {
+  margin-top: 17rem;
+  text-align: left;
+  padding: 0 12rem 0 9rem;
+}
+
+.Section .title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.Section .title h3 {
+  margin: 0;
+}
+
+.Section .title:before,
+.Section .title:after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 7px;
+  background: #2a363b;
+}
+
+.Section .title:before {
+  margin-bottom: 1rem;
+}
+
+.Section .title:after {
+  margin-left: 40px;
+  margin-top: 0.3rem;
+}
+
+.Section .content {
+  padding-top: 3rem;
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  color: rgb(153, 153, 153);
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 300;
+}
+.Section .content .item {
+  margin-bottom: 5rem;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .Section {
+    padding: 0 12rem 0 12rem;
+    margin-top: 10rem;
+  }
+  .Section .title {
+    font-size: 1.8rem;
+  }
+  .Section .content {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .Section {
+    padding: 0 8rem 0 8rem;
+  }
+  .Section .title {
+    font-size: 2.2rem;
+  }
+  .Section .content {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .Section {
+    padding: 0 5rem 0 5rem;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .Section {
+    margin: 0 2.4rem 2rem 2.4rem;
+    padding: 0;
+  }
+
+  .Section .content {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .Section {
+    margin: 0 2rem 1.5rem 2rem;
+    padding: 0;
+  }
+  .Section .content {
+    padding-top: 2rem;
+  }
+
+  .Section .title {
+    font-size: 1.3rem;
+  }
+
+  .Section .item-content.big,
+  .Section .content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}

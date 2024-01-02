@@ -1,0 +1,9 @@
+.media-item {
+  position: relative;
+}
+.media-item img.youtubeLogo {
+  height: 1.7rem;
+  width: 1.7rem;
+  position: absolute;
+  top: 11rem;
+}

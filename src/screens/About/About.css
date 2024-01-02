@@ -1,0 +1,51 @@
+.About .content {
+  font-size: 2.7rem;
+  line-height: 3.7rem;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .About {
+    margin-top: 3rem;
+    padding: 0 12rem 0 12rem;
+  }
+  .About .content {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .About .content {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .About {
+    padding: 0;
+  }
+  
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+  .About .content {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .About .content {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+}

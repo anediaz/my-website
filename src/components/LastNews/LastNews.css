@@ -1,0 +1,117 @@
+.last-news {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin: 4rem 9rem 0 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.last-news .empty {
+  width: 55%;
+}
+
+.last-news .content {
+  width: 20rem;
+  color: rgb(153, 153, 153);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.last-news .content div:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.last-news .content a,
+.last-news .content i {
+  text-decoration: none;
+  color: gray;
+}
+
+.last-news .content i.fa-heart {
+  color: palevioletred;
+}
+.last-news .content a:hover {
+  color: black;
+}
+
+.last-news .content .read-article{
+  white-space: nowrap;
+  position: relative;
+  width: fit-content;
+}
+
+.last-news .content .read-article i {
+  margin-left: .3rem;
+}
+
+.last-news .content .read-article::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: palevioletred;
+  opacity: 0.3;
+}
+
+.last-news .content .read-article:hover {
+  cursor: pointer;
+  color: rgb(104, 103, 103);
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .last-news {
+    font-size: 1rem;
+    margin: 2rem 7rem 0 7rem;
+    justify-content: space-between;
+  }
+}
+
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .last-news {
+    margin: 2rem 5rem 0 5rem;
+  }
+}
+
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .last-news {
+    margin-top: 0;
+  }
+  .last-news .empty {
+    width: 50%;
+  }
+
+  .last-news .content {
+    width: 15rem;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .last-news {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+  }
+
+  .last-news .empty {
+    width: 0;
+  }
+
+  .last-news .content {
+    width: 100%;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .last-news {
+    font-size: 0.8rem;
+    margin: 4rem 2rem 0 2rem;
+  }
+}
