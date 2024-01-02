@@ -5,7 +5,7 @@ interface MediaProps {
   youtubeId?: string;
 }
 
-export const microsoftMedia:MediaProps[] = [
+export const MicrosoftMedia:MediaProps[] = [
   {
     title: 'Inclusive Design is for everyone',
     youtubeId: 'ISjbFDcGqhA',
@@ -92,7 +92,7 @@ export const microsoftMedia:MediaProps[] = [
   },
 ];
 
-export const paquierMedia:MediaProps[] = [
+export const PaquierMedia:MediaProps[] = [
   {
     title: 'Peps',
     alt: 'peps',

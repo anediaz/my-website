@@ -10,7 +10,7 @@ import { getPhotos } from '../../service/FlickrAPI';
 import {
   PAQUIER_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
-import { paquierMedia } from '../../service';
+import { PaquierMedia } from '../../service';
 import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
@@ -50,7 +50,7 @@ export const Paquier = () => {
           <span>{t('paquier.mediaIllustration')}</span>
         </div>
       </div>
-      {paquierMedia.map(({
+      {PaquierMedia.map(({
         title, tag, alt,
       }) => (
         <div className="MediaSectionItem media" key={title}>

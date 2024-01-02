@@ -10,7 +10,7 @@ import { getPhotos } from '../../service/FlickrAPI';
 import {
   MS_PHOTOSET_ID, SIZES_URLS,
 } from '../../service/constants';
-import { microsoftMedia } from '../../service';
+import { MicrosoftMedia } from '../../service';
 import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
 
 const { original: def, large1024: big } = SIZES_URLS;
@@ -55,7 +55,7 @@ export const Microsoft = () => {
           <i className="fa fa-hand-o-down" aria-hidden="true" />
         </div>
       </div>
-      {microsoftMedia.map(({
+      {MicrosoftMedia.map(({
         title, youtubeId, tag, alt,
       }) => (
         <div className="MediaSectionItem media" key={title}>
