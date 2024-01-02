@@ -11,7 +11,7 @@ import {
 import { LanguagesData } from '../../service/data';
 
 import {
-  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, SECTIONS, PageType,
+  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, PageType,
 } from '../../service/constants';
 import './Main.css';
 

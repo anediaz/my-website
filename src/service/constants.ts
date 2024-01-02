@@ -109,6 +109,7 @@ export const SECTIONS = [
   'more',
 ] as const;
 export type SectionType = ValueOf<typeof SECTIONS>;
+export const isSection = (x: any): x is SectionType => SECTIONS.includes(x);
 
 export type LanguageItem = {
   id: LocaleType;
@@ -128,3 +129,4 @@ export const PAGES = [
   'paquier',
 ] as const;
 export type PageType = ValueOf<typeof PAGES>;
+export const isPage = (x: any): x is PageType => PAGES.includes(x);
