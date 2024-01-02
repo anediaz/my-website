@@ -49,7 +49,7 @@ export const HeaderData = {
     eu: 'https://drive.google.com/uc?export=download&id=1XBew-56GZ_SL95MB0TyA-YrCbpI2lkI2',
   },
   social: [
-    { id: 'linkedin', url: 'https://www.linkedin.com/in/ane-diaz-de-tuesta-37785252', className: 'fa-linkedin' },
+    { id: 'linkedin', url: 'https://www.linkedin.com/in/%E2%9C%8F%EF%B8%8F-ane-diaz-de-tuesta-37785252/', className: 'fa-linkedin' },
     { id: 'twitter', url: 'https://twitter.com/ane_naiz', className: 'fa-twitter' },
     {
       id: 'giphy', url: 'https://giphy.com/ane_naiz', className: 'giphyLogo', isSvg: true,
