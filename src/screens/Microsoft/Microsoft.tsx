@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Ligthbox } from 'react-ikusi';
 import './Microsoft.css';
@@ -6,35 +6,22 @@ import msLogo from './logo-ms.png';
 import {
   MediaItem, ImageWithLoader, LoaderInline, ContainerWithCloseKeyInteraction,
 } from '../../components';
-import { getPhotos } from '../../service/FlickrAPI';
 import {
-  MS_PHOTOSET_ID, SIZES_URLS,
+  MS_PHOTOSET_ID,
 } from '../../service/constants';
 import { MicrosoftMedia } from '../../service';
 import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
-
-const { original: def, large1024: big } = SIZES_URLS;
+import { useTaggedPhotos } from '../../hooks/useTaggedPhotos';
 
 export const Microsoft = () => {
   const [t] = useTranslation();
-  const [photos, setPhotos] = useState<ImageProps[]>([]);
   const [lightboxImg, setLightboxImg] = useState<ImageProps|undefined>();
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Create an scoped async function in the hook
-    async function loadPhotos() {
-      const result = await getPhotos(MS_PHOTOSET_ID, [
-        def,
-        big,
-        'tags',
-      ]);
-      setPhotos(transformToPhoto(result, 'original', 'large1024'));
-      setIsLoading(false);
-    }
-    // Execute the created function directly
-    loadPhotos();
-  }, []);
+  const { photos = [], isPhotosFailed } = useTaggedPhotos(MS_PHOTOSET_ID);
+
+  if (isPhotosFailed) {
+    return <div>Failed to load images</div>;
+  }
 
   const onCloseLightbox = () => setLightboxImg(undefined);
 
@@ -75,7 +62,7 @@ export const Microsoft = () => {
   ) : <></>);
 
   return (
-    <ContainerWithCloseKeyInteraction className="Microsoft" onClose={onCloseLightbox} isLoading={isLoading}>
+    <ContainerWithCloseKeyInteraction className="Microsoft" onClose={onCloseLightbox} isLoading={!photos}>
       {lightboxImg && <Ligthbox onClose={onCloseLightbox} img={lightboxImg.bigSrc || lightboxImg.src} id={lightboxImg.id} />}
       <div className="Header">
         <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">

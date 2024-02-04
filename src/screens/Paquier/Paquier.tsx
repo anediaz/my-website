@@ -8,33 +8,23 @@ import {
 } from '../../components';
 import { getPhotos } from '../../service/FlickrAPI';
 import {
-  PAQUIER_PHOTOSET_ID, SIZES_URLS,
+  PAQUIER_PHOTOSET_ID, SIZES,
 } from '../../service/constants';
 import { PaquierMedia } from '../../service';
 import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
+import { useTaggedPhotos } from '../../hooks/useTaggedPhotos';
 
-const { original: def, large1024: big } = SIZES_URLS;
+const { original: def, large1024: big } = SIZES;
 
 export const Paquier = () => {
   const [t] = useTranslation();
-  const [photos, setPhotos] = useState<ImageProps[]>([]);
   const [lightboxImg, setLightboxImg] = useState<ImageProps|undefined>();
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Create an scoped async function in the hook
-    async function loadPhotos() {
-      const result = await getPhotos(PAQUIER_PHOTOSET_ID, [
-        def,
-        big,
-        'tags',
-      ]);
-      setPhotos(transformToPhoto(result, 'original', 'large1024'));
-      setIsLoading(false);
-    }
-    // Execute the created function directly
-    loadPhotos();
-  }, []);
+  const { photos = [], isPhotosFailed } = useTaggedPhotos(PAQUIER_PHOTOSET_ID);
+
+  if (isPhotosFailed) {
+    return <div>Failed to load images</div>;
+  }
 
   const renderImg = (findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
@@ -61,7 +51,7 @@ export const Paquier = () => {
   ) : <></>);
 
   return (
-    <ContainerWithCloseKeyInteraction className="Paquier" onClose={onCloseLightbox} isLoading={isLoading}>
+    <ContainerWithCloseKeyInteraction className="Paquier" onClose={onCloseLightbox} isLoading={!photos}>
       {lightboxImg && <Ligthbox onClose={onCloseLightbox} img={lightboxImg.bigSrc || lightboxImg.src} id={lightboxImg.id} />}
       <div className="Header">
         <a href="https://www.cabinet-paquier.fr/" target="_blank" rel="noreferrer">

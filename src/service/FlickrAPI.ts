@@ -8,7 +8,7 @@ export const getPhotosets = async () => {
   const response = await fetch(getPhotosetsUrl);
   return response && response.ok
     ? (await response.json()).photosets.photoset.map((p:photosetProps) => p.id)
-    : { Error: 'Error while fetching user\'s photosets' };
+    : 'Error while fetching user\'s photosets';
 };
 
 export const getPhotos = async (photoSetId:string, sizes:string[]) => {
@@ -17,5 +17,5 @@ export const getPhotos = async (photoSetId:string, sizes:string[]) => {
   const response = await fetch(getPhotosUrl);
   return response && response.ok
     ? (await response.json()).photoset.photo
-    : { Error: `Error while reading photoset=${photoSetId}` };
+    : `Error while reading photoset=${photoSetId}`;
 };

@@ -1,5 +1,5 @@
 import { PhotoProps } from 'react-ikusi';
-import { FlickrSizeType, SIZES } from '../service/constants';
+import { FlickrSizeProps } from '../service/constants';
 
 interface FlickrResult {
   'url_n': string;
@@ -21,20 +21,35 @@ interface FlickrResult {
   tags?: string;
 }
 
-export const transformToGalleryPhoto = (result: FlickrResult[], def: FlickrSizeType, big:FlickrSizeType):PhotoProps[] => result.map((r) => ({
-  src: r[SIZES[def].url],
-  width: r[SIZES[def].width],
-  height: r[SIZES[def].height],
-  bigSrc: r[SIZES[big].url],
+/**
+ * Transforms Flickr result to Photo to be displayed inside Gallery
+ * @param result FlickrAPI result data
+ * @param def Default picture object
+ * @param big Big picture object
+ * @returns Serialized Photo
+ */
+export const transformToGalleryPhoto = (result: FlickrResult[], def: FlickrSizeProps, big:FlickrSizeProps):PhotoProps[] => result.map((r) => ({
+  src: r[def.url],
+  width: r[def.width],
+  height: r[def.height],
+  bigSrc: r[big.url],
   id: r.id,
 }));
 
+/** Props of a image to be displayed individually (not inside Gallery component) */
 export type ImageProps = Pick<PhotoProps, 'src' | 'bigSrc'|'id'> & {tag?:string};
 
-export const transformToPhoto = (result: FlickrResult[], def: FlickrSizeType, big:FlickrSizeType):ImageProps[] => {
+/**
+ * Transforms Flickr result to Photo to be displayed indivially
+ * @param result FlickrAPI result data
+ * @param def Default picture object
+ * @param big Big picture object
+ * @returns Serialized Photo
+ */
+export const transformToPhoto = (result: FlickrResult[], def: FlickrSizeProps, big:FlickrSizeProps):ImageProps[] => {
   const transformed = result.map((r) => ({
-    src: r[SIZES[def].url],
-    bigSrc: r[SIZES[big].url],
+    src: r[def.url],
+    bigSrc: r[big.url],
     id: r.id,
     tag: r.tags,
   }));

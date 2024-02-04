@@ -6,12 +6,12 @@ export const FLICKR = {
 
 export const googleTrackId = 'UA-56075584-1';
 
-export type FlickrSizeType = 'small320' | 'original' | 'medium500' | 'medium800' | 'large1024';
-export type FlickrSizeUrlType = 'url_n' | 'url_o' | 'url_m' | 'url_c' | 'url_l';
-export type FlickrSizeWidthUrlType = 'width_n' | 'width_o' | 'width_m' | 'width_c' | 'width_l';
-export type FlickrSizeHeightUrlType = 'height_n' | 'height_o' | 'height_m' | 'height_c' | 'height_l';
+type FlickrSizeType = 'small320' | 'original' | 'medium500' | 'medium800' | 'large1024';
+type FlickrSizeUrlType = 'url_n' | 'url_o' | 'url_m' | 'url_c' | 'url_l';
+type FlickrSizeWidthUrlType = 'width_n' | 'width_o' | 'width_m' | 'width_c' | 'width_l';
+type FlickrSizeHeightUrlType = 'height_n' | 'height_o' | 'height_m' | 'height_c' | 'height_l';
 
-interface FlickrSizeProps {
+export interface FlickrSizeProps {
   key: string;
   url: FlickrSizeUrlType;
   width: FlickrSizeWidthUrlType;
@@ -49,19 +49,10 @@ export const SIZES:Record<FlickrSizeType, FlickrSizeProps> = {
     height: 'height_l',
   },
 };
-export const SIZES_URLS:Record<string, FlickrSizeUrlType> = {
-  small320: 'url_n',
-  original: 'url_o',
-  medium500: 'url_m',
-  medium800: 'url_c',
-  large1024: 'url_l',
-};
+
 export const PHOTOSET_ID = '72157713844633802';
 export const MS_PHOTOSET_ID = '72157719163846608';
 export const PAQUIER_PHOTOSET_ID = '72177720302387065';
-export const ERROR_TYPES = {
-  flickrLoading: 'Photo loading from Flickr',
-};
 
 export const imageSectionConfigurations = [
   { maxWidth: 340, cols: 1, margin: 2 },
@@ -89,11 +80,11 @@ export const animationsConfigurations = [
 export type ValueOf<T> = T extends readonly unknown[] ? T[number] : T[keyof T];
 
 export const LOCALES = [
-  'es',
-  'fr',
-  'en',
-  'eu',
-] as const;
+  'es' as const,
+  'fr' as const,
+  'en' as const,
+  'eu' as const,
+];
 export type LocaleType = ValueOf<typeof LOCALES>;
 export const LANGUAGES:Record<LocaleType, string> = {
   eu: 'basque',
@@ -103,11 +94,11 @@ export const LANGUAGES:Record<LocaleType, string> = {
 };
 
 export const SECTIONS = [
-  'about',
-  'skills',
-  'works',
-  'more',
-] as const;
+  'about' as const,
+  'skills' as const,
+  'works' as const,
+  'more' as const,
+];
 export type SectionType = ValueOf<typeof SECTIONS>;
 export const isSection = (x: any): x is SectionType => SECTIONS.includes(x);
 
@@ -118,15 +109,15 @@ export type LanguageItem = {
 export const DEFAULT_LOCALE = 'en';
 export const DEFAULT_SECTION = 'about';
 export const SKILLS = [
-  'developer' as const,
-  'graphic' as const,
-  'speaker' as const,
-] as const;
+  'developer',
+  'graphic',
+  'speaker',
+];
 
 export const PAGES = [
-  'article',
-  'microsoft',
-  'paquier',
-] as const;
+  'article' as const,
+  'microsoft' as const,
+  'paquier' as const,
+];
 export type PageType = ValueOf<typeof PAGES>;
-export const isPage = (x: any): x is PageType => PAGES.includes(x);
+export const isPage = (x: string): x is PageType => !!PAGES.find((page) => page === x);

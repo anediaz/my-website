@@ -66,7 +66,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: 'ADD_NEW_PHOTOS',
-        newPhotos: transformToGalleryPhoto(photos, 'original', 'large1024'),
+        newPhotos: transformToGalleryPhoto(photos, def, big),
         selectedAlbum,
       });
     };
@@ -92,7 +92,7 @@ const Illustrations = () => {
       const photos = await getPhotos(selectedAlbum, sizes);
       dispatch({
         type: 'ADD_NEW_PHOTOS',
-        newPhotos: transformToGalleryPhoto(photos, 'original', 'large1024'),
+        newPhotos: transformToGalleryPhoto(photos, def, big),
         selectedAlbum,
       });
     }

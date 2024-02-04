@@ -35,7 +35,7 @@ const Animations = () => {
                 />
               </div>
             )
-            : <></>}
+            : null}
           {gifs && gifs.length
             ? (
               <div className="gifs">
@@ -49,7 +49,7 @@ const Animations = () => {
                 />
               </div>
             )
-            : <></>}
+            : null}
         </div>
       </div>
     </div>

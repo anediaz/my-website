@@ -23,7 +23,7 @@ const FallBack = () => (
 
 export const getSection = (section: string | null) => (isSection(section) ? section : DEFAULT_SECTION);
 
-export const getPage = (page: string | null) => (isPage(page) ? page : undefined);
+export const getPage = (page: string | null) => (page && isPage(page) ? page : undefined);
 
 const QueryScreen = () => {
   const query = useQuery();

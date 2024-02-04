@@ -1,4 +1,4 @@
-import { GiphyResultProps } from '../service/GIPHYApi';
+import { GiphyResult } from '../service/GIPHYApi';
 
 export interface FormattedGiphyResult {
     src: string;
@@ -8,7 +8,7 @@ export interface FormattedGiphyResult {
     id: string;
 }
 
-export const formatGiphyResult = (result:GiphyResultProps[]):FormattedGiphyResult[] => result.map(({ images, id }) => {
+export const formatGiphyResult = (result:GiphyResult[]):FormattedGiphyResult[] => result.map(({ images, id }) => {
   const { original } = images;
   const serialized = {
     src: original.url,

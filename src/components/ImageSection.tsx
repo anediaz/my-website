@@ -1,34 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Gallery, PhotoProps } from 'react-ikusi';
-import { sufflePhotos, transformToGalleryPhoto } from '../helpers';
-import { getPhotos } from '../service/FlickrAPI';
+import { sufflePhotos } from '../helpers';
 import {
-  SIZES_URLS,
   PHOTOSET_ID,
   imageSectionConfigurations,
 } from '../service/constants';
-
-const { original: def, large1024: big } = SIZES_URLS;
+import { useGallery } from '../hooks/useGallery';
 
 export const ImageSection = () => {
-  const [photos, setPhotos] = useState<PhotoProps[]>([]);
-
-  useEffect(() => {
-    // Create an scoped async function in the hook
-    async function loadPhotos() {
-      const result = await getPhotos(PHOTOSET_ID, [
-        def,
-        big,
-      ]);
-      setPhotos(transformToGalleryPhoto(result, 'original', 'large1024'));
-    }
-    // Execute the created function directly
-    loadPhotos();
-  }, []);
+  const { photos, isPhotosFailed } = useGallery(PHOTOSET_ID);
 
   return (
     <div className="image-section">
-      {photos.length ? (
+      {isPhotosFailed ? <div>Failed to load images</div> : null}
+      {photos && photos.length ? (
         <Gallery
           photos={sufflePhotos(photos)}
           configurations={imageSectionConfigurations}

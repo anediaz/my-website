@@ -14,9 +14,9 @@ module.exports = {
     sourceType: 'module',
   },
   env: {
-      es2021: true,
-      node: true,
-      browser: true,
+    es2021: true,
+    node: true,
+    browser: true,
   },
   plugins: [
     'import',
@@ -38,27 +38,27 @@ module.exports = {
   settings: {
     // React plugin, configured with the right version
     react: {
-        pragma: 'React',
-        version: '17.0.2',
+      pragma: 'React',
+      version: '17.0.2',
     },
     'import/resolver': {
-        node: {},
-        typescript: {
-            alwaysTryTypes: true,
-            project: 'tsconfig.json',
-        },
+      node: {},
+      typescript: {
+        alwaysTryTypes: true,
+        project: 'tsconfig.json',
+      },
     },
     overrides: [
       {
-        files: ["**/*.ts", "**/*.tsx"],
-        plugins: ["@typescript-eslint"],
+        files: ['**/*.ts', '**/*.tsx'],
+        plugins: ['@typescript-eslint'],
         rules: {
           'no-use-before-define': 'off',
           '@typescript-eslint/no-use-before-define': ['error'],
         },
-      }
+      },
     ],
-},
+  },
 
   rules: {
     'import/no-unresolved': 0,
@@ -71,7 +71,7 @@ module.exports = {
       'error',
       { extensions: ['.tsx', '.jsx'] },
     ],
-    "no-use-before-define": "off",
-    'no-unused-vars': "off",
+    'no-use-before-define': 'off',
+    'no-unused-vars': 'off',
   },
 };
