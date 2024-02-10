@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PhotoProps } from 'react-ikusi';
-import { transformToPhoto } from '../helpers';
+import { TransformedPhotoProps, transformToPhoto } from '../helpers';
 import { getPhotos } from '../service/FlickrAPI';
 import { SizeKeys } from '../service/constants';
 
@@ -18,7 +18,7 @@ interface usePhotosProps {
 export const usePhotos = ({
   photosetId, withTags = false, shouldFetch = true, def = defDefault, big = bigDefault,
 }:usePhotosProps) => {
-  const [photosState, setPhotosState] = useState({ isPhotosFailed: false, photos: <PhotoProps[]>[] });
+  const [photosState, setPhotosState] = useState({ isPhotosFailed: false, photos: <TransformedPhotoProps[]>[] });
   useEffect(() => {
     // method that fetches and transforms photos to the right format
     const loadPhotos = async (id: string) => {

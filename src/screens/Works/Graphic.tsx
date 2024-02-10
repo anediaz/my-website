@@ -40,7 +40,6 @@ export const GraphicWorks = ({ className, goToArticle }: GraphicWorksProps) => {
 
   return (
     <div className={`graphic ${className}`}>
-
       <div className="articles">
         {works.map(({ name, image }) => (<Graphic goToArticle={goToArticle} work={name} image={image} translate={t} key={name} />))}
       </div>
