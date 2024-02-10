@@ -60,12 +60,12 @@ export const Menu = ({
         <span>{t('menu.animations')}</span>
         <i className="fa fa fa-file-video-o" />
       </Link>
-      {closable && (
-      <button className="closeButton" type="button" onClick={() => selectItemHandler(undefined)} role="menuitem">
-        <i className="fa fa-hand-o-left" />
-        {t('menu.closable')}
-      </button>
-      )}
+      {closable ? (
+        <button className="closeButton" type="button" onClick={() => selectItemHandler(undefined)} role="menuitem">
+          <i className="fa fa-hand-o-left" />
+          {t('menu.closable')}
+        </button>
+      ) : null}
     </div>
   );
 };

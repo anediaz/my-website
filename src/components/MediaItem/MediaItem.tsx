@@ -24,7 +24,7 @@ export const MediaItem = ({ title, youtubeId, withLogo }:MediaItemProps) => (
     title={title}
   >
     <ImageWithLoader alt={title} src={buildVideoThumbnail(youtubeId)} loader={<LoaderInline size={50} />} />
-    {withLogo && <img className="youtubeLogo" src={youtubeIcon} alt="See on youtube" />}
+    {withLogo ? <img className="youtubeLogo" src={youtubeIcon} alt="See on youtube" /> : null}
     <div className="media-info">
       <div>{title}</div>
     </div>

@@ -15,9 +15,9 @@ export const Footer = () => {
   const footerText = t('webSiteInfo').split('$author');
   return (
     <div className="Footer">
-      {footerText[0] && <div key={1}>{footerText[0]}</div>}
+      <div key={1}>{footerText[0]}</div>
       {clickableText}
-      {footerText[1] && <div key={3}>{footerText[1]}</div>}
+      <div key={3}>{footerText[1]}</div>
     </div>
   );
 };

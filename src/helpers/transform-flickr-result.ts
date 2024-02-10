@@ -27,7 +27,11 @@ type FlickrResult = { [K in typeof urls[number]]: string }
  * @param big Big picture object
  * @returns Serialized Photo
  */
-export const transformToPhoto = (result: FlickrResult[], def: SizeKeys, big: SizeKeys): PhotoProps[] => {
+
+export interface TransformedPhotoProps extends PhotoProps {
+  tag?: string;
+}
+export const transformToPhoto = (result: FlickrResult[], def: SizeKeys, big: SizeKeys): TransformedPhotoProps[] => {
   // calculate attribute names to get information from result
   const urlAttribute = urlKey(def);
   const widthAttribute = widthKey(def);
