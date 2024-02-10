@@ -6,49 +6,13 @@ export const FLICKR = {
 
 export const googleTrackId = 'UA-56075584-1';
 
-type FlickrSizeType = 'small320' | 'original' | 'medium500' | 'medium800' | 'large1024';
-type FlickrSizeUrlType = 'url_n' | 'url_o' | 'url_m' | 'url_c' | 'url_l';
-type FlickrSizeWidthUrlType = 'width_n' | 'width_o' | 'width_m' | 'width_c' | 'width_l';
-type FlickrSizeHeightUrlType = 'height_n' | 'height_o' | 'height_m' | 'height_c' | 'height_l';
-
-export interface FlickrSizeProps {
-  key: string;
-  url: FlickrSizeUrlType;
-  width: FlickrSizeWidthUrlType;
-  height: FlickrSizeHeightUrlType
+export enum SizeKeys {
+  small = '_n',
+  original = '_o',
+  medium500 = '_m',
+  medium800 = '_c',
+  large='_l'
 }
-export const SIZES:Record<FlickrSizeType, FlickrSizeProps> = {
-  small320: {
-    key: '_n',
-    url: 'url_n',
-    width: 'width_n',
-    height: 'height_n',
-  },
-  original: {
-    key: '_o',
-    url: 'url_o',
-    width: 'width_o',
-    height: 'height_o',
-  },
-  medium500: {
-    key: '_m',
-    url: 'url_m',
-    width: 'width_m',
-    height: 'height_m',
-  },
-  medium800: {
-    key: '_c',
-    url: 'url_c',
-    width: 'width_c',
-    height: 'height_c',
-  },
-  large1024: {
-    key: '_l',
-    url: 'url_l',
-    width: 'width_l',
-    height: 'height_l',
-  },
-};
 
 export const PHOTOSET_ID = '72157713844633802';
 export const MS_PHOTOSET_ID = '72157719163846608';

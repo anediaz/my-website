@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Ligthbox } from 'react-ikusi';
+import { Ligthbox, PhotoProps } from 'react-ikusi';
 import './Paquier.css';
 import paquierLogo from './logo-paquier.png';
 import {
   ImageWithLoader, LoaderInline, ContainerWithCloseKeyInteraction,
 } from '../../components';
-import { getPhotos } from '../../service/FlickrAPI';
 import {
-  PAQUIER_PHOTOSET_ID, SIZES,
+  PAQUIER_PHOTOSET_ID,
 } from '../../service/constants';
 import { PaquierMedia } from '../../service';
-import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
-import { useTaggedPhotos } from '../../hooks/useTaggedPhotos';
-
-const { original: def, large1024: big } = SIZES;
+import { formatContent } from '../../helpers';
+import { usePhotos } from '../../hooks/usePhotos';
 
 export const Paquier = () => {
   const [t] = useTranslation();
-  const [lightboxImg, setLightboxImg] = useState<ImageProps|undefined>();
+  const [lightboxImg, setLightboxImg] = useState<PhotoProps|undefined>();
 
-  const { photos = [], isPhotosFailed } = useTaggedPhotos(PAQUIER_PHOTOSET_ID);
+  const { photos = [], isPhotosFailed } = usePhotos({ photosetId: PAQUIER_PHOTOSET_ID, withTags: true });
 
   if (isPhotosFailed) {
     return <div>Failed to load images</div>;

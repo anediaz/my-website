@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Ligthbox } from 'react-ikusi';
+import { Ligthbox, PhotoProps } from 'react-ikusi';
 import './Microsoft.css';
 import msLogo from './logo-ms.png';
 import {
@@ -10,14 +10,14 @@ import {
   MS_PHOTOSET_ID,
 } from '../../service/constants';
 import { MicrosoftMedia } from '../../service';
-import { ImageProps, formatContent, transformToPhoto } from '../../helpers';
-import { useTaggedPhotos } from '../../hooks/useTaggedPhotos';
+import { formatContent } from '../../helpers';
+import { usePhotos } from '../../hooks/usePhotos';
 
 export const Microsoft = () => {
   const [t] = useTranslation();
-  const [lightboxImg, setLightboxImg] = useState<ImageProps|undefined>();
+  const [lightboxImg, setLightboxImg] = useState<PhotoProps|undefined>();
 
-  const { photos = [], isPhotosFailed } = useTaggedPhotos(MS_PHOTOSET_ID);
+  const { photos = [], isPhotosFailed } = usePhotos({ photosetId: MS_PHOTOSET_ID, withTags: true });
 
   if (isPhotosFailed) {
     return <div>Failed to load images</div>;
@@ -35,11 +35,11 @@ export const Microsoft = () => {
       <div className="MediaSectionItem content">
         <div className="text">
           <span>{t('microsoft.mediaIllustration')}</span>
-          <i className="fa fa-hand-o-down" aria-hidden="true" />
+          <i className="fa fa-hand-o-down" />
         </div>
         <div className="text">
           <span>{t('microsoft.mediaVideo')}</span>
-          <i className="fa fa-hand-o-down" aria-hidden="true" />
+          <i className="fa fa-hand-o-down" />
         </div>
       </div>
       {MicrosoftMedia.map(({
@@ -48,12 +48,12 @@ export const Microsoft = () => {
         <div className="MediaSectionItem media" key={title}>
           <div className="text">
             <span>{t('microsoft.mediaIllustration.smartphone')}</span>
-            <i className="fa fa-hand-o-down" aria-hidden="true" />
+            <i className="fa fa-hand-o-down" />
           </div>
           {renderImg(tag, alt)}
           <div className="text">
             <span>{t('microsoft.mediaVideo.smartphone')}</span>
-            <i className="fa fa-hand-o-down" aria-hidden="true" />
+            <i className="fa fa-hand-o-down" />
           </div>
           { youtubeId ? <MediaItem title={title} youtubeId={youtubeId} /> : null }
         </div>

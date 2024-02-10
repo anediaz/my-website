@@ -1,25 +1,24 @@
 import { PhotoProps } from 'react-ikusi';
-import { FlickrSizeProps } from '../service/constants';
+import { SizeKeys } from '../service/constants';
 
-interface FlickrResult {
-  'url_n': string;
-  'url_o': string;
-  'url_m': string;
-  'url_c': string;
-  'url_l': string;
-  'width_n': number;
-  'width_o': number;
-  'width_m': number;
-  'width_c': number;
-  'width_l': number;
-  'height_n': number;
-  'height_o': number;
-  'height_m': number;
-  'height_c': number;
-  'height_l': number;
-  id: string;
-  tags?: string;
-}
+const urlKey = (key:string) => `url${key}`;
+const widthKey = (key:string) => `width${key}`;
+const heightKey = (key:string) => `height${key}`;
+
+const urls: string[] = [];
+const sizes: string[] = [];
+Object.values(SizeKeys).forEach((k: string) => {
+  urls.push(urlKey(k));
+  sizes.push(widthKey(k));
+  sizes.push(heightKey(k));
+});
+
+type FlickrResult = { [K in typeof urls[number]]: string }
+  & { [K in typeof sizes[number]]: number }
+  & {
+    id: string;
+    tags?: string;
+  };
 
 /**
  * Transforms Flickr result to Photo to be displayed inside Gallery
@@ -28,30 +27,19 @@ interface FlickrResult {
  * @param big Big picture object
  * @returns Serialized Photo
  */
-export const transformToGalleryPhoto = (result: FlickrResult[], def: FlickrSizeProps, big:FlickrSizeProps):PhotoProps[] => result.map((r) => ({
-  src: r[def.url],
-  width: r[def.width],
-  height: r[def.height],
-  bigSrc: r[big.url],
-  id: r.id,
-}));
-
-/** Props of a image to be displayed individually (not inside Gallery component) */
-export type ImageProps = Pick<PhotoProps, 'src' | 'bigSrc'|'id'> & {tag?:string};
-
-/**
- * Transforms Flickr result to Photo to be displayed indivially
- * @param result FlickrAPI result data
- * @param def Default picture object
- * @param big Big picture object
- * @returns Serialized Photo
- */
-export const transformToPhoto = (result: FlickrResult[], def: FlickrSizeProps, big:FlickrSizeProps):ImageProps[] => {
-  const transformed = result.map((r) => ({
-    src: r[def.url],
-    bigSrc: r[big.url],
+export const transformToPhoto = (result: FlickrResult[], def: SizeKeys, big: SizeKeys): PhotoProps[] => {
+  // calculate attribute names to get information from result
+  const urlAttribute = urlKey(def);
+  const widthAttribute = widthKey(def);
+  const heightAttribute = heightKey(def);
+  const bigUrlAttribute = urlKey(big);
+  // map result to PhotoProps
+  return result.map((r) => ({
+    src: r[urlAttribute],
+    width: r[widthAttribute],
+    height: r[heightAttribute],
+    bigSrc: r[bigUrlAttribute],
     id: r.id,
     tag: r.tags,
   }));
-  return transformed;
 };

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Gallery, PhotoProps } from 'react-ikusi';
+import { Gallery } from 'react-ikusi';
 import { sufflePhotos } from '../helpers';
 import {
   PHOTOSET_ID,
   imageSectionConfigurations,
 } from '../service/constants';
-import { useGallery } from '../hooks/useGallery';
+import { usePhotos } from '../hooks/usePhotos';
 
 export const ImageSection = () => {
-  const { photos, isPhotosFailed } = useGallery(PHOTOSET_ID);
+  const { photos, isPhotosFailed } = usePhotos({ photosetId: PHOTOSET_ID });
 
   return (
     <div className="image-section">
