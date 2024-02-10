@@ -22,6 +22,7 @@ body {
 .Illustrations .container {
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .Illustrations .container div {
