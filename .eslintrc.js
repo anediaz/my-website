@@ -73,5 +73,8 @@ module.exports = {
     ],
     'no-use-before-define': 'off',
     'no-unused-vars': 'off',
+    'no-console': 'off',
+    'no-debugger': 'off',
+    'no-shadow': 'off',
   },
 };
