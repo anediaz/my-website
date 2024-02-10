@@ -12,7 +12,7 @@ export const LanguageSelector = ({ language, items, handleLanguageClick }: Langu
   const isActive = (lang:LocaleType) => `language ${LANGUAGES[lang]} ${lang === language ? 'active' : ''}`;
 
   return (
-    <div className="LanguageSelector">
+    <div className="LanguageSelector" role="menuitem">
       <ul>
         {items.map(({ id, title }) => (
           <li

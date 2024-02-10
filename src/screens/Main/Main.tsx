@@ -105,6 +105,7 @@ const Main = ({ page, section }: MainProps) => {
           selectedItem={page ? '' : visibleSection}
           selectItemHandler={menuItemClickHandler}
           closable={Boolean(page)}
+          isPageMenu={page !== undefined}
         />
         <div className="page">
           { page ? renderPage(page)

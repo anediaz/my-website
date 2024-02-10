@@ -49,7 +49,7 @@ export const LastNews = ({ goToArticle = () => {} }: LastNewsProps) => {
         {transformItem(t('lastNews.text2'), 'text2')}
         <div className="read-article" onClick={goToArticle} role="presentation">
           {t('lastNews.last')}
-          <i className="fa fa-heart" aria-hidden="true" />
+          <i className="fa fa-heart" />
         </div>
       </div>
     </div>
