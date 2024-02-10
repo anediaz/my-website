@@ -20,7 +20,8 @@ export const LanguageSelector = ({ language, items, handleLanguageClick }: Langu
             title={title}
             onClick={() => handleLanguageClick(id)}
             key={id}
-            role="presentation"
+            role="menuitem"
+            onKeyDown={() => {}}
           >
             {id}
           </li>
