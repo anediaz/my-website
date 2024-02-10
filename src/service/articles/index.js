@@ -1,4 +1,4 @@
-export { default as eu } from './articleEu';
-export { default as es } from './articleEs';
-export { default as en } from './articleEn';
-export { default as fr } from './articleFr';
+export { articleEu as eu } from './articleEu';
+export { articleEs as es } from './articleEs';
+export { articleEn as en } from './articleEn';
+export { articleFr as fr } from './articleFr';

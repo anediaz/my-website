@@ -1,0 +1,21 @@
+[*.css]
+indent_size = 4
+indent_style = space
+[*.js]
+indent_size = 4
+indent_style = space
+[*.jsx]
+indent_size = 4
+indent_style = space
+[*.ts]
+indent_size = 4
+indent_style = space
+[*.tsx]
+indent_size = 4
+indent_style = space
+[*.mdx]
+indent_size = 4
+indent_style = space
+[*.webmanifest]
+indent_size = 4
+indent_style = space
