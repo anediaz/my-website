@@ -20,9 +20,10 @@ export const ImageWithLoader = ({
     setLoading(false);
     onLoad();
   };
-  const img = <img src={src} className={!loading ? 'loaded' : ''} role="presentation" alt={alt} title={alt} onLoad={handleOnLoad} onClick={onClick} />;
+  const img = <img src={src} className={!loading ? 'loaded' : ''} alt={alt} title={alt} onLoad={handleOnLoad} />;
+  const onClickHandler = () => (url ? {} : onClick());
   return (
-    <div className={`ImageWithLoader ${className}`}>
+    <div className={`ImageWithLoader ${className}`} onClick={onClickHandler} role="button" onKeyDown={onClickHandler} tabIndex={0}>
       {loading && loader}
       {url
         ? <a href={url} target="_blank" rel="noopener noreferrer">{img}</a>

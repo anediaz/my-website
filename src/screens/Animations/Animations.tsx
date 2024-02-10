@@ -26,7 +26,7 @@ const Animations = () => {
             ? (
               <div className="stickers">
                 <div className="subtitle">
-                  <i className="fa fa-angle-double-right symbol" aria-hidden="true" />
+                  <i className="fa fa-angle-double-right symbol" />
                   Stickers
                 </div>
                 <Gallery
@@ -40,7 +40,7 @@ const Animations = () => {
             ? (
               <div className="gifs">
                 <div className="subtitle">
-                  <i className="fa fa-angle-double-right symbol" aria-hidden="true" />
+                  <i className="fa fa-angle-double-right symbol" />
                   Gifs
                 </div>
                 <Gallery
