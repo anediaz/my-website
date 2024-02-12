@@ -1,27 +1,26 @@
 import React from 'react';
 import './LanguageSelector.css';
-import { LANGUAGES, LocaleType, LanguageItem } from '../../service/constants';
+import { LANGUAGES, LocaleType } from '../../service/constants';
 
 interface LanguageSelectorProps {
-  items: LanguageItem[];
   language: LocaleType;
   handleLanguageClick: (v:LocaleType) => void;
 }
 
-export const LanguageSelector = ({ language, items, handleLanguageClick }: LanguageSelectorProps) => {
+export const LanguageSelector = ({ language, handleLanguageClick }: LanguageSelectorProps) => {
   const isActive = (lang:LocaleType) => `language ${LANGUAGES[lang]} ${lang === language ? 'active' : ''}`;
 
   return (
     <div className="LanguageSelector" role="menuitem">
       <ul>
-        {items.map(({ id, title }) => (
+        {Object.entries(LANGUAGES).map(([id, title]) => (
           <li
-            className={isActive(id)}
+            className={isActive(id as LocaleType)}
             title={title}
-            onClick={() => handleLanguageClick(id)}
+            onClick={() => handleLanguageClick(id as LocaleType)}
             key={id}
             role="menuitem"
-            onKeyDown={() => {}}
+            onKeyDown={() => { }}
           >
             {id}
           </li>

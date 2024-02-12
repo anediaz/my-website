@@ -8,8 +8,6 @@ import {
   About, Skills, Works, More, Article, Microsoft, Paquier,
 } from '../index';
 
-import { LanguagesData } from '../../service/data';
-
 import {
   LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, PageType,
 } from '../../service/constants';
@@ -101,7 +99,6 @@ const Main = ({ page, section }: MainProps) => {
         <Menu
           language={language}
           languageClickHandler={languageClickHandler}
-          languageItems={LanguagesData}
           selectedItem={page ? '' : visibleSection}
           selectItemHandler={menuItemClickHandler}
           closable={Boolean(page)}

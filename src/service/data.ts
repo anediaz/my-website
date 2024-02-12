@@ -5,26 +5,7 @@ interface Album {
   id: string;
 }
 
-export const LanguagesData:LanguageItem[] = [
-  {
-    id: 'en',
-    title: 'english',
-  },
-  {
-    id: 'fr',
-    title: 'français',
-  },
-  {
-    id: 'es',
-    title: 'español',
-  },
-  {
-    id: 'eu',
-    title: 'euskera',
-  },
-];
-
-export const IllustrationsAlbums:Album[] = [
+export const IllustrationsAlbums: Album[] = [
   { name: 'Technical conferences', id: '72157713855312227' },
   { name: 'Visual thinking', id: '72157711643998961' },
   { name: 'Visual communication', id: '72177720301819686' },

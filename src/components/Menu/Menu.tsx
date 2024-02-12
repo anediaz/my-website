@@ -10,7 +10,6 @@ import {
 interface MenuProps {
   language: LocaleType;
   languageClickHandler: (l:LocaleType) => void;
-  languageItems: LanguageItem[];
   selectedItem: string;
   selectItemHandler: (v:SectionType|undefined) =>void
   closable?: boolean;
@@ -20,7 +19,6 @@ interface MenuProps {
 export const Menu = ({
   selectedItem,
   language,
-  languageItems,
   languageClickHandler = () => {},
   selectItemHandler,
   closable,
@@ -49,7 +47,6 @@ export const Menu = ({
       <LanguageSelector
         language={language}
         handleLanguageClick={languageClickHandler}
-        items={languageItems}
       />
       {isPageMenu ? null : buildMenu()}
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')} role="menuitem">
