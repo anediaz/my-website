@@ -1,0 +1,47 @@
+body {
+  background-color: #09101b;
+}
+
+.Illustrations {
+  height: 100%;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 5rem;
+}
+
+.Illustrations .title {
+  background-image: url("./title-white.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 13rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+
+.Illustrations .container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Illustrations .container div {
+  outline: none;
+}
+
+/* smartphone en portrait */
+@media screen and (max-width: 479px) {
+  .Illustrations .title {
+    height: 3rem;
+    width: 85%;
+  }
+
+}
+
+/* smartphone in landscape, tablet in portrait and small tablet in landscape */
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  .Illustrations .title {
+    height: 4.5rem;
+    width: 90%;
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "menu.about": "niri buruz",
+  "menu.skills": "ezagutzak",
+  "menu.works": "lanak",
+  "menu.more": "gehiago",
+  "menu.closable": "itzuli",
+  "menu.portfolio": "portfolioa",
+  "menu.animations": "animazionak",
+  "menu.title.illustrations": "burutze grafikoak",
+  "menu.title.animations": "gif-ak eta bestelakoak",
+
+  "header.resumeTitle": "Deskargatu nire curriculuma",
+  "header.skill.developer": "Web Garatzailea",
+  "header.skill.graphic":"Erraztaile Grafikoa",
+  "header.skill.speaker":"Hizlaria",
+  "header.social.linkedin": "Linkedin",
+  "header.social.twitter": "Jarrai nazazu Twitter-en",
+  "header.social.giphy": "Nire GIPHY-a",
+  "header.social.github": "Nire GitHub-a",
+  "header.social.npm": "Nire npm",
+  "lastNews.text1": "$toAddLink",
+  "lastNews.text2": "euskarazko itzulpenaren burutzea",
+  "lastNews.last": "Artikulua irakurri",
+  "lastNews.link": "Node.js Best Practices gidaren",
+
+  "about.content": "Pertsona dinamikoa, jakinguratsua eta lagunartekoa naiz. Programatzaile lanbidea daukat 2012tik. Nire lanaren zale naiz eta honek zoriontsu egiten nau.",
+
+  "skills.title": "Ezagutzak",
+  "skills.content.developer": "Web Garapenean 10 urte baino gehiagoko esperientzia dut. Garrantzi handia ematen diot erabiltzaileen beharrei erantzuten dieten aplikazio kualitatibo eta intuitiboak sortzeari, teknologia berrienak erabiliaz.",
+  "skills.content.developer.highlight": "Web Garapen",
+
+  "skills.content.graphic": "Errazte Grafikoak dituen onurez konbentzituta nago. Orain dela urte batzuk teknika hau ezagutu nuenetik, ez diot ikasteari eta hobetzeari uzten. Aukera dudan oro, nire bizitza pertsonalean eta profesionalean erabiltzen dut.",
+  "skills.content.graphic.highlight": "Errazte Grafikoak",
+
+  "skills.content.speaker": "Konferentziak gustuko ditut, batez ere informatika eta garapenari buruzkoak. Interakzioak, ezagutzen zabalpena, giroa... sekulakoak dirudizkit. Guzti honegatik, aukera dudan bakoitzean, konferentzietan Hizlari gisa parte hartzen dut.",
+  "skills.content.speaker.highlight": "Hizlari",
+
+  "works.title": "Lanak",
+  "works.developer.title": "Azken web proiektua",
+  "works.developer.info": "Argazki webgunea",
+  "works.developer.role": "Rola: Web garapena eta diseinua",
+
+  "works.graphic.microsoft.title":  "Microsoft",
+  "works.graphic.microsoft.content": "Erraztaile Grafiko lana Microsoft-entzat (artikulua irakurri)",
+  "works.graphic.paquier.title":  "Azken lan bisuala",
+  "works.graphic.paquier.content": "A bisuala Paquier & Associés-entzat (artikulua irakurri)",
+  "works.graphic.other": "Beste burutze grafikoak",
+
+  "works.speaker.title": "Konferentziak",
+  "works.speaker.content": "Hizlari gisa parte hartutako konferentziak",
+
+  "more.title": "Gehiago",
+  "more.languages": "Hizkuntzak",
+  "more.languages.eu": "Euskara",
+  "more.languages.fr": "Frantsesa",
+  "more.languages.en": "Ingelesa",
+  "more.languages.es": "Gaztelera",
+
+  "more.sports": "Kirolak",
+  "more.sports.content": "Nagusiki korrika egitea, bizikletan ibiltzea eta mendi irteerak egitea",
+
+  "more.draw": "Marraztea",
+  "more.draw.content": "Arkatzez eta errotulatzailez egindako marrazkiak, olio pinturak eta sketchnoting-a",
+
+  "webSiteInfo": "$authork egindako webgunea",
+
+  "microsoft.title": "Microsoft-entzat lan grafikoa",
+  "microsoft.description": "MS Dev RoadShow-ko konferentzia ezberdinen 14 sketchnote-ren burutzea.",
+  "microsoft.highlightDescription": "14 sketchnote",
+  "microsoft.description2": "Gainera, sketchnote hauek bilduko dituen liburuaren azaleko marrazkia.",
+  "microsoft.highlightDescription2": "liburuaren azaleko marrazkia",
+  "microsoft.whatIs": "Zer da MS Dev Road Show?",
+  "microsoft.mediaIllustration": "Aurkezpen tekniko bakoitzaren adierazpen bisuala",
+  "microsoft.mediaIllustration.smartphone": "Nire sketchnote-a",
+  "microsoft.mediaVideo": "Aurkezpenaren bideoaz jarraitua",
+  "microsoft.mediaVideo.smartphone": "Aurkezpenaren bideoa",
+
+  "paquier.title": "Paquier & Associés-entzat lan grafikoa",
+  "paquier.description": "Paquier & Associés-entzat 7 marrazkiren burutzea, beren 7 enpresa balioena.",
+  "paquier.highlightDescription": "7 marrazki",
+  "paquier.description2": "Jatorrizko beharrari modu hoberean erantzuteko kabineteko arduradunekin elkarlan eta komunikazio asko behar izan duen lana.",
+  "paquier.highlightDescription2": "elkarlan eta komunikazio",
+  "paquier.whatIs": "Kontable aditua, kontu-hartzailea Bordelen, Girondan.",
+  "paquier.mediaIllustration": "Paquier & Associés-en 7 balioak"
+
+}

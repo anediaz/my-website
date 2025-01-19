@@ -1,0 +1,172 @@
+.work {
+  margin-bottom: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.work .body {
+  display: flex;
+}
+
+.work .body .clickableImage {
+  width: 50%;
+}
+.work .body .clickableImage a{
+  display: contents;
+}
+
+.work .body .clickableImage img {
+  width: 100%;
+}
+
+.work .body .clickableImage:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.work .body .description {
+  width: calc(50% - 6rem);
+  padding: 1rem 3rem 0 3rem;
+}
+.work .body .description .project {
+  color: #2a363b;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.3rem;
+  line-height: 3.3rem;
+  padding-bottom: 9rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.work .body .description .project::after {
+  content: "";
+  width: 1px;
+  display: block;
+  height: 120px;
+  background-color: #ccc;
+  position: absolute;
+  left: 5px;
+  top: 60px;
+}
+
+.work .body .description .infos div::first-letter {
+  opacity: 0.8;
+  color: palevioletred;
+}
+
+.work .infos:hover{
+  cursor: pointer;
+  color: #2a363b;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .work {
+    margin-bottom: 6rem;
+  }
+
+  .work .body .description .project {
+    padding-bottom: 7rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .work .body .description .project::after {
+    top: 42px;
+    height: 93px;
+  }
+
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .work .body .description {
+    padding: 1rem 0rem 0 3rem;
+  }
+  .work .body .description .project {
+    padding-bottom: 6rem;
+  }
+
+  .work .body .description .project::after {
+    height: 75px;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .work {
+    margin-bottom: 6rem;
+  }
+
+  .work .body {
+    flex-direction: column-reverse;
+  }
+
+  .work .body .description, .work .body .clickableImage {
+    padding: 0;
+    width: 100%;
+  }
+
+  .work .body .description .project {
+    padding-bottom: 1em;
+    font-size: 2.2rem;
+  }
+  .work .body .description .project::after {
+    display: none;
+  }
+
+  .work .body .description .infos {
+    margin-bottom: 2.5rem;
+  }
+
+  .work .body a img {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .work {
+    margin-bottom: 4.5rem;
+  }
+
+  .work .body .description {
+    padding: 1rem 3rem 0 3rem;
+  }
+
+  .work .body .description .project {
+    padding-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .work .body .description .infos {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .work {
+    margin-bottom: 2.5rem;
+  }
+
+  .work .body .description {
+    padding: 0;
+  }
+
+  .work .body .description .project {
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .work .body .description .infos {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+

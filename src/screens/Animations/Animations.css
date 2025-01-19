@@ -1,0 +1,126 @@
+body {
+  background-color: #09101b;
+}
+
+.Animations {
+  height: 100%;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 5rem;
+}
+
+.Animations .title {
+  background-image: url("./title-white.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 13rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.Animations .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Animations .container .media {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.Animations .container div {
+  outline: none;
+}
+
+.Animations .container .description {
+  padding: 12px;
+  margin: 0 0 2rem 0;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  justify-content:flex-end;
+}
+
+.Animations .container .description .onGiphy {
+  position: relative;
+  width: fit-content;
+  z-index: 100;
+  opacity: 1;
+}
+
+.Animations .container .description .onGiphy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 125%;
+  background-color: rgba(128, 128, 128, .3);
+  transform: skew(-20deg) translateX(2%);
+  z-index: -1;
+}
+
+.Animations .container .description a {
+  margin-left: 5px;
+  color: tomato;
+  text-decoration: none;
+}
+
+.Animations .container .subtitle{
+  padding: .8rem;
+  font-size: 2rem;
+}
+
+.Animations .container .symbol {
+  color: tomato;
+  margin-right: 10px;
+}
+
+.Animations .poweredByGiphy img {
+  width: 10rem;
+  height: auto;
+}
+
+.Animations .container .stickers img:not([alt~="lightbox"]){
+  background-color: #323d4c;
+}
+
+/* smartphone en portrait */
+@media screen and (max-width: 479px) {
+  .Animations .title {
+    height: 3rem;
+    width: 85%;
+  }
+  .Animations .container .description {
+    font-size: 1rem;
+    margin: 0 0 .8rem 0;
+  }
+  .Animations .container .subtitle{
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+  .Animations .container .media {
+    gap: 3rem;
+  }
+}
+
+/* smartphone in landscape, tablet in portrait and small tablet in landscape */
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  .Animations .title {
+    height: 4.5rem;
+    width: 90%;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 480px) {
+  .Animations .container .description {
+    gap: 1rem;
+  }
+  .Animations .poweredByGiphy img {
+    width: 7rem;
+  }
+}

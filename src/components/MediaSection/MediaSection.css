@@ -1,0 +1,90 @@
+.MediaSection {
+  padding: 2rem 0 0 0;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+.MediaSection .media-item {
+  flex: 0 1 auto;
+   width: 30%;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  margin: 2% 0;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.MediaSection .media-item img {
+  width: 100%;
+}
+
+.MediaSection .media-item .media-info {
+  color: #555;
+  text-align: center;
+  padding: 0.8rem 0.5rem;
+  margin: 0;
+  font-size: 1.1rem;;
+}
+
+.MediaSection .media-item:hover{
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.MediaSection .media-item:hover .media-info{
+  color: black;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .MediaSection .media-item {
+    width: 45%;
+    font-size: 1.5rem;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .MediaSection {
+    margin-bottom: 2rem;
+  }
+
+  .MediaSection {
+    padding: 0;
+  }
+
+  .MediaSection .media-item {
+    font-size: 0.9rem;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .MediaSection .media-item {
+    width: 45%;
+    font-size: 13px;
+  }
+  .MediaSection .media-item .media-info {
+    font-size: .8rem;;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+
+  .MediaSection .media-item {
+    width: 90%;
+    font-size: 12px;
+    margin: 4% 0;
+  }
+}

@@ -1,0 +1,50 @@
+.Skills .skill {
+  margin-bottom: 4.5rem;
+}
+
+.Skills .skill .highlight-marker {
+  white-space: nowrap;
+  position: relative;
+}
+
+.Skills .skill .highlight-marker::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: rgb(153, 153, 153);
+  opacity: 0.3;
+}
+
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .Skills .skill {
+    margin-bottom: 3rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .skill {
+    margin-bottom: 2rem;
+  }
+}
+

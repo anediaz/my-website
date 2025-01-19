@@ -1,0 +1,196 @@
+.Menu {
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  background-color: #ececeb;
+  position: fixed;
+  height: 100%;
+}
+
+.Menu .item{
+  line-height: 5rem;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 4rem;
+}
+
+.Menu .item .text{
+  text-decoration: none;
+  color: rgb(204, 204, 204);
+}
+
+.Menu.closable .item.illustrations,
+.Menu.closable .item.animations {
+  display: none;
+}
+
+.Menu .item.illustrations, .Menu .item.animations {
+  margin: 2rem auto 0 auto;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: palevioletred;
+  display: block;
+}
+
+.Menu .item.illustrations:hover, .Menu .item.animations:hover{
+  color: #c33564;
+}
+
+.Menu .item.illustrations i, .Menu .item.animations i{
+  display: none;
+}
+
+.Menu .item .text:hover{
+  color: gray;
+  cursor: pointer;
+}
+
+
+.Menu .item.active .text{
+  color: #2a363b;
+}
+.Menu .LanguageSelector {
+  margin-bottom: 10rem;
+  margin-right: 4rem;
+  margin-left: 3rem;
+}
+
+.LanguageSelector ul li:last-child:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 8rem;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  right: 4rem;
+  top: 6rem;
+}
+
+.Menu .closeButton {
+  border: none;
+  outline: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+  opacity: 0.5;
+  overflow-wrap: break-word;
+  margin: 0 auto 10rem auto;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 0;
+}
+
+.Menu .closeButton i {
+  margin-right: 10px;
+}
+
+.Menu .closeButton:hover {
+  cursor: pointer;
+  font-weight: 500;
+  opacity: 1;
+  background-color: inherit;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .Menu .LanguageSelector {
+    margin-right: 3rem;
+    margin-bottom: 7rem;
+  }
+
+  .Menu .item {
+    margin: 0 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+  }
+  .LanguageSelector ul li:last-child:after {
+    right: 3rem;
+    top: 5.5rem;
+    height: 5rem;
+  }
+
+  .Menu .closeButton {
+    font-size: 1rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .LanguageSelector ul li:last-child:after {
+    display: none;
+  }
+
+  .Menu .closeButton {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .Menu .item {
+    display: none;
+  }
+
+  .Menu:not(.closable) .item.illustrations .Menu:not(.closable) .item.animations{
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .Menu .LanguageSelector {
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .Menu .closeButton {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+
+  }
+  .Menu .closeButton i {
+    margin-bottom: 5px;
+  }
+
+  .Menu .item.illustrations, .Menu .item.animations {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  .Menu:not(.closable) .item.illustrations span{
+    display: none;
+  }
+
+  .Menu:not(.closable) .item.animations span {
+    display: none;
+  }
+
+  .Menu .item.illustrations i,
+  .Menu .item.animations i {
+    display: inline;
+  }
+
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .Menu .LanguageSelector {
+    margin: 2rem 0;
+  }
+
+  .Menu .closeButton {
+    font-size: 0.7rem;
+    margin: 2rem auto;
+  }
+}

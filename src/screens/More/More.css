@@ -1,0 +1,151 @@
+.More {
+    margin-top: 0;
+}
+
+.More .more {
+    display: flex;
+    padding: 1.5rem;
+}
+
+.More .more .more-title {
+    font-size: 2.2rem;
+    color: #2a363b;
+    font-weight: 500;
+    width: 25%;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #dadada;
+}
+
+.More .more .more-content-items {
+    display: flex;
+    width: 65%;
+    justify-content: flex-start;
+}
+
+.More .more .more-content{
+    width: 65%;
+}
+
+.More .more .more-content-item {
+    padding-right: 3rem;
+}
+
+.More .more .more-content-item::first-letter {
+    opacity: 0.8;
+    color: palevioletred;
+}
+
+
+.More .image-section {
+    margin-top: 5rem;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+    .More .more {
+        display: flex;
+        padding: 1.2rem;
+    }
+    .More .more .more-title {
+        font-size: 1.5rem;
+    }
+    .More .more .more-content-item {
+        padding-right: 1.7rem;
+    }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+     .More .image-section {
+        margin-top: 2rem;
+    }
+
+    .More .more .more-title {
+        font-size: 1.8rem;
+    }
+
+    .More .more .more-content-item,
+    .More .more .more-content{
+        font-size: 1.6rem;
+    }
+
+    .More .more .more-content,
+    .More .more .more-content-items {
+        margin-left: 1.2rem;
+    }
+  
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+    .More .more {
+        padding: 1.2rem 0;
+    }
+
+    .More .more .more-title {
+        font-size: 1.6rem;
+    }
+
+    .More .more .more-content-item,
+    .More .more .more-content{
+        font-size: 1.4rem;
+    }
+   
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+    .More .more {
+        padding: 1.2rem;
+    }
+    .More .more .more-title {
+        font-size: 1.4rem;
+    }
+    .More .more .more-content-item,
+    .More .more .more-content{
+        font-size: 1.2rem;
+    }
+
+    .More .more .more-content, .More .more .more-content-items {
+        padding-left: 1.5rem;
+    }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+    .More .more {
+        flex-direction: column;
+        padding: 0 0.5rem 2rem 0.5rem;
+    }
+    .More .more .more-title {
+        width: 100%;
+        text-align: left;
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+    .More .more .more-content-items,
+    .More .more .more-content {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .More .more .more-content-items {
+        flex-wrap: wrap;
+    }
+
+    .More .more .more-content-item {
+        padding-right: 0;
+        width: 50%;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: .4rem;
+    }
+
+    .More .image-section {
+        margin-top: 3rem;
+    }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+}
+

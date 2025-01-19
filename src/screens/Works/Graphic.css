@@ -1,0 +1,78 @@
+.graphic .articles {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.graphic .illustrations {
+  display: flex;
+}
+
+.graphic .clickableImage:hover{
+  cursor: pointer;
+}
+
+.graphic .illustrations .empty {
+  width: 50%;
+}
+
+.graphic .illustrations a {
+  text-decoration: none;
+  color: rgb(153, 153, 153);
+  font-family: "Raleway", sans-serif;
+  margin-top: -3rem;
+}
+
+.graphic .illustrations i, .graphic .illustrations a:hover {
+  color: palevioletred;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .graphic .illustrations {
+    margin-top: 4rem;
+  }
+  .graphic .illustrations a {
+    margin-top: -2rem;
+  }
+  .graphic .illustrations .empty {
+    width: 60%;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .graphic .illustrations {
+    margin-top: 4.5rem;
+  }
+  .graphic .illustrations .empty {
+    width: 55%;
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .graphic .illustrations {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .graphic .illustrations a {
+    margin-top: 0;
+  }
+  .graphic .illustrations .empty {
+    display: none;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .graphic .illustrations {
+    margin-top: 1rem;
+  }
+}

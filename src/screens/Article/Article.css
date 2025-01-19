@@ -1,0 +1,107 @@
+.article {
+  font-family: 'Source Serif Pro', serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  padding: 4em 8em;
+  text-align: left;
+  color: #2a363b;
+  font-size: 21px;
+  letter-spacing: -0.003em;;
+  line-height: 32px;
+  overflow-wrap: break-word;
+  text-rendering: optimizelegibility;
+  word-break: break-word;
+}
+
+.article h1 {
+  line-height: 56px;
+  margin-top: 0.6em;
+  font-size: 48px;
+  letter-spacing: -0.011em;
+  margin-bottom: -0.27em;
+  font-family: 'Source Serif Pro', serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+.article h2 {
+  margin-top: 3em;
+  margin-bottom: -0.46em;
+  font-weight: 500;
+}
+
+.article p {
+  margin-bottom: -0.46em;
+  margin-top: 2em;
+}
+
+.article a {
+  text-decoration: underline;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.article img.nodejs{
+  float: left;
+  width: 7em;
+  margin-right: 2em;
+}
+
+.article img[alt=sketchnote] {
+  width: 100%;
+}
+
+.article img[alt=sketchnote]:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .article {
+    padding: 4em 6em;
+  }
+  .article img.nodejs {
+    width: 5.5em;
+  }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .article {
+    padding: 2em 4em;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .article h1 {
+    line-height: 50px;
+    font-size: 40px;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+  .article {
+    padding: 2em 2em;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .article {
+    padding: .8em 2.5em;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .article h1 {
+    line-height: 38px;
+    font-size: 28px;
+  }
+
+  .article h2 {
+    font-size: 24px;
+  }
+
+  .article img.nodejs {
+    width: 3em;
+    margin-right: 1em;
+  }
+}
