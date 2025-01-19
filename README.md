@@ -1,6 +1,10 @@
+# 👋🏻 Welcome to my Web site ☀️
+
 Website : https://anediaz.com
 
 The source code is on this repository: https://github.com/anediaz/my-website
+
+<img width="546" alt="Image" src="https://github.com/user-attachments/assets/57b98303-1ab1-4fc7-a9e6-3572b537ff29" />
 
 # React + TypeScript + Vite
 
