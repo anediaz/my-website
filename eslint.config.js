@@ -24,5 +24,10 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
     },
+    env: { 
+      browser: true, 
+      es2020: true, 
+      "vitest-globals/env": true // <--- add new env
+    },
   },
 )

@@ -39,11 +39,11 @@ export const animationsConfigurations = [
 export type ValueOf<T> = T extends readonly unknown[] ? T[number] : T[keyof T];
 
 export const LOCALES = [
-  'es' as const,
-  'fr' as const,
-  'en' as const,
-  'eu' as const,
-];
+  'es',
+  'fr',
+  'en',
+  'eu',
+] as const;
 export type LocaleType = ValueOf<typeof LOCALES>;
 export const LANGUAGES: Record<LocaleType, string> = {
   eu: 'basque',
@@ -53,11 +53,11 @@ export const LANGUAGES: Record<LocaleType, string> = {
 };
 
 export const SECTIONS = [
-  'about' as const,
-  'skills' as const,
-  'works' as const,
-  'more' as const,
-];
+  'about',
+  'skills',
+  'works',
+  'more',
+] as const;
 export type SectionType = ValueOf<typeof SECTIONS>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isSection = (x: any): x is SectionType => SECTIONS.includes(x);
@@ -75,9 +75,9 @@ export const SKILLS = [
 ];
 
 export const PAGES = [
-  'article' as const,
-  'microsoft' as const,
-  'paquier' as const,
-];
+  'article',
+  'microsoft',
+  'paquier',
+] as const;
 export type PageType = ValueOf<typeof PAGES>;
 export const isPage = (x: string): x is PageType => !!PAGES.find((page) => page === x);
