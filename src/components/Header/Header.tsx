@@ -17,7 +17,7 @@ export const Header = ({
 }: HeaderProps) => {
   const [t] = useTranslation();
   const getSocial = () => {
-    const socialContent = HeaderData.social.map(({
+    const socialContent = HeaderData.social.filter(({id}) => id !== 'twitter').map(({
       id: socialId, url, className, isSvg,
     }) => (
       <a

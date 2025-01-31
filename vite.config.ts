@@ -19,4 +19,7 @@ export default defineConfig({
         // run tests in jsdom environment
         environment: "jsdom",
     },
+    build: {
+        sourcemap: true,
+    },
 })
