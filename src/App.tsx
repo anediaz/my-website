@@ -2,6 +2,8 @@ import { lazy, Suspense, useEffect, useRef } from 'react';
 import {
   HashRouter, Route, Routes, useLocation,
 } from 'react-router-dom';
+import { generateUsername } from "unique-username-generator";
+import { v4 as uuidV4 } from 'uuid';
 import './i18n/i18n';
 import { LoaderCircle } from './components';
 import './App.css';
@@ -43,7 +45,17 @@ const QueryScreen = () => {
     // Update the ref with the current state of the navigation 
     previousPathRef.current = { pathName: location.pathname, page }; 
   }, [location]); 
-  
+
+  // Handle user details in RUM
+  useEffect(() => {
+    if (!window.DD_RUM.getUser().id) {
+      window.DD_RUM.setUser({
+        id: uuidV4(),
+        name: generateUsername("-")
+      });
+    }
+  }, []);
+
   const section = getSection(query.get('section'));
   return (
     <div className="App">
