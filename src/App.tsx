@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import {
   HashRouter, Route, Routes, useLocation,
 } from 'react-router-dom';
@@ -8,6 +8,11 @@ import './App.css';
 import {
   DEFAULT_SECTION, isPage, isSection,
 } from './service/constants';
+import { startNewView } from 'instrument';
+interface previousNavStateProps {
+  pathName: string,
+  page?: string,
+}
 
 const Illustrations = lazy(() => import('./screens/Illustrations/Illustrations'));
 const Animations = lazy(() => import('./screens/Animations/Animations'));
@@ -28,6 +33,17 @@ const QueryScreen = () => {
   const useQuery = () => new URLSearchParams(location.search);
   const query = useQuery();
   const page = getPage(query.get('page'));
+    const previousPathRef = useRef<previousNavStateProps>({ pathName:''}); // we need to remember the previous path and page
+ 
+  useEffect(() => { 
+    // If the previous and the current states are different, we start a new view
+    if (previousPathRef.current.pathName !== location.pathname || previousPathRef.current.page !== page) { 
+      startNewView(location.pathname, page);
+    }
+    // Update the ref with the current state of the navigation 
+    previousPathRef.current = { pathName: location.pathname, page }; 
+  }, [location]); 
+  
   const section = getSection(query.get('section'));
   return (
     <div className="App">

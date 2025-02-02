@@ -1,11 +1,13 @@
 import { match, P } from 'ts-pattern';
 import { LOCALES } from './service/constants';
-import { datadogRum } from "@datadog/browser-rum";
-
 
 const INDEX_PATH = '/';
 const HOME_WITH_LOCALE = LOCALES.map((l) => `/${l}`);
-
+declare global {
+  interface Window {
+    DD_RUM: any;
+  }
+}
 export const getViewName = (pathName: string, page?: "article" | "microsoft" | "paquier" | undefined) => {
   const viewName: string = match({ pathName, page })
     .with({ pathName: INDEX_PATH, page: undefined }, () => "/home-EN") // Home English (default)
@@ -18,6 +20,7 @@ export const getViewName = (pathName: string, page?: "article" | "microsoft" | "
 
 export const startNewView = (pathName: string, page?: "article" | "microsoft" | "paquier" | undefined) => {
   const viewName = getViewName(pathName, page);
-  console.log("start new view => " + viewName)
-  datadogRum.startView(viewName);
+  window.DD_RUM.startView({
+    name: viewName,
+  })
 }
