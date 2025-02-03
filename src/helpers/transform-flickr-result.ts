@@ -1,9 +1,9 @@
 import { PhotoProps } from 'react-ikusi';
 import { SizeKeys } from '../service/constants';
 
-const urlKey = (key:string) => `url${key}`;
-const widthKey = (key:string) => `width${key}`;
-const heightKey = (key:string) => `height${key}`;
+const urlKey = (key: string) => `url${key}`;
+const widthKey = (key: string) => `width${key}`;
+const heightKey = (key: string) => `height${key}`;
 
 const urls: string[] = [];
 const sizes: string[] = [];
@@ -17,6 +17,7 @@ type FlickrResult = { [K in typeof urls[number]]: string }
   & { [K in typeof sizes[number]]: number }
   & {
     id: string;
+    title: string;
     tags?: string;
   };
 
@@ -44,6 +45,7 @@ export const transformToPhoto = (result: FlickrResult[], def: SizeKeys, big: Siz
     height: r[heightAttribute],
     bigSrc: r[bigUrlAttribute],
     id: r.id,
+    title: r.title,
     tag: r.tags,
   }));
 };
