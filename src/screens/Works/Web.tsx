@@ -15,11 +15,11 @@ export const Web = ({ data, className }: WebProps) => {
   return (
     <div className={`web ${className}`}>
       <div className="body">
-        <ImageWithLoader className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline size={50} />} />
+        <ImageWithLoader id="work-last-dev-project" className="clickableImage" alt={t('works.developer.title')} url={data.url} src={image} loader={<LoaderInline size={50} />} />
         <div className="description">
-          <div className="project">{t('works.developer.title')}</div>
-          <div role="button" tabIndex={0} onKeyPress={() => {}} onClick={() => window.open(data.url)} aria-label="Latest web project: Araotzeko familiak">
-            <div className="infos">
+          <div className="project" aria-label="work-last-dev-project">{t('works.developer.title')}</div>
+          <div role="button" tabIndex={0} onKeyPress={() => {}} onClick={() => window.open(data.url)}>
+            <div className="infos" aria-label='work-last-dev-project'>
               <div>{t('works.developer.info')}</div>
               <div>{t('works.developer.role')}</div>
             </div>

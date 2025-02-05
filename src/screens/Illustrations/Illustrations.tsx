@@ -24,7 +24,7 @@ const Illustrations = () => {
   }, [illustrationsState, photos, photosetId, previousPhotos]);
   return (
     <div className="Illustrations">
-      <div className="title" />
+      <div className="title"/>
       <HamburgerMenu
         menuItems={IllustrationsAlbums}
         onSelectItem={(album:string) => setPhotosetId(album)}

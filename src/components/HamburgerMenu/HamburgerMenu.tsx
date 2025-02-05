@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState,useMemo } from 'react';
 import './HamburgerMenu.css';
 
 interface MenuItemsProps {
   id: string,
-  name: string
+  name: string,
+  ariaLabel: string,
 }
 
 interface HamburgerMenuProps {
@@ -15,7 +16,10 @@ interface HamburgerMenuProps {
 export const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }: HamburgerMenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const getClassName = (id:string) => `menuItem ${id === activeItem ? 'active' : ''}`;
-  const findActive = ():MenuItemsProps|undefined => menuItems.find(({ id }) => id === activeItem);
+  const active = useMemo(() => {
+    const found = menuItems.find(({ id }) => id === activeItem);
+    return found;
+  },[menuItems, activeItem]);
   const handleSelectItem = (id:string) => {
     onSelectItem(id);
     setMenuOpen(!menuOpen);
@@ -29,14 +33,15 @@ export const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }
         <span />
         <span />
         <ul id="menu">
-          {menuItems.map(({ id, name }) => (
+          {menuItems.map(({ id, name, ariaLabel }) => (
             <div
               key={id}
               className={getClassName(id)}
               onClick={() => handleSelectItem(id)}
               role="menuitem"
               tabIndex={0}
-              onKeyDown={() => {}}
+              onKeyDown={() => { }}
+              aria-label={`hamburger-menu-item-${ariaLabel}`}
             >
               <li>
                 {name}
@@ -45,7 +50,7 @@ export const HamburgerMenu = ({ menuItems, activeItem, onSelectItem = () => {} }
           ))}
         </ul>
       </div>
-      <div className="activeText">{findActive()?.name}</div>
+      <div className="activeText" aria-label={`hamburger-menu-current-${active?.ariaLabel}`}>{active?.name}</div>
     </nav>
   );
 };

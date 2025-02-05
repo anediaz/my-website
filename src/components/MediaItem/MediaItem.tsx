@@ -8,6 +8,7 @@ const buildVideoUrl = (youtubeId:string, seconds?:number) => `https://www.youtub
 const buildVideoThumbnail = (youtubeId:string) => `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
 
 interface MediaItemProps {
+  id: string;
   title: string;
   youtubeId: string;
   withLogo?: boolean;
@@ -15,7 +16,7 @@ interface MediaItemProps {
 }
 
 export const MediaItem = ({
-  title, youtubeId, withLogo, seconds,
+  id, title, youtubeId, withLogo, seconds,
 }:MediaItemProps) => (
   <a
     className="media-item"
@@ -23,9 +24,9 @@ export const MediaItem = ({
     href={buildVideoUrl(youtubeId, seconds)}
     target="_blank"
     rel="noopener noreferrer"
-    title={title}
+    id={id}
   >
-    <ImageWithLoader alt={title} src={buildVideoThumbnail(youtubeId)} loader={<LoaderInline size={50} />} />
+    <ImageWithLoader id="" alt={title} src={buildVideoThumbnail(youtubeId)} loader={<LoaderInline size={50} />} />
     {withLogo ? <img className="youtubeLogo" src={youtubeIcon} alt="See on youtube" /> : null}
     <div className="media-info">
       <div>{title}</div>

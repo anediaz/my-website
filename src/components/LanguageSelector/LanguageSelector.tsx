@@ -20,6 +20,7 @@ export const LanguageSelector = ({ language, handleLanguageClick }: LanguageSele
             key={id}
             role="menuitem"
             onKeyDown={() => { }}
+            aria-label={`language-item-${title}`}
           >
             {id}
           </li>

@@ -14,7 +14,7 @@ export const About = ({ id, onChangeVisibility }: AboutProps) => {
 
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} className="About">
-      <div className="item">
+      <div className="item" aria-label="website-title">
         <p>{t('about.content')}</p>
       </div>
     </SectionWithSensor>

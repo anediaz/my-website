@@ -29,7 +29,7 @@ const ImageComponent = ({ src, alt = '' }: ImageComponentProps) => {
       {isOpen && <Ligthbox onClose={onClose} img={src} id="article-image" />}
       {
       isNodejs(alt) ? <img alt={alt} src={src} className="nodejs" />
-        : <ImageWithLoader alt={alt} src={src} onClick={() => setIsOpen(true)} loader={<LoaderInline size={50} />} />
+        : <ImageWithLoader id="media-adventure" alt={alt} src={src} onClick={() => setIsOpen(true)} loader={<LoaderInline size={50} />} />
     }
     </div>
   );

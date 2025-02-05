@@ -80,6 +80,7 @@
   font-size: 1.5rem;
   text-align: right;
   padding: 0;
+  text-transform: lowercase;
 }
 
 .Menu .closeButton i {

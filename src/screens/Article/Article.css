@@ -44,11 +44,11 @@
   margin-right: 2em;
 }
 
-.article img[alt=sketchnote] {
+.article img[alt=nodejs-post-sketchnote] {
   width: 100%;
 }
 
-.article img[alt=sketchnote]:hover {
+.article img[alt=nodejs-post-sketchnote]:hover {
   cursor: pointer;
   opacity: .7;
 }

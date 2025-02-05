@@ -11,7 +11,7 @@ Node.js is an open-source, cross-platform, back-end Javascript runtime environme
 Nowadays, many of the most popular companies use it: Linkedin, Netflix, Uber, Trello, PayPal, Nasa, Ebay, Medium, Groupon, Walmart, Mozilla, GoDaddy, Yandex, Citybank and Yahoo.
 
 
-![nodejs](/assets/nodejs.svg) Official web site: [https://nodejs.org/](https://nodejs.org/)
+![nodejs-post-logo](/assets/nodejs.svg) Official web site: [https://nodejs.org/](https://nodejs.org/)
 
 GitHub page: [https://github.com/nodejs](https://github.com/nodejs)
 
@@ -35,7 +35,7 @@ At first, I thought the translation would be easy: it’s been 10 years that I w
 
 I thought about giving up. Fortunately, thanks to someone even more stubborn than me, I refer to my father, I changed my mind. He encouraged me to continue with it, and we have both worked on the translation for many months. We form a perfect team: combining his ability of writing in Basque and my developer knowledge, we have made it. After a year and several re-readings, corrections, doubts… we are proud of this publication. And happy to know that from now on, any Basque-speaker developer has the possibility of using such a high-level guide, in Basque!
 
-![sketchnote](/assets/adventure.jpeg)
+![nodejs-post-sketchnote](/assets/adventure.jpeg)
 
 The aim of this guide is to spread and share knowledge. We aspire to do the same with culture, spread and share it.
 

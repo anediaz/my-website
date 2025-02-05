@@ -33,7 +33,8 @@ export const Menu = ({
       key={item}
       role="menuitem"
       tabIndex={0}
-      onKeyDown={() => {}}
+      onKeyDown={() => { }}
+      aria-label={`menu-item-${item}`}
     >
       <div className="text">
         {t(`menu.${item}`)}
@@ -48,19 +49,19 @@ export const Menu = ({
         handleLanguageClick={languageClickHandler}
       />
       {isPageMenu ? null : buildMenu()}
-      <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')} role="menuitem">
+      <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')} role="menuitem" aria-label='menu-item-portfolio'>
         <span>{t('menu.portfolio')}</span>
         <i className="fa fa-image" />
       </Link>
-      <Link to="/animations" target="_blank" className="item animations" title={t('menu.title.animations')} role="menuitem">
+      <Link to="/animations" target="_blank" className="item animations" title={t('menu.title.animations')} role="menuitem" aria-label='menu-item-animations'>
         <span>{t('menu.animations')}</span>
         <i className="fa fa fa-file-video-o" />
       </Link>
       {closable ? (
-        <button className="closeButton" type="button" onClick={() => selectItemHandler(undefined)} role="menuitem">
+        <div aria-label="menu-item-back" className="closeButton" onClick={() => selectItemHandler(undefined)} role="menuitem">
           <i className="fa fa-hand-o-left" />
           {t('menu.closable')}
-        </button>
+        </div>
       ) : null}
     </div>
   );

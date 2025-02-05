@@ -3,6 +3,7 @@ import { MediaItem } from '../MediaItem/MediaItem';
 
 export interface MediaProps {
   title: string;
+  id: string;
   youtubeId: string;
   seconds?: number;
 }
@@ -13,8 +14,8 @@ interface MediaSectionProps {
 
 export const MediaSection = ({ media }:MediaSectionProps) => (
   <div className="MediaSection">
-    {media.map(({ title, youtubeId, seconds }) => (
-      <MediaItem key={title} title={title} youtubeId={youtubeId} seconds={seconds} withLogo />
+    {media.map(({ id, title, youtubeId, seconds }) => (
+      <MediaItem id={id} key={title} title={title} youtubeId={youtubeId} seconds={seconds} withLogo />
     ))}
   </div>
 );

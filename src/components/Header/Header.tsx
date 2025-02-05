@@ -27,8 +27,9 @@ export const Header = ({
         key={`${t(`header.social.${socialId}`)}`}
         title={`${t(`header.social.${socialId}`)}`}
         className={isSvg ? className : undefined}
+        aria-label={`header-social-${socialId}`}
       >
-        {isSvg ? <GiphyLogo /> : <i className={`fa ${className}`} />}
+        {isSvg ? <GiphyLogo/> : <i className={`fa ${className}`}/>}
       </a>
     ));
 
@@ -36,14 +37,14 @@ export const Header = ({
       <>
         <div className="social">
           <i className="fa fa-envelope mail">
-            <a href={`mailto:${HeaderData.mail}?`} target="_top">
+            <a href={`mailto:${HeaderData.mail}?`} aria-label="header-social-mail" target="_top">
               {` ${HeaderData.mail}`}
             </a>
           </i>
           <div className="social-icons">
             {socialContent}
-            <a href={HeaderData.url[language]} aria-label="resume">
-              <i className="fa fa-file-text-o" title={`${t('header.resumeTitle')}`} />
+            <a href={HeaderData.url[language]}>
+              <i className="fa fa-file-text-o" aria-label="header-social-resume" title={`${t('header.resumeTitle')}`} />
             </a>
           </div>
         </div>
@@ -54,15 +55,15 @@ export const Header = ({
   return (
     <div className="Header" id={id}>
       <div className="name">
-        <h2>{HeaderData.name}</h2>
-        <div className="presentation">
+        <h2 aria-label="website-title">{HeaderData.name}</h2>
+        <div className="presentation" aria-label="website-subtitle">
           {SKILLS.map((skill:string) => (
             <div key={skill}>{t(`header.skill.${skill}`)}</div>
           ))}
         </div>
       </div>
       <div className="infos">
-        <ImageWithLoader className="pic" src={profileImage} alt="profile" loader={<LoaderInline size={50} />} />
+        <ImageWithLoader id="profile-image" className="pic" src={profileImage} aria-label="header-profile-pic" alt="profile" loader={<LoaderInline size={50} />} />
         {getSocial()}
       </div>
     </div>

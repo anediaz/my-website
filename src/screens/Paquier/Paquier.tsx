@@ -23,9 +23,9 @@ export const Paquier = () => {
     return <div>Failed to load images</div>;
   }
 
-  const renderImg = (findingTag:string, alt:string, cls?:string) => {
+  const renderImg = (id:string, findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
-    return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject)} loader={<LoaderInline />} /> : null;
+    return imgObject ? <ImageWithLoader id={id} src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject)} loader={<LoaderInline />} /> : null;
   };
 
   const onCloseLightbox = () => setLightboxImg(undefined);
@@ -38,10 +38,10 @@ export const Paquier = () => {
         </div>
       </div>
       {PaquierMedia.map(({
-        title, tag, alt,
+        id, title, tag, alt,
       }) => (
         <div className="MediaSectionItem media" key={title}>
-          {renderImg(tag, alt)}
+          {renderImg(id, tag, alt)}
         </div>
       ))}
     </div>

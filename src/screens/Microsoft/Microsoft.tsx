@@ -25,9 +25,9 @@ export const Microsoft = () => {
 
   const onCloseLightbox = () => setLightboxImg(undefined);
 
-  const renderImg = (findingTag:string, alt:string, cls?:string) => {
+  const renderImg = (id:string, findingTag:string, alt:string, cls?:string) => {
     const imgObject = photos.find(({ tag }) => tag === findingTag);
-    return imgObject ? <ImageWithLoader src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject)} loader={<LoaderInline />} /> : null;
+    return imgObject ? <ImageWithLoader id={id} src={imgObject.src} alt={alt} className={cls} onClick={() => setLightboxImg(imgObject)} loader={<LoaderInline />} /> : null;
   };
 
   const renderMediaSection = () => (photos.length ? (
@@ -43,19 +43,19 @@ export const Microsoft = () => {
         </div>
       </div>
       {MicrosoftMedia.map(({
-        title, youtubeId, tag, alt,
+        title, youtubeId, tag, alt, id,
       }) => (
         <div className="MediaSectionItem media" key={title}>
           <div className="text">
             <span>{t('microsoft.mediaIllustration.smartphone')}</span>
             <i className="fa fa-hand-o-down" />
           </div>
-          {renderImg(tag, alt)}
+          {renderImg(id, tag, alt)}
           <div className="text">
             <span>{t('microsoft.mediaVideo.smartphone')}</span>
             <i className="fa fa-hand-o-down" />
           </div>
-          { youtubeId ? <MediaItem title={title} youtubeId={youtubeId} /> : null }
+          { youtubeId ? <MediaItem id={id} title={title} youtubeId={youtubeId} /> : null }
         </div>
       ))}
     </div>

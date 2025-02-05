@@ -17,7 +17,7 @@ const Graphic = ({
   goToArticle, work, translate, image,
 }: GraphicProps) => (
   <div className="body">
-    <ImageWithLoader className="clickableImage" src={image} alt={translate(`works.graphic.${work}.title`)} loader={<LoaderInline size={50} />} onClick={() => goToArticle(work)} />
+    <ImageWithLoader id={`work-${work}`} className="clickableImage" src={image} alt={translate(`works.graphic.${work}.title`)} loader={<LoaderInline size={50} />} onClick={() => goToArticle(work)} />
     <div className="description">
       <div className="project">{translate(`works.graphic.${work}.title`)}</div>
       <div className="infos">
@@ -42,7 +42,7 @@ export const GraphicWorks = ({ className, goToArticle }: GraphicWorksProps) => {
       <div className="articles">
         {works.map(({ name, image }) => (<Graphic goToArticle={goToArticle} work={name} image={image} translate={t} key={name} />))}
       </div>
-      <div className="illustrations">
+      <div className="illustrations" aria-label='work-other-graphic'>
         <Link to="/illustrations" target="_blank">
           <i className="fa fa-eye">&nbsp;</i>
           {t('works.graphic.other')}

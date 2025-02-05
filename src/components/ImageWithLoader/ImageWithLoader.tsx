@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ImageWithLoader.css';
 
 interface ImageWithLoaderProps {
+  id: string;
   src: string;
   alt: string;
   className?:string;
@@ -12,7 +13,7 @@ interface ImageWithLoaderProps {
 }
 
 export const ImageWithLoader = ({
-  className, src, alt, loader, url, onClick = () => {}, onLoad = () => {},
+  id, className, src, alt, loader, url, onClick = () => {}, onLoad = () => {},
 }:ImageWithLoaderProps) => {
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +21,7 @@ export const ImageWithLoader = ({
     setLoading(false);
     onLoad();
   };
-  const img = <img src={src} className={!loading ? 'loaded' : ''} alt={alt} title={alt} onLoad={handleOnLoad} />;
+  const img = <img src={src} className={!loading ? 'loaded' : ''} aria-label={id} alt={alt} title={alt} onLoad={handleOnLoad} />;
   const onClickHandler = () => (url ? {} : onClick());
   return (
     <div className={`ImageWithLoader ${className}`} onClick={onClickHandler} role="button" onKeyDown={onClickHandler} tabIndex={0}>
