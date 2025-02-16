@@ -1,7 +1,7 @@
 {
   "name": "my-website",
   "private": true,
-  "version": "2.3.0",
+  "version": "2.4.0",
   "type": "module",
   "author": "Ane Diaz de Tuesta",
   "license": "MIT",
