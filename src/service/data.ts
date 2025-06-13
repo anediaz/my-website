@@ -51,6 +51,12 @@ export const WorksData = {
 
 export const TalksData = [
   {
+    title: 'Devoxx France 2025',
+    youtubeId: 'W7Cl2XzraHc',
+    date: '2025/04/16',
+    id: 'talk-devoxxFR-2025'
+  },
+  {
     title: 'DevFest Nantes 2024',
     youtubeId: '5tWDfGgevKg',
     date: '2024/10/17',
