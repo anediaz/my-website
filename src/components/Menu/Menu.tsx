@@ -49,6 +49,7 @@ export const Menu = ({
         handleLanguageClick={languageClickHandler}
       />
       {isPageMenu ? null : buildMenu()}
+      <div className="external-sections">
       <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')} role="menuitem" aria-label='menu-item-portfolio'>
         <span>{t('menu.portfolio')}</span>
         <i className="fa fa-image" />
@@ -57,6 +58,7 @@ export const Menu = ({
         <span>{t('menu.animations')}</span>
         <i className="fa fa fa-file-video-o" />
       </Link>
+      </div>
       {closable ? (
         <div aria-label="menu-item-back" className="closeButton" onClick={() => selectItemHandler(undefined)} role="menuitem">
           <i className="fa fa-hand-o-left" />

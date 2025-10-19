@@ -26,8 +26,11 @@
   display: none;
 }
 
+.Menu .external-sections {
+  margin-top: 2rem;
+}
+
 .Menu .item.illustrations, .Menu .item.animations {
-  margin: 2rem auto 0 auto;
   font-size: 1.3rem;
   text-decoration: none;
   color: palevioletred;
