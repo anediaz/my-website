@@ -54,6 +54,7 @@ const QueryScreen = () => {
         <Route key="root" path="/" element={<Main page={page} section={section} />} />
         <Route key="root-locale" path="/:locale" element={<Main page={page} section={section} />} />
         <Route key="illustrations" path="/illustrations" element={<Illustrations />} />
+        <Route key="illustrations-category" path="/illustrations/:category" element={<Illustrations />} />
         <Route key="animations" path="/animations" element={<Animations />} />
       </Routes>
     </div>
