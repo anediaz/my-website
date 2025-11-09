@@ -7,6 +7,10 @@ const CURRENT_USER_STORAGE_KEY = 'currentUser';
 
 
 export const useCurrentUser = () => {
+    if (!window.DD_RUM) {
+        return;
+    }
+
     const rumUser = window.DD_RUM.getUser();
     const [localStorageUser, setLocalStorageUser] = useLocalStorage(CURRENT_USER_STORAGE_KEY, null);
 
