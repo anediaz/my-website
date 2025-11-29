@@ -51,6 +51,12 @@ export const WorksData = {
 
 export const TalksData = [
   {
+    title: 'BDX/IO 2025',
+    youtubeId: 'NW6hLxXf_lM',
+    date: '2025/11/07',
+    id: 'talk-bdxio-2025'
+  },
+  {
     title: 'Devoxx France 2025',
     youtubeId: 'W7Cl2XzraHc',
     date: '2025/04/16',
