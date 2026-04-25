@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Ligthbox, PhotoProps } from 'react-ikusi';
 import './Paquier.css';
@@ -12,12 +12,22 @@ import {
 import { PaquierMedia } from '../../service';
 import { formatContent } from '../../helpers';
 import { usePhotos } from '../../hooks/usePhotos';
+import { useAutoOperation } from '@monitoring-lib/rum/feature-operation/use-auto-operation';
 
 export const Paquier = () => {
   const [t] = useTranslation();
   const [lightboxImg, setLightboxImg] = useState<PhotoProps|undefined>();
 
   const { photos = [], isPhotosFailed } = usePhotos({ photosetId: PAQUIER_PHOTOSET_ID, withTags: true });
+  const { onSucceedOperation, onFailOperation } = useAutoOperation({ operationName: 'paquier.load_photos' });
+
+  useEffect(() => {
+    if (isPhotosFailed) {
+      onFailOperation('error');
+    } else if (photos.length > 0) {
+      onSucceedOperation();
+    }
+  }, [photos.length, isPhotosFailed, onSucceedOperation, onFailOperation]);
 
   if (isPhotosFailed) {
     return <div>Failed to load images</div>;

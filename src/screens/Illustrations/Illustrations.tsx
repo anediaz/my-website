@@ -8,6 +8,7 @@ import './Illustrations.css';
 import { HamburgerMenu, LoaderInline } from '../../components';
 import { usePhotos } from '../../hooks/usePhotos';
 import { usePrevious } from '../../hooks/usePrevious';
+import { useOperation } from '@monitoring-lib/rum/feature-operation/use-operation';
 
 const Illustrations = () => {
   const { category } = useParams<{ category?: string }>();
@@ -26,8 +27,11 @@ const Illustrations = () => {
   const initialAlbum = getCategoryAlbum(category);
   const [photosetId, setPhotosetId] = React.useState<string>(initialAlbum.id);
   const [illustrationsState, setIllustrationsState] = React.useState<Record<string, PhotoProps[]>>({});
-  const { photos } = usePhotos({ photosetId, shouldFetch: !illustrationsState[photosetId] });
+  const { photos, isPhotosFailed } = usePhotos({ photosetId, shouldFetch: !illustrationsState[photosetId] });
   const previousPhotos = usePrevious(photos);
+  const { onStartOperation, onSucceedOperation, onFailOperation } = useOperation({
+    operationName: 'illustrations.load_album',
+  });
 
   useEffect(() => {
     const categoryAlbum = getCategoryAlbum(category);
@@ -37,13 +41,27 @@ const Illustrations = () => {
   }, [category, photosetId]);
 
   useEffect(() => {
+    if (!illustrationsState[photosetId]) {
+      onStartOperation({ context: { photosetId } });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [photosetId]);
+
+  useEffect(() => {
     if (photos?.length && previousPhotos !== photos && !illustrationsState[photosetId]) {
       setIllustrationsState((prevState) => ({
         ...prevState,
         [photosetId]: photos,
       }));
+      onSucceedOperation();
     }
-  }, [illustrationsState, photos, photosetId, previousPhotos]);
+  }, [illustrationsState, photos, photosetId, previousPhotos, onSucceedOperation]);
+
+  useEffect(() => {
+    if (isPhotosFailed) {
+      onFailOperation('error');
+    }
+  }, [isPhotosFailed, onFailOperation]);
   return (
     <div className="Illustrations">
       <div className="title"/>

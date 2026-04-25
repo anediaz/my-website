@@ -13,12 +13,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "upload-sourcemaps": "DATADOG_SITE=datadoghq.eu datadog-ci sourcemaps upload ./dist --service=anes-website --release-version=$npm_package_version --minified-path-prefix=/",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"
   },
   "dependencies": {
-    "@datadog/datadog-ci": "^2.47.0",
+    "@monitoring-lib/rum": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.0",
@@ -31,6 +32,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
+    "@datadog/datadog-ci": "^2.47.0",
     "@eslint/js": "^9.17.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",

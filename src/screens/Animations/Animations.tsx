@@ -1,12 +1,23 @@
+import { useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
 import './Animations.css';
 import { useAnimations } from '../../hooks/useAnimations';
+import { useAutoOperation } from '@monitoring-lib/rum/feature-operation/use-auto-operation';
 import poweredBy from './poweredby_large.png';
 
 import { animationsConfigurations } from '../../service/constants';
 
 const Animations = () => {
-  const { gifs, stickers } = useAnimations();
+  const { gifs, stickers, isGifsFailed, isStickersFailed } = useAnimations();
+  const { onSucceedOperation, onFailOperation } = useAutoOperation({ operationName: 'animations.load' });
+
+  useEffect(() => {
+    if (isGifsFailed || isStickersFailed) {
+      onFailOperation('error');
+    } else if (gifs !== undefined && stickers !== undefined) {
+      onSucceedOperation();
+    }
+  }, [gifs, stickers, isGifsFailed, isStickersFailed, onSucceedOperation, onFailOperation]);
   return (
     <div className="Animations">
       <div className="title" />
