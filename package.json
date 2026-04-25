@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "upload-sourcemaps": "DATADOG_SITE=datadoghq.eu datadog-ci sourcemaps upload ./dist --service=anes-website --release-version=$npm_package_version --minified-path-prefix=/",
+    "upload-sourcemaps": "DATADOG_SITE=datadoghq.eu npx datadog-ci sourcemaps upload ./dist --service=anes-website --release-version=$npm_package_version --minified-path-prefix=/",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"
