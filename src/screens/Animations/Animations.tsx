@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Gallery } from 'react-ikusi';
 import './Animations.css';
 import { useAnimations } from '../../hooks/useAnimations';
-import { useAutoOperation } from '@monitoring-lib/rum/feature-operation/use-auto-operation';
+import { useAutoOperation } from '../../hooks/useAutoOperation';
 import poweredBy from './poweredby_large.png';
 
 import { animationsConfigurations } from '../../service/constants';

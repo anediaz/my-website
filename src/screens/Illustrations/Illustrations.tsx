@@ -8,7 +8,7 @@ import './Illustrations.css';
 import { HamburgerMenu, LoaderInline } from '../../components';
 import { usePhotos } from '../../hooks/usePhotos';
 import { usePrevious } from '../../hooks/usePrevious';
-import { useOperation } from '@monitoring-lib/rum/feature-operation/use-operation';
+import { useOperation } from '../../hooks/useOperation';
 
 const Illustrations = () => {
   const { category } = useParams<{ category?: string }>();

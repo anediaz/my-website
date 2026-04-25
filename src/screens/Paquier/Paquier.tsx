@@ -12,7 +12,7 @@ import {
 import { PaquierMedia } from '../../service';
 import { formatContent } from '../../helpers';
 import { usePhotos } from '../../hooks/usePhotos';
-import { useAutoOperation } from '@monitoring-lib/rum/feature-operation/use-auto-operation';
+import { useAutoOperation } from '../../hooks/useAutoOperation';
 
 export const Paquier = () => {
   const [t] = useTranslation();

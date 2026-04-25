@@ -12,7 +12,7 @@ import {
 import { MicrosoftMedia } from '../../service';
 import { formatContent } from '../../helpers';
 import { usePhotos } from '../../hooks/usePhotos';
-import { useAutoOperation } from '@monitoring-lib/rum/feature-operation/use-auto-operation';
+import { useAutoOperation } from '../../hooks/useAutoOperation';
 
 export const Microsoft = () => {
   const [t] = useTranslation();
