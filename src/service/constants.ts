@@ -47,9 +47,9 @@ export const LOCALES = [
 export type LocaleType = ValueOf<typeof LOCALES>;
 export const LANGUAGES: Record<LocaleType, string> = {
   eu: 'basque',
-  es: 'spanish',
   en: 'english',
   fr: 'french',
+  es: 'spanish',
 };
 
 export const SECTIONS = [
@@ -74,8 +74,15 @@ export const SKILLS = [
   'speaker',
 ];
 
+export const ARTICLE_IDS = [
+  'nodejs',
+  'chromium',
+] as const;
+export type ArticleIdType = ValueOf<typeof ARTICLE_IDS>;
+export const isArticleId = (x: string): x is ArticleIdType => !!ARTICLE_IDS.find((id) => id === x);
+
 export const PAGES = [
-  'article',
+  ...ARTICLE_IDS,
   'microsoft',
   'paquier',
 ] as const;

@@ -1,4 +1,4 @@
-import { useEffect, useState,useCallback } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -9,12 +9,11 @@ import {
 } from '../index';
 
 import {
-  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, PageType,
+  LOCALES, DEFAULT_LOCALE, DEFAULT_SECTION, LocaleType, SectionType, PageType, ArticleIdType, isArticleId,
 } from '../../service/constants';
 import './Main.css';
 
 const PAGES = {
-  article: Article,
   microsoft: Microsoft,
   paquier: Paquier,
 };
@@ -87,7 +86,10 @@ const Main = ({ page, section }: MainProps) => {
   };
 
   const renderPage = (pageType:PageType) => {
-    const PageComponent = PAGES[pageType];
+    if (isArticleId(pageType)) {
+      return <Article language={i18n.language as LocaleType} articleId={pageType as ArticleIdType} />;
+    }
+    const PageComponent = (PAGES as Record<string, React.ComponentType<{language: LocaleType}>>)[pageType];
     if (PageComponent) {
       return <PageComponent language={i18n.language as LocaleType} />;
     }
@@ -114,7 +116,7 @@ const Main = ({ page, section }: MainProps) => {
                   language={language}
                 />
                 <LastNews
-                  goToArticle={() => goTo('page=article')}
+                  goToChromiumArticle={() => goTo('page=chromium')}
                 />
                 <About
                   id="about"

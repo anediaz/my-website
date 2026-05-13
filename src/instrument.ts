@@ -1,5 +1,5 @@
 import { match, P } from 'ts-pattern';
-import { LOCALES } from './service/constants';
+import { LOCALES, PageType } from './service/constants';
 
 const INDEX_PATH = '/';
 const HOME_WITH_LOCALE = LOCALES.map((l) => `/${l}`);
@@ -8,7 +8,7 @@ declare global {
     DD_RUM: any;
   }
 }
-export const getViewName = (pathName: string, page?: "article" | "microsoft" | "paquier" | undefined) => {
+export const getViewName = (pathName: string, page?: PageType) => {
   const viewName: string = match({ pathName, page })
     .with({ pathName: INDEX_PATH, page: undefined }, () => "/home-EN") // Home English (default)
     .with({ pathName: P.when((name) => HOME_WITH_LOCALE.includes(name)), page: undefined }, ({ pathName }) => `/home-${pathName.replace('/', '').toUpperCase()}`) // Home other locales
@@ -18,7 +18,7 @@ export const getViewName = (pathName: string, page?: "article" | "microsoft" | "
   return viewName;
 }
 
-export const startNewView = (pathName: string, page?: "article" | "microsoft" | "paquier" | undefined) => {
+export const startNewView = (pathName: string, page?: PageType) => {
   const viewName = getViewName(pathName, page);
   window.DD_RUM.startView({
     name: viewName,

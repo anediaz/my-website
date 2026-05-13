@@ -1,53 +1,37 @@
 import { useTranslation } from 'react-i18next';
 import './LastNews.css';
 
-const GUIDE_URL = 'https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md';
+const CHROMIUM_WORD = 'Chromium';
 
-const transformLink = (text:string, index:string) => {
-  const wordToFind = 'Node.js';
-  const [phrase1, phrase2] = text.split(wordToFind);
-  return [phrase1, wordToFind, phrase2].map((t) => (t === wordToFind
-    ? (
-      <span key={`span-${index}`}>
-        <i className="fab fa-node-js" key={index} />
-        Node.js
+const transformChromiumText = (text: string) => {
+  const [before, after] = text.split(CHROMIUM_WORD);
+  return (
+    <>
+      {before}
+      <span>
+        <i className="fab fa-chrome" />
+        {CHROMIUM_WORD}
       </span>
-    )
-    : t !== '' && (
-    <span key={index}>
-      {t}
-    </span>
-    )));
+      {after}
+    </>
+  );
 };
 
 interface LastNewsProps {
-  goToArticle?: () => void;
+  goToChromiumArticle?: () => void;
 }
 
-export const LastNews = ({ goToArticle = () => {} }: LastNewsProps) => {
+export const LastNews = ({ goToChromiumArticle = () => {} }: LastNewsProps) => {
   const [t] = useTranslation();
-
-  const transformItem = (text:string, key:string) => (text === '$toAddLink' ? (
-    <div key={key}>
-      <a href={GUIDE_URL} target="_blank" rel="noopener noreferrer">
-        {transformLink(t('lastNews.link'), key)}
-      </a>
-    </div>
-  )
-    : (
-      <div key={key}>
-        {text}
-      </div>
-    ));
 
   return (
     <div className="last-news">
       <div className="empty" />
       <div className="content">
-        {transformItem(t('lastNews.text1'), 'text1')}
-        {transformItem(t('lastNews.text2'), 'text2')}
-        <div className="read-article" onClick={goToArticle} role="presentation" aria-label='header-read-nodejs-post'>
-          {t('lastNews.last')}
+        <div>{t('lastNews.chromiumText1')}</div>
+        <div>{transformChromiumText(t('lastNews.chromiumText2'))}</div>
+        <div className="read-article" onClick={goToChromiumArticle} role="presentation" aria-label='header-read-chromium-post'>
+          {t('lastNews.chromiumLast')}
           <i className="fa fa-heart" />
         </div>
       </div>

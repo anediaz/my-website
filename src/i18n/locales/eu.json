@@ -18,10 +18,13 @@
   "header.social.giphy": "Nire GIPHY-a",
   "header.social.github": "Nire GitHub-a",
   "header.social.npm": "Nire npm",
-  "lastNews.text1": "$toAddLink",
-  "lastNews.text2": "euskarazko itzulpenaren burutzea",
-  "lastNews.last": "Artikulua irakurri",
-  "lastNews.link": "Node.js Best Practices gidaren",
+  "lastNews.chromiumText1": "Nire lehen ekarpena",
+  "lastNews.chromiumText2": "Chromiumen",
+  "lastNews.chromiumLast": "Artikulua irakurri",
+
+  "works.contributions.title": "Ekarpenak",
+  "works.contributions.nodejs.content": "$guide gidaren euskarazko itzulpena",
+  "works.contributions.chromium.content": "Nire lehen ekarpena Chromium-i",
 
   "about.content": "Pertsona dinamikoa, jakinguratsua eta lagunartekoa naiz. Programatzaile lanbidea daukat 2012tik. Nire lanaren zale naiz eta honek zoriontsu egiten nau.",
 
@@ -41,9 +44,9 @@
   "works.developer.role": "Rola: Web garapena eta diseinua",
 
   "works.graphic.microsoft.title":  "Microsoft",
-  "works.graphic.microsoft.content": "Erraztaile Grafiko lana Microsoft-entzat (artikulua irakurri)",
+  "works.graphic.microsoft.content": "Erraztaile Grafiko lana Microsoft-entzat",
   "works.graphic.paquier.title":  "Azken lan bisuala",
-  "works.graphic.paquier.content": "A bisuala Paquier & Associés-entzat (artikulua irakurri)",
+  "works.graphic.paquier.content": "Lan bisuala Paquier & Associés-entzat",
   "works.graphic.other": "Beste burutze grafikoak",
 
   "works.speaker.title": "Konferentziak",

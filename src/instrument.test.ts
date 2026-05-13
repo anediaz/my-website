@@ -19,22 +19,22 @@ describe('getViewName', () => {
     expect(viewName).toBe('/home-FR');
 
   })
-  it('Should return /article-EN', () => {
-    const viewName = getViewName('/', 'article');
-    expect(viewName).toBe('/article-EN');
+  it('Should return /nodejs-EN', () => {
+    const viewName = getViewName('/', 'nodejs');
+    expect(viewName).toBe('/nodejs-EN');
   })
-  it('Should return /article-ES', () => {
-    const viewName = getViewName('/es', 'article');
-    expect(viewName).toBe('/article-ES');
+  it('Should return /nodejs-ES', () => {
+    const viewName = getViewName('/es', 'nodejs');
+    expect(viewName).toBe('/nodejs-ES');
   })
-  it('Should return /article-EU', () => {
-    const viewName = getViewName('/eu', 'article');
-    expect(viewName).toBe('/article-EU');
+  it('Should return /nodejs-EU', () => {
+    const viewName = getViewName('/eu', 'nodejs');
+    expect(viewName).toBe('/nodejs-EU');
 
   })
-  it('Should return /article-FR', () => {
-    const viewName = getViewName('/fr', 'article');
-    expect(viewName).toBe('/article-FR');
+  it('Should return /nodejs-FR', () => {
+    const viewName = getViewName('/fr', 'nodejs');
+    expect(viewName).toBe('/nodejs-FR');
   })
   it('Should return /microsoft-EN', () => {
     const viewName = getViewName('/', 'microsoft');

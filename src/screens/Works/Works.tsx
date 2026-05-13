@@ -5,6 +5,7 @@ import './Works.css';
 import { Web } from './Web';
 import { GraphicWorks } from './Graphic';
 import { Conferences } from './Conferences';
+import { Contributions } from './Contributions';
 import { WorksData, TalksData } from '../../service/data';
 import { SectionType } from '../../service/constants';
 
@@ -21,6 +22,7 @@ export const Works = ({
 
   return (
     <SectionWithSensor onChangeVisibility={onChangeVisibility} id={id} title={t(`${id}.title`)} className="Works">
+      <Contributions goToArticle={goToArticle} className="work" key={0} />
       <Web className="work" key={1} data={{ url: WorksData.developer.url }} />
       <GraphicWorks className="work" key={2} goToArticle={goToArticle} />
       <Conferences
