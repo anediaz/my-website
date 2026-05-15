@@ -55,23 +55,12 @@
 
 .contributions .contribution-thumbnail {
   width: 160px;
-  height: 160px;
-  background-color: #f4f4f4;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .contributions .contribution-thumbnail img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
 }
 
@@ -87,7 +76,6 @@
 
   .contributions .contribution-thumbnail {
     width: 120px;
-    height: 120px;
   }
 }
 
@@ -103,7 +91,5 @@
 
   .contributions .contribution-thumbnail {
     width: 80px;
-    height: 80px;
-    padding: 0.6rem;
   }
 }

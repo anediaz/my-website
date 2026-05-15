@@ -44,7 +44,7 @@ const ContributionItem = ({ content, onClick, thumbnail }: ContributionItemProps
   <div className="body contribution-row" role="button" tabIndex={0} onKeyPress={() => {}} onClick={onClick}>
     <div className="contribution-thumbnails">
       <div className="contribution-thumbnail">
-        <img src={thumbnail.src} alt={thumbnail.alt} />
+        <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy" />
       </div>
     </div>
     <div className="description">
@@ -78,7 +78,7 @@ export const Contributions = ({ goToArticle, className }: ContributionsProps) =>
       <ContributionItem
         content={transformChromiumContent(t('works.contributions.chromium.content'))}
         onClick={() => goToArticle('chromium')}
-        thumbnail={{ src: '/assets/chromium.png', alt: 'Chromium illustration' }}
+        thumbnail={{ src: '/assets/chromium.jpg', alt: 'Chromium illustration' }}
       />
     </div>
   );
