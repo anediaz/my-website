@@ -1,0 +1,109 @@
+.contributions.work .body .description {
+  width: fit-content;
+}
+.contributions.work .body .description .project {
+  padding-bottom: 1rem;
+}
+.contributions.work .body .description .project::after {
+  display: none;
+}
+
+.contributions .nodejs-guide,
+.contributions .chromium-label {
+  white-space: nowrap;
+}
+
+.contributions .nodejs-guide i {
+  margin-right: 0.3rem;
+  color: #5fa04e;
+}
+
+.contributions .nodejs-guide strong {
+  background-color: #eef6eb;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.contributions .chromium-label i {
+  margin-right: 0.3rem;
+  color: #4285f4;
+}
+
+.contributions .chromium-label strong {
+  background-color: #eaf1fe;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.contributions.work .contribution-row {
+  cursor: pointer;
+  margin-bottom: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.contributions.work .contribution-row .description {
+  flex: 1;
+  padding: 0 3rem;
+  width: auto;
+}
+
+.contributions .contribution-thumbnails {
+  flex-shrink: 0;
+}
+
+.contributions .contribution-thumbnail {
+  width: 160px;
+  height: 160px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.contributions .contribution-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  .contributions.work .contribution-row {
+    flex-direction: row;
+  }
+
+  .contributions.work .contribution-row .description {
+    padding: 0 1.5rem;
+  }
+
+  .contributions .contribution-thumbnail {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .contributions.work .contribution-row {
+    margin-bottom: 1rem;
+  }
+
+  .contributions.work .contribution-row .description {
+    padding: 0 1rem;
+  }
+
+  .contributions .contribution-thumbnail {
+    width: 80px;
+    height: 80px;
+    padding: 0.6rem;
+  }
+}
