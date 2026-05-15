@@ -19,10 +19,13 @@
     "header.social.giphy": "My GIPHY",
     "header.social.github": "My GitHub",
     "header.social.npm": "My npm",
-    "lastNews.text1": "Realization of Basque translation of",
-    "lastNews.text2": "$toAddLink",
-    "lastNews.last": "Read the post",
-    "lastNews.link": "Node.js Best Practices",
+    "lastNews.chromiumText1": "My first contribution",
+    "lastNews.chromiumText2": "to Chromium",
+    "lastNews.chromiumLast": "Read the post",
+
+    "works.contributions.title": "Contributions",
+    "works.contributions.nodejs.content": "Basque translation of $guide",
+    "works.contributions.chromium.content": "My first contribution to Chromium",
 
     "about.content": "I am a dynamic, curious and sociable person. I work as a developer since 2012. I am passionated by my work, which makes me happy.",
 
@@ -42,9 +45,9 @@
     "works.developer.role": "Role: Web development and design",
 
     "works.graphic.microsoft.title":  "Microsoft",
-    "works.graphic.microsoft.content": "A Graphic Faciliation work for Microsoft (read the article)",
+    "works.graphic.microsoft.content": "A Graphic Facilitation work for Microsoft",
     "works.graphic.paquier.title":  "Latest visual work",
-    "works.graphic.paquier.content": "A Graphic work for Paquier & Associés (read the article)",
+    "works.graphic.paquier.content": "A Graphic work for Paquier & Associés",
     "works.graphic.other": "Other graphic realizations",
 
     "works.speaker.title": "Conferences",

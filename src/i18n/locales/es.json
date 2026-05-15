@@ -18,10 +18,13 @@
     "header.social.giphy": "Mi GIPHY",
     "header.social.github": "Mi GitHub",
     "header.social.npm": "Mi npm",
-    "lastNews.text1": "Realización de la traducción vasca de",
-    "lastNews.text2": "$toAddLink",
-    "lastNews.last": "Leer el artículo",
-    "lastNews.link": "Node.js Best Practices",
+    "lastNews.chromiumText1": "Mi primera contribución",
+    "lastNews.chromiumText2": "a Chromium",
+    "lastNews.chromiumLast": "Leer el artículo",
+
+    "works.contributions.title": "Contribuciones",
+    "works.contributions.nodejs.content": "Traducción vasca de $guide",
+    "works.contributions.chromium.content": "Mi primera contribución a Chromium",
     "about.content": "Soy una persona dinámica, curiosa y sociable. Trabajo como programadora desde 2012. Mi trabajo mi pasiona y me hace feliz.",
 
     "skills.title": "Competencias",
@@ -40,9 +43,9 @@
     "works.developer.role": "Rol: Desarrollo web y diseño",
 
     "works.graphic.microsoft.title":  "Microsoft",
-    "works.graphic.microsoft.content": "Trabajo de Facilitadora Gráfica para Microsoft (leer artículo)",
+    "works.graphic.microsoft.content": "Trabajo de Facilitadora Gráfica para Microsoft",
     "works.graphic.paquier.title":  "Último trabajo visual",
-    "works.graphic.paquier.content": "Trabajo Gráfico para Paquier & Associés (leer artículo)",
+    "works.graphic.paquier.content": "Trabajo Gráfico para Paquier & Associés",
     "works.graphic.other": "Otras realizaciones gráficas",
 
     "works.speaker.title": "Conferencias",
