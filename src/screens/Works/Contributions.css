@@ -35,50 +35,75 @@
   border-radius: 3px;
 }
 
-.contributions .contribution-row {
+.contributions.work .contribution-row {
   cursor: pointer;
   margin-bottom: 2rem;
   align-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
-.contributions .contribution-row .description {
-  width: calc(50% - 6rem);
-  padding: 1rem 3rem 0 3rem;
+.contributions.work .contribution-row .description {
+  flex: 1;
+  padding: 0 3rem;
+  width: auto;
 }
 
 .contributions .contribution-thumbnails {
-  width: 50%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
   flex-shrink: 0;
 }
 
 .contributions .contribution-thumbnail {
-  background-color: #ddd;
-  aspect-ratio: 4 / 3;
+  width: 160px;
+  height: 160px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.contributions .contribution-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /*iPadPro Vertical / iPad HorizontaL*/
 @media screen and (max-width: 1024px) {
-  .contributions .contribution-row {
-    flex-direction: column;
+  .contributions.work .contribution-row {
+    flex-direction: row;
   }
 
-  .contributions .contribution-thumbnails,
-  .contributions .contribution-row .description {
-    width: 100%;
-    padding: 0;
+  .contributions.work .contribution-row .description {
+    padding: 0 1.5rem;
   }
 
-  .contributions .contribution-thumbnails {
-    margin-bottom: 1rem;
+  .contributions .contribution-thumbnail {
+    width: 120px;
+    height: 120px;
   }
 }
 
 /*iPhoneX/iPhone6/7/8 vertical*/
 @media screen and (max-width: 480px) {
-  .contributions .contribution-row {
+  .contributions.work .contribution-row {
     margin-bottom: 1rem;
+  }
+
+  .contributions.work .contribution-row .description {
+    padding: 0 1rem;
+  }
+
+  .contributions .contribution-thumbnail {
+    width: 80px;
+    height: 80px;
+    padding: 0.6rem;
   }
 }
