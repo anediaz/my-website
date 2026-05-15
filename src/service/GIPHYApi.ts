@@ -16,15 +16,23 @@ export interface GiphyResult {
 }
 
 export const getAnimations = async ():Promise<GiphyResult[] | string> => {
-  const response = await fetch(animationsSearchUrl);
-  return response && response.ok
-    ? (await response.json()).data
-    : 'Error while fetching user\'s giphy';
+  try {
+    const response = await fetch(animationsSearchUrl);
+    return response.ok
+      ? (await response.json()).data
+      : 'Error while fetching user\'s giphy';
+  } catch {
+    return 'Error while fetching user\'s giphy';
+  }
 };
 
 export const getStickers = async () => {
-  const response = await fetch(stickersSearchUrl);
-  return response && response.ok
-    ? (await response.json()).data
-    : 'Error while fetching user\'s giphy';
+  try {
+    const response = await fetch(stickersSearchUrl);
+    return response.ok
+      ? (await response.json()).data
+      : 'Error while fetching user\'s giphy';
+  } catch {
+    return 'Error while fetching user\'s giphy';
+  }
 };
