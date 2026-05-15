@@ -1,7 +1,7 @@
 .HamburgerMenu {
-  min-height: 8rem;
+  min-height: clamp(4rem, 2rem + 4vw, 8rem);
   display: flex;
-  padding: 0 3rem
+  padding: 0 clamp(1.5rem, 0.5rem + 2vw, 3rem);
 }
 
 #menuToggle {
@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-#menuToggle:hover{
+#menuToggle:hover {
   cursor: pointer;
 }
 
@@ -37,8 +37,8 @@
   width: 2.5rem;
   height: 0;
   cursor: pointer;
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0;
+  z-index: 2;
 
   -webkit-touch-callout: none;
 }
@@ -69,7 +69,7 @@
   transform-origin: 0% 100%;
 }
 
-/* 
+/*
  * Transform all the slices of hamburger
  * into a crossmark.
  */
@@ -101,13 +101,13 @@
 #menu {
   position: absolute;
   width: 18.8rem;
+  max-width: 80vw;
   margin: -6.2rem 0 0 -3.1rem;
   padding: 3.1rem;
   padding-top: 7.8rem;
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -115,7 +115,7 @@
 
 #menu li {
   padding: 0.7rem 0;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 0.6rem + 0.8vw, 2rem);
 }
 
 /*
@@ -127,52 +127,23 @@
 
 .HamburgerMenu .activeText {
   position: relative;
-  font-size: 2rem;
-  margin: 0.5rem 0rem 0 0.5rem;
+  font-size: clamp(1.2rem, 0.6rem + 0.8vw, 2rem);
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 .HamburgerMenu.open .activeText {
   display: none;
 }
 
-/*MacBook 13"*/
-@media screen and (max-width: 1920px) {
-  #menu li {
-    font-size: 1.7rem;
-  }
-}
-
-/*iPadPro Vertical / iPad HorizontaL*/
-@media screen and (max-width: 1024px) {
-  .HamburgerMenu {
-    min-height: 6rem;
-  }
-  #menu li {
-    font-size: 1.5rem;
-  }
- 
-  .HamburgerMenu .activeText {
-    font-size: 1.5rem;
-    margin: 1rem 0rem 0 0.5rem;
-  }
-}
-
-/*iPad Vertical iPhone6/7/8 Horizontal*/
-@media screen and (max-width: 768px) {
-
-}
-
-/* smartphone en portrait */
+/* smartphone vertical */
 @media screen and (max-width: 479px) {
   .HamburgerMenu {
-    padding: 0 2rem
+    padding: 0 1.2rem;
   }
-  #menu li {
-    font-size: 1.2rem;
+  #menu {
+    width: 15rem;
   }
- 
   .HamburgerMenu .activeText {
-    font-size: 1.2rem;
-    margin: 1rem 0rem 0 0.2rem;
+    margin: 1rem 0 0 0.2rem;
   }
 }

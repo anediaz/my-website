@@ -72,13 +72,27 @@
   }
 }
 
-/*iPad Vertical iPhone6/7/8 Horizontal*/
+/*iPad Vertical iPhone6/7/8 Horizontal — horizontal layout in top bar*/
 @media screen and (max-width: 768px) {
   .LanguageSelector {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .LanguageSelector ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
   }
   .LanguageSelector ul li {
-    height: 3.5rem;
+    height: auto;
+    line-height: 1.4;
+  }
+  .LanguageSelector ul li:not(:first-child):before {
+    content: "|";
+    margin-right: 0.3rem;
+    opacity: 0.5;
   }
 }
 
@@ -86,9 +100,6 @@
 @media screen and (max-width: 480px) {
   .LanguageSelector {
     font-size: 0.8rem;
-  }
-  .LanguageSelector ul li {
-    height: 2rem;
   }
 }
 

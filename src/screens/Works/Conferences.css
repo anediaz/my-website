@@ -1,5 +1,9 @@
+.conferences.work .body {
+  flex-direction: column;
+}
+
 .conferences.work .body .description {
-  width: fit-content;
+  width: 100%;
 }
 .conferences.work .body .description .project {
   padding-bottom: 1rem;

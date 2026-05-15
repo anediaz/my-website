@@ -2,8 +2,8 @@
   position: relative;
 }
 .media-item img.youtubeLogo {
-  height: 1.7rem;
-  width: 1.7rem;
+  height: clamp(1.2rem, 0.8rem + 0.6vw, 1.7rem);
+  width: clamp(1.2rem, 0.8rem + 0.6vw, 1.7rem);
   position: absolute;
-  top: 11rem;
+  top: clamp(7rem, 4rem + 8vw, 11rem);
 }

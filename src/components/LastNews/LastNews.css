@@ -1,10 +1,12 @@
 .last-news {
-  font-size: 1.4rem;
+  font-size: clamp(0.85rem, 0.5rem + 0.6vw, 1.4rem);
   font-style: italic;
   margin: 4rem 9rem 0 9rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .last-news .empty {
@@ -65,7 +67,6 @@
 /*MacBook 13"*/
 @media screen and (max-width: 1920px) {
   .last-news {
-    font-size: 1rem;
     margin: 2rem 7rem 0 7rem;
     justify-content: space-between;
   }
@@ -78,10 +79,12 @@
   }
 }
 
-/*iPadPro Vertical / iPad HorizontaL*/
+/*iPadPro Vertical / iPad Horizontal*/
 @media screen and (max-width: 1024px) {
   .last-news {
     margin-top: 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
   .last-news .empty {
     width: 50%;
@@ -95,14 +98,11 @@
 /*iPhoneX horizontal*/
 @media screen and (max-width: 900px) {
   .last-news {
-    font-size: 1.2rem;
-    margin-top: 4rem;
+    margin: 2.5rem 2rem 0 2rem;
   }
-
   .last-news .empty {
-    width: 0;
+    display: none;
   }
-
   .last-news .content {
     width: 100%;
   }
@@ -111,7 +111,6 @@
 /*iPhoneX/iPhone6/7/8 vertical*/
 @media screen and (max-width: 480px) {
   .last-news {
-    font-size: 0.8rem;
-    margin: 4rem 2rem 0 2rem;
+    margin: 2rem 1rem 0 1rem;
   }
 }

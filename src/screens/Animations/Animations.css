@@ -13,7 +13,8 @@ body {
   background-image: url("./title-white.svg");
   background-repeat: no-repeat;
   background-position: center top;
-  height: 13rem;
+  background-size: contain;
+  height: clamp(3rem, 1rem + 10vw, 13rem);
   width: 80%;
   margin: 2rem auto;
 }
@@ -26,7 +27,7 @@ body {
 .Animations .container .media {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: clamp(2.5rem, 1rem + 5vw, 8rem);
 }
 
 .Animations .container div {
@@ -36,12 +37,12 @@ body {
 .Animations .container .description {
   padding: 12px;
   margin: 0 0 2rem 0;
-  font-size: 1.4rem;
+  font-size: clamp(0.9rem, 0.5rem + 0.5vw, 1.4rem);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 1.5rem;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
 .Animations .container .description .onGiphy {
@@ -69,9 +70,9 @@ body {
   text-decoration: none;
 }
 
-.Animations .container .subtitle{
+.Animations .container .subtitle {
   padding: .8rem;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 0.6rem + 0.8vw, 2rem);
 }
 
 .Animations .container .symbol {
@@ -80,47 +81,34 @@ body {
 }
 
 .Animations .poweredByGiphy img {
-  width: 10rem;
+  width: clamp(6rem, 4rem + 4vw, 10rem);
   height: auto;
 }
 
-.Animations .container .stickers img:not([alt~="lightbox"]){
+.Animations .container .stickers img:not([alt~="lightbox"]) {
   background-color: #323d4c;
 }
 
-/* smartphone en portrait */
-@media screen and (max-width: 479px) {
-  .Animations .title {
-    height: 3rem;
-    width: 85%;
+/* smartphone in landscape, tablet in portrait */
+@media screen and (max-width: 900px) {
+  .Animations .container {
+    width: 95%;
   }
-  .Animations .container .description {
-    font-size: 1rem;
-    margin: 0 0 .8rem 0;
-  }
-  .Animations .container .subtitle{
-    font-size: 1.5rem;
-    padding: .5rem;
-  }
-  .Animations .container .media {
-    gap: 3rem;
-  }
-}
-
-/* smartphone in landscape, tablet in portrait and small tablet in landscape */
-@media screen and (min-width: 480px) and (max-width: 959px) {
-  .Animations .title {
-    height: 4.5rem;
-    width: 90%;
-  }
-}
-
-/*iPad Vertical iPhone6/7/8 Horizontal*/
-@media screen and (max-width: 480px) {
   .Animations .container .description {
     gap: 1rem;
   }
-  .Animations .poweredByGiphy img {
-    width: 7rem;
+}
+
+/* smartphone vertical */
+@media screen and (max-width: 480px) {
+  .Animations {
+    margin-bottom: 3rem;
+  }
+  .Animations .container .description {
+    align-items: stretch;
+    margin: 0 0 .8rem 0;
+  }
+  .Animations .container .media {
+    gap: 2.5rem;
   }
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
 import { Link } from 'react-router-dom';
@@ -24,6 +25,7 @@ export const Menu = ({
   isPageMenu,
 }: MenuProps) => {
   const [t] = useTranslation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const getClass = (id:string) => `item ${selectedItem === id ? 'active' : ''}`;
 
   const buildMenu = () => SECTIONS.map((item:SectionType) => (
@@ -59,6 +61,24 @@ export const Menu = ({
         <i className="fa fa fa-file-video-o" />
       </Link>
       </div>
+      <button
+        className={`mobileHamburger${mobileMenuOpen ? ' open' : ''}`}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="toggle mobile menu"
+        aria-expanded={mobileMenuOpen}
+      >
+        <span /><span /><span />
+      </button>
+      {mobileMenuOpen && (
+        <div className="mobileNav">
+          <Link to="/illustrations" target="_blank" className="item illustrations" title={t('menu.title.illustrations')} role="menuitem" aria-label='mobile-menu-item-portfolio' onClick={() => setMobileMenuOpen(false)}>
+            {t('menu.portfolio')}
+          </Link>
+          <Link to="/animations" target="_blank" className="item animations" title={t('menu.title.animations')} role="menuitem" aria-label='mobile-menu-item-animations' onClick={() => setMobileMenuOpen(false)}>
+            {t('menu.animations')}
+          </Link>
+        </div>
+      )}
       {closable ? (
         <div aria-label="menu-item-back" className="closeButton" onClick={() => selectItemHandler(undefined)} role="menuitem">
           <i className="fa fa-hand-o-left" />

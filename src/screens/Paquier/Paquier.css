@@ -1,25 +1,32 @@
 .Paquier {
   min-height: 100vh;
 }
+
 .Paquier .Header {
-  margin: 14rem 0 0 8rem;
+  margin: 8rem 0 0 6rem;
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
 }
+
 .Paquier .Header h2 {
   text-align: center;
   margin: 0;
-  font-size: 2em;
+  font-size: clamp(1.6rem, 0.8rem + 1.4vw, 3rem);
 }
 
-.Paquier img.msLogo{
-  height: 4.5rem;
-  margin-right: 1.5rem;
+.Paquier img.msLogo {
+  height: clamp(1.8rem, 1rem + 1.2vw, 4.5rem);
+  margin-right: 1rem;
+}
+
+.Paquier .Section {
+  margin-top: 2rem;
+  padding: 0 9rem 0 6rem;
 }
 
 .Paquier .Section .description {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .Paquier .Section .description .highlight-marker {
@@ -38,28 +45,20 @@
   opacity: 0.3;
 }
 
-.Paquier .Section {
-  margin-top: 4rem;
-  padding: 0 12rem 0 9rem;
-}
-
-.Paquier .Section.coverImage{
-  margin-bottom: 15rem;
-}
-
 .Paquier .Section .content {
-  font-size: 2.7rem;
-  line-height: 3.7rem;
-  margin: 0 0 2rem 0;
+  font-size: clamp(1.1rem, 0.5rem + 1.2vw, 2.7rem);
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+  padding-top: 2rem;
 }
 
-.Paquier .paquierinfo{
+.Paquier .paquierinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Paquier a.paquierinfo{
+.Paquier a.paquierinfo {
   text-decoration: none;
   font-size: 1rem;
   color: #555;
@@ -70,11 +69,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size:1.5rem;
+  font-size: clamp(1rem, 0.5rem + 0.6vw, 1.5rem);
 }
 
 .Paquier .Section .content .text span {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .Paquier .MediaSection {
@@ -89,7 +88,7 @@
 }
 
 .Paquier .MediaSectionItem.media {
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
 .Paquier .MediaSectionItem.media .text {
@@ -100,173 +99,82 @@
   border-bottom: 1px solid #bbb;
 }
 
-
-.Paquier .MediaSectionItem .ImageWithLoader{
-  width: 45%;
+.Paquier .MediaSectionItem .ImageWithLoader {
+  width: 55%;
 }
 
-.Paquier .MediaSectionItem .ImageWithLoader img{
+.Paquier .MediaSectionItem .ImageWithLoader img {
   width: 100%;
 }
 
-.Paquier .MediaSectionItem .media-item{
-  width: 40%;
+.Paquier .MediaSectionItem .media-item {
+  width: 35%;
 }
 
-.Paquier .MediaSectionItem .media-item .ImageWithLoader{
+.Paquier .MediaSectionItem .media-item .ImageWithLoader {
   width: 100%;
 }
 
-.Paquier .Section .content .cover-image-wrapper a{
+.Paquier .Section .content .cover-image-wrapper a {
   padding-left: 0;
-
 }
 
-.Paquier .ImageWithLoader.cover-image{
+.Paquier .ImageWithLoader.cover-image {
   margin: 2rem 0 0 0;
 }
 
-.Paquier .ImageWithLoader.cover-image img{
-  width: 60%;
+.Paquier .ImageWithLoader.cover-image img {
+  width: 100%;
 }
 
-.Paquier .ImageWithLoader img:hover{
+.Paquier .ImageWithLoader img:hover {
   cursor: pointer;
 }
 
 .Paquier .MediaSection .media-item .media-info {
-  font-size: 3rem;
-  padding-top: 1.5rem;
+  font-size: clamp(0.85rem, 0.5rem + 0.6vw, 1.5rem);
+  padding-top: 0.8rem;
 }
 
-/*MacBook 13"*/
-@media screen and (max-width: 1920px) {
-  .Paquier .Header {
-    margin-top: 8rem;
-  }
-
-  .Paquier .Header h2 {
-    font-size: 3rem;
-  }
-
-  .Paquier img.msLogo{
-    height: 2.5rem;
-    margin-right: 1rem;
-  }
-
-  .Paquier .Section {
-    margin-top: 1rem;
-    padding: 0 12rem 0 9rem;
-  }
-
-  .Paquier .Section .content {
-    font-size: 1.3rem;
-    line-height: 2rem;
-    padding-top: 3rem;
-    margin: 0;
-  }
-
-  .Paquier .Section .description {
-    margin-bottom: 0rem;
-  }
-  .Paquier .Section.coverImage {
-    margin-bottom: 0rem;
-  }
-
-  .Paquier .ImageWithLoader.cover-image img{
-    width: 100%;
-  }
-
-  .Paquier .Section .content .text span {
-    margin-bottom: 1rem;
-  }
-
-  .Paquier .Section .content.paquierinfo{
-    padding-top: .8rem;
-    margin-bottom: 0;
-    font-size: 1.1rem;
-  }
-
-  .Paquier .MediaSection .media-item .media-info {
-    font-size: 1rem;
-    padding-top: .8rem;
-  }
-
-  .Paquier .MediaSectionItem .media-item{
-    width: 35%;
-  }
-
-  .Paquier .MediaSectionItem .ImageWithLoader {
-    width: 55%;
-  }
-  .Paquier .MediaSectionItem.media {
-    padding: 1.5rem 0;
-  }
-}
 /*iPadPro Horizontal*/
 @media screen and (max-width: 1382px) {
-
   .Paquier .Section {
-    padding: 0 8rem 0 8rem;
+    padding: 0 6rem 0 6rem;
   }
   .Paquier .Header {
-    margin-top: 6rem;
-  }
-
-  .Paquier .Section .content .text{
-    font-size: 1.1rem;
+    margin: 6rem 0 0 5rem;
   }
 }
-/*iPadPro Vertical / iPad HorizontaL*/
+
+/*iPadPro Vertical / iPad Horizontal*/
 @media screen and (max-width: 1024px) {
   .Paquier .Header {
-    margin: 6rem 4rem 0 4rem;
-    flex-direction: row;
+    margin: 5rem 3rem 0 3rem;
   }
-
-  .Paquier .Header h2 {
-    text-align: left;
-  }
-
-  .Paquier img.msLogo {
-    margin-right: .5rem;
-  }
-
   .Paquier .Section {
-    padding: 0 3rem 0 3rem;
+    padding: 0 3rem;
   }
-
   .Paquier .Section .content .text {
     text-align: center;
   }
-
 }
 
 /*iPhoneX horizontal*/
 @media screen and (max-width: 900px) {
   .Paquier .Header {
-    margin: 6rem 3rem 0 2.5rem;
-  }
-
-  .Paquier .Header h2 {
-    font-size: 2rem;
+    margin: 4rem 2rem 0 2rem;
   }
   .Paquier .Section {
+    margin: 0 2rem;
     padding: 0;
-    margin: 0 2.5rem 0 2.5rem;
   }
-  .Paquier .Section .content.paquierinfo {
-    padding-top: .5rem;
-  }
-
   .Paquier .MediaSectionItem .text {
     line-height: 1.5rem;
   }
-
-  .Paquier .MediaSectionItem .text:first-child{
+  .Paquier .MediaSectionItem .text:first-child {
     width: 50%;
   }
-  .Paquier .MediaSectionItem .text:nth-child(2){
+  .Paquier .MediaSectionItem .text:nth-child(2) {
     width: 35%;
   }
 }
@@ -274,11 +182,10 @@
 /*iPad Vertical iPhone6/7/8 Horizontal*/
 @media screen and (max-width: 768px) {
   .Paquier .Header {
-    margin-top: 4rem;
+    margin: 3rem 1.5rem 0 1.5rem;
   }
-
   .Paquier .Section {
-    margin: 0 2rem 0 2rem;
+    margin: 0 1.5rem;
   }
 }
 
@@ -286,41 +193,33 @@
 @media screen and (max-width: 480px) {
   .Paquier .Header {
     align-items: flex-start;
-    margin: 3rem 1.8rem 0 1.8rem;
+    margin: 2.5rem 1rem 0 1rem;
   }
   .Paquier .Section {
-    margin: 0 1.8rem 0 1.8rem;
+    margin: 0 1rem;
   }
-
   .Paquier .Section .content {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
+    line-height: 1.45;
   }
-
-  .Paquier .Section .content .description:first-child{
+  .Paquier .Section .content .description:first-child {
     margin-bottom: 1rem;
   }
-  .Paquier .Section .content.paquierinfo {
-    font-size: .9rem;
-  }
   .Paquier .MediaSection {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
-  .Paquier .MediaSection .MediaSectionItem.content{
+  .Paquier .MediaSection .MediaSectionItem.content {
     display: none;
   }
-  .Paquier .MediaSection .MediaSectionItem.media{
+  .Paquier .MediaSection .MediaSectionItem.media {
     flex-direction: column;
   }
-
-  .Paquier .MediaSection .MediaSectionItem.media .ImageWithLoader, 
-  .Paquier .MediaSection .MediaSectionItem.media .media-item{
-    width: 80%;
+  .Paquier .MediaSection .MediaSectionItem.media .ImageWithLoader,
+  .Paquier .MediaSection .MediaSectionItem.media .media-item {
+    width: 90%;
   }
-  .Paquier .MediaSection .MediaSectionItem.media .media-item .ImageWithLoader{
+  .Paquier .MediaSection .MediaSectionItem.media .media-item .ImageWithLoader {
     width: 100%;
   }
-
   .Paquier .MediaSectionItem.media .text {
     display: flex;
     align-items: baseline;
@@ -330,18 +229,14 @@
     width: 100%;
   }
   .Paquier .MediaSectionItem.media .text:nth-child(3) {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
-
-  .Paquier .MediaSectionItem.media .text span{
+  .Paquier .MediaSectionItem.media .text span {
     margin: 0 .3rem .3rem 0;
-
   }
-
   .Paquier .MediaSection .media-item {
     margin-top: 0;
   }
-
   .Paquier .MediaSection .media-item .media-info {
     display: none;
   }
