@@ -1,4 +1,3 @@
-import React from 'react';
 import './BugVisual.css';
 
 const PANEL_W = 240;
