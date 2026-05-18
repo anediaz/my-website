@@ -8,12 +8,13 @@ interface ImageWithLoaderProps {
   className?:string;
   url?: string;
   loader?: React.ReactNode;
+  fetchPriority?: 'high' | 'low' | 'auto';
   onClick?: () => void;
   onLoad?: () => void;
 }
 
 export const ImageWithLoader = ({
-  id, className, src, alt, loader, url, onClick = () => {}, onLoad = () => {},
+  id, className, src, alt, loader, url, fetchPriority, onClick = () => {}, onLoad = () => {},
 }:ImageWithLoaderProps) => {
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +22,7 @@ export const ImageWithLoader = ({
     setLoading(false);
     onLoad();
   };
-  const img = <img src={src} className={!loading ? 'loaded' : ''} aria-label={id} alt={alt} title={alt} onLoad={handleOnLoad} />;
+  const img = <img src={src} className={!loading ? 'loaded' : ''} aria-label={id} alt={alt} title={alt} fetchPriority={fetchPriority} onLoad={handleOnLoad} />;
   const onClickHandler = () => (url ? {} : onClick());
   return (
     <div className={`ImageWithLoader ${className}`} onClick={onClickHandler} role="button" onKeyDown={onClickHandler} tabIndex={0}>

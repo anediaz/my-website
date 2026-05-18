@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import './Header.css';
-import profileImage from './profile.jpg';
 import { HeaderData } from '../../service/data';
 import { ImageWithLoader } from '../ImageWithLoader/ImageWithLoader';
 import { LoaderInline } from '../Loader/LoaderInline';
@@ -63,7 +62,7 @@ export const Header = ({
         </div>
       </div>
       <div className="infos">
-        <ImageWithLoader id="profile-image" className="pic" src={profileImage} aria-label="header-profile-pic" alt="profile" loader={<LoaderInline size={50} />} />
+        <ImageWithLoader id="profile-image" className="pic" src="/assets/profile.jpg" aria-label="header-profile-pic" alt="profile" fetchPriority="high" loader={<LoaderInline size={50} />} />
         {getSocial()}
       </div>
     </div>
