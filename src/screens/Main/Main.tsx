@@ -38,11 +38,9 @@ const Main = ({ page, section }: MainProps) => {
   };
 
   const selectSectionHandler = useCallback((sectionToSelect: SectionType) => {
-    if (sectionToSelect !== visibleSection) {
-      setVisibleSection(sectionToSelect);
-      scrollToSection(sectionToSelect);
-    }
-  },[]);
+    setVisibleSection(sectionToSelect);
+    scrollToSection(sectionToSelect);
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(locale && LOCALES.includes(locale) ? locale : DEFAULT_LOCALE);

@@ -22,7 +22,7 @@ export const ImageWithLoader = ({
     setLoading(false);
     onLoad();
   };
-  const img = <img src={src} className={!loading ? 'loaded' : ''} aria-label={id} alt={alt} title={alt} fetchPriority={fetchPriority} onLoad={handleOnLoad} />;
+  const img = <img src={src} className={!loading ? 'loaded' : ''} aria-label={id} alt={alt} title={alt} {...(fetchPriority && { fetchpriority: fetchPriority })} onLoad={handleOnLoad} />;
   const onClickHandler = () => (url ? {} : onClick());
   return (
     <div className={`ImageWithLoader ${className}`} onClick={onClickHandler} role="button" onKeyDown={onClickHandler} tabIndex={0}>

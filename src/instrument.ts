@@ -19,6 +19,7 @@ export const getViewName = (pathName: string, page?: PageType) => {
 }
 
 export const startNewView = (pathName: string, page?: PageType) => {
+  if (!window.DD_RUM) return;
   const viewName = getViewName(pathName, page);
   window.DD_RUM.startView({
     name: viewName,
