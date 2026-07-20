@@ -51,6 +51,12 @@ export const WorksData = {
 
 export const TalksData = [
   {
+    title: 'MiXiT Lyon 2026',
+    youtubeId: 'zFjse5guC1s',
+    date: '2026/05/01',
+    id: 'talk-mixit-2026'
+  },
+  {
     title: 'BDX/IO 2025',
     youtubeId: 'NW6hLxXf_lM',
     date: '2025/11/07',
